@@ -54,11 +54,12 @@ export function HomeClient() {
         <div className="pointer-events-none absolute -top-28 -right-24 h-80 w-80 rounded-full bg-blue-100/50 blur-3xl" />
         <div className="pointer-events-none absolute top-1/3 left-1/3 h-64 w-64 rounded-full bg-sky-100/40 blur-3xl" />
 
-        <div className="relative mx-auto max-w-7xl px-4 pt-10 pb-0 sm:px-6 lg:px-8 lg:pt-14">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
+        <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8 lg:py-12">
+          {/* Row 1: Portrait (Left) & Heading + Bio + CTA (Right) — Perfectly Aligned */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center lg:gap-10">
             {/* Left: Clean Large HD Transparent Portrait (No Background) */}
             {data.profile.avatar && (
-              <div className="lg:col-span-5 flex items-end justify-center self-end">
+              <div className="lg:col-span-5 flex items-center justify-center">
                 <button
                   type="button"
                   onClick={() =>
@@ -74,28 +75,28 @@ export function HomeClient() {
                   <img
                     src={data.profile.avatar}
                     alt={data.profile.name}
-                    className="h-[380px] sm:h-[460px] lg:h-[530px] w-auto object-contain object-bottom drop-shadow-[0_14px_24px_rgba(15,23,42,0.14)] group-hover:scale-[1.015] transition duration-300"
+                    className="h-[340px] sm:h-[410px] lg:h-[460px] w-auto object-contain object-bottom drop-shadow-[0_14px_24px_rgba(15,23,42,0.14)] group-hover:scale-[1.015] transition duration-300"
                   />
                 </button>
               </div>
             )}
 
-            {/* Right: Personal Digital Lab Concept Copy, CTA & Summary Stats */}
+            {/* Right: Personal Digital Lab Concept Copy & CTA */}
             <div
               className={`${
                 data.profile.avatar ? "lg:col-span-7" : "lg:col-span-12"
-              } space-y-5 pb-12 lg:pb-14`}
+              } space-y-4`}
             >
               <div className="inline-flex flex-wrap items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-widest text-blue-900 shadow-sm">
                 <Sparkles className="h-3.5 w-3.5 text-blue-600" />
                 <span>PERSONAL PORTFOLIO &amp; LEARNING DOCUMENTATION</span>
               </div>
 
-              <div className="space-y-2">
+              <div className="space-y-1.5">
                 <p className="text-xs font-extrabold uppercase tracking-wider text-sky-700">
                   PERSONAL DIGITAL LAB — DAFFA ZIDAN MAHESTA
                 </p>
-                <h1 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl lg:text-[2.95rem] lg:leading-[1.12]">
+                <h1 className="font-display text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.85rem] lg:leading-[1.12]">
                   Learning Technology,{" "}
                   <span className="bg-gradient-to-r from-slate-900 via-blue-800 to-sky-600 bg-clip-text text-transparent">
                     Creating Possibilities.
@@ -106,7 +107,7 @@ export function HomeClient() {
                 </p>
               </div>
 
-              <div className="max-w-2xl space-y-3 text-sm sm:text-base leading-relaxed text-slate-600">
+              <div className="max-w-2xl space-y-2.5 text-sm sm:text-[15px] leading-relaxed text-slate-600">
                 <p>
                   Halo, saya <strong className="text-slate-900">Daffa Zidan Mahesta</strong>. Seorang{" "}
                   <strong className="text-slate-800">IT Enthusiast &amp; Digital Creator</strong> dari{" "}
@@ -153,9 +154,13 @@ export function HomeClient() {
                   Teaching &amp; Learning Hub
                 </Link>
               </div>
+            </div>
+          </div>
 
-              {/* Real Documentation Summary Card */}
-              <div className="rounded-3xl border border-slate-200/90 bg-white p-4 sm:p-5 shadow-md shadow-slate-900/5 space-y-3.5">
+          {/* Row 2: Full-Width Documentation Summary Bar */}
+          <div className="mt-10 rounded-3xl border border-slate-200/90 bg-white p-5 shadow-md shadow-slate-900/5">
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-4 space-y-2.5">
                 <div className="flex items-center justify-between gap-3">
                   <div>
                     <p className="text-[11px] font-bold uppercase tracking-wider text-blue-800">
@@ -169,58 +174,57 @@ export function HomeClient() {
                     {progressPct}%
                   </span>
                 </div>
-
-                <div className="h-2 w-full overflow-hidden rounded-full bg-slate-100">
+                <div className="h-2.5 w-full overflow-hidden rounded-full bg-slate-100">
                   <div
                     className="h-full rounded-full bg-gradient-to-r from-slate-900 via-blue-700 to-sky-500 transition-all duration-500"
                     style={{ width: `${Math.max(progressPct, 6)}%` }}
                   />
                 </div>
+              </div>
 
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                  <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3">
-                    <div className="flex items-center gap-1.5 text-slate-700">
-                      <Layers className="h-3.5 w-3.5 text-blue-700" />
-                      <span className="text-[11px] font-bold">Topik Materi</span>
-                    </div>
-                    <p className="mt-1 font-display text-xl font-extrabold text-slate-900">
-                      {totalModules}
-                    </p>
-                    <p className="text-[10px] text-slate-500">Pelatihan IDN SMSIT</p>
+              <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5">
+                  <div className="flex items-center gap-1.5 text-slate-700">
+                    <Layers className="h-3.5 w-3.5 text-blue-700" />
+                    <span className="text-[11px] font-bold">Topik Materi</span>
                   </div>
+                  <p className="mt-1 font-display text-2xl font-extrabold text-slate-900">
+                    {totalModules}
+                  </p>
+                  <p className="text-[10px] text-slate-500">Pelatihan IDN SMSIT</p>
+                </div>
 
-                  <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3">
-                    <div className="flex items-center gap-1.5 text-slate-700">
-                      <FolderKanban className="h-3.5 w-3.5 text-sky-600" />
-                      <span className="text-[11px] font-bold">My Projects</span>
-                    </div>
-                    <p className="mt-1 font-display text-xl font-extrabold text-slate-900">
-                      {allProjects.length}
-                    </p>
-                    <p className="text-[10px] text-slate-500">Karya &amp; dokumentasi</p>
+                <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5">
+                  <div className="flex items-center gap-1.5 text-slate-700">
+                    <FolderKanban className="h-3.5 w-3.5 text-sky-600" />
+                    <span className="text-[11px] font-bold">My Projects</span>
                   </div>
+                  <p className="mt-1 font-display text-2xl font-extrabold text-slate-900">
+                    {allProjects.length}
+                  </p>
+                  <p className="text-[10px] text-slate-500">Karya &amp; dokumentasi</p>
+                </div>
 
-                  <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3">
-                    <div className="flex items-center gap-1.5 text-slate-700">
-                      <GraduationCap className="h-3.5 w-3.5 text-emerald-600" />
-                      <span className="text-[11px] font-bold">Panduan Praktik</span>
-                    </div>
-                    <p className="mt-1 font-display text-xl font-extrabold text-slate-900">
-                      {totalTutorials}
-                    </p>
-                    <p className="text-[10px] text-slate-500">Tutorial langkah kerja</p>
+                <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5">
+                  <div className="flex items-center gap-1.5 text-slate-700">
+                    <GraduationCap className="h-3.5 w-3.5 text-emerald-600" />
+                    <span className="text-[11px] font-bold">Panduan Praktik</span>
                   </div>
+                  <p className="mt-1 font-display text-2xl font-extrabold text-slate-900">
+                    {totalTutorials}
+                  </p>
+                  <p className="text-[10px] text-slate-500">Tutorial langkah kerja</p>
+                </div>
 
-                  <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3">
-                    <div className="flex items-center gap-1.5 text-slate-700">
-                      <StickyNote className="h-3.5 w-3.5 text-amber-600" />
-                      <span className="text-[11px] font-bold">Catatan Belajar</span>
-                    </div>
-                    <p className="mt-1 font-display text-xl font-extrabold text-slate-900">
-                      {totalNotes}
-                    </p>
-                    <p className="text-[10px] text-slate-500">Learning resources</p>
+                <div className="rounded-2xl bg-slate-50 border border-slate-200/80 p-3.5">
+                  <div className="flex items-center gap-1.5 text-slate-700">
+                    <StickyNote className="h-3.5 w-3.5 text-amber-600" />
+                    <span className="text-[11px] font-bold">Catatan Belajar</span>
                   </div>
+                  <p className="mt-1 font-display text-2xl font-extrabold text-slate-900">
+                    {totalNotes}
+                  </p>
+                  <p className="text-[10px] text-slate-500">Learning resources</p>
                 </div>
               </div>
             </div>
