@@ -12,17 +12,17 @@ export const DAYS_META: DayMeta[] = [
   {
     day: 2,
     label: "Hari Ke-2",
-    themeTitle: "Robotika Tiny:bit, IoT & Dunia Virtual",
+    themeTitle: "WebAR, Robotika Tiny:bit & IoT Micro:bit",
     description:
-      "Pemrograman robot pintar Tiny:bit, merancang sistem Internet of Things berbasis Micro:bit, dan coding game kreatif di Minecraft Education.",
+      "Membangun pengalaman Augmented Reality berbasis web (MyWebAR), pemrograman robot pintar Tiny:bit, dan merancang sistem Internet of Things berbasis Micro:bit.",
     accentColor: "sky",
   },
   {
     day: 3,
     label: "Hari Ke-3",
-    themeTitle: "Teknologi Masa Depan: AR, AI & 3D Game",
+    themeTitle: "Dunia Virtual, AI & 3D Game Coding",
     description:
-      "Membangun pengalaman Augmented Reality berbasis web (WebAR), kecerdasan buatan dengan PictoBlox + Micro:bit, dan pembuatan game 3D di Roblox.",
+      "Coding game kreatif di Minecraft Education, kecerdasan buatan dengan PictoBlox + Micro:bit, dan pembuatan game 3D di Roblox.",
     accentColor: "violet",
   },
   {

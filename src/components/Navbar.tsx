@@ -41,46 +41,53 @@ export function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Brand */}
         <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-500 to-sky-500 text-white shadow-md shadow-emerald-200 group-hover:scale-105 transition">
-            <Sparkles className="h-5 w-5" />
+          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-sky-700 text-white shadow-md shadow-slate-300 group-hover:scale-105 transition">
+            <Sparkles className="h-5 w-5 text-sky-300" />
           </div>
           <div>
             <p className="font-display text-base font-bold leading-tight text-slate-900">
               {data.profile.siteTitle}
             </p>
             <p className="text-[11px] font-medium text-slate-500">
-              SMS STEAM • {completedCount}/12 Modul Selesai
+              {data.profile.name} • IDN SMSIT
             </p>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1.5">
+        <nav className="hidden xl:flex items-center gap-1">
           <Link
             href="/"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-semibold transition ${
+            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition ${
               pathname === "/"
-                ? "bg-emerald-50 text-emerald-700"
+                ? "bg-slate-900 text-white"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >
-            <Home className="h-4 w-4" />
-            Beranda
+            <Home className="h-3.5 w-3.5" />
+            Home
           </Link>
 
-          {/* 12 Materi Mega Dropdown */}
+          <Link
+            href="/#about"
+            className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
+          >
+            About Me
+          </Link>
+
+          {/* Training Journey Mega Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen((o) => !o)}
-              className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-semibold transition cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition cursor-pointer ${
                 pathname.startsWith("/materi")
-                  ? "bg-emerald-50 text-emerald-700"
+                  ? "bg-blue-50 text-blue-800"
                   : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
               }`}
             >
-              Materi 4 Hari (12)
+              Training Journey ({completedCount}/12)
               <ChevronDown
-                className={`h-4 w-4 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
               />
             </button>
 
@@ -89,15 +96,19 @@ export function Navbar() {
                 <div className="mb-3 flex items-center justify-between border-b border-slate-100 pb-3">
                   <div>
                     <p className="font-display text-sm font-bold text-slate-900">
-                      Kurikulum Praktik 4 Hari — 12 Halaman Materi
+                      Training Journey — Dokumentasi Pelatihan IDN SMSIT
                     </p>
                     <p className="text-xs text-slate-500">
-                      Setiap materi memiliki halaman sendiri untuk Project, Catatan, dan Tutorial
+                      12 topik materi pelatihan beserta dokumentasi project, catatan belajar, dan panduan praktik
                     </p>
                   </div>
-                  <span className="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">
-                    {completedCount} / 12 Selesai
-                  </span>
+                  <Link
+                    href="/#training-journey"
+                    onClick={() => setDropdownOpen(false)}
+                    className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 hover:bg-blue-100 transition"
+                  >
+                    Lihat Roadmap ({completedCount}/12 Selesai)
+                  </Link>
                 </div>
 
                 <div className="grid grid-cols-2 gap-3.5">
@@ -160,38 +171,45 @@ export function Navbar() {
 
           <Link
             href="/portofolio"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-semibold transition ${
+            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition ${
               pathname === "/portofolio"
-                ? "bg-emerald-50 text-emerald-700"
+                ? "bg-blue-50 text-blue-800"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >
-            <FolderKanban className="h-4 w-4" />
-            Portofolio Karya
+            <FolderKanban className="h-3.5 w-3.5" />
+            My Projects
           </Link>
 
           <Link
             href="/tutorial"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-sm font-semibold transition ${
+            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition ${
               pathname === "/tutorial"
-                ? "bg-emerald-50 text-emerald-700"
+                ? "bg-blue-50 text-blue-800"
                 : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
             }`}
           >
-            <BookOpen className="h-4 w-4" />
-            Tutorial & Catatan
+            <BookOpen className="h-3.5 w-3.5" />
+            Teaching &amp; Learning Hub
+          </Link>
+
+          <Link
+            href="/#pondok-tholabie"
+            className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
+          >
+            Pondok Tholabie
           </Link>
         </nav>
 
         {/* Right CTA */}
-        <div className="hidden lg:flex items-center gap-2">
+        <div className="hidden xl:flex items-center gap-2">
           <Link
             href="/admin"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-4 py-2 text-sm font-bold transition shadow-sm ${
+            className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition shadow-sm ${
               pathname === "/admin"
                 ? "bg-slate-900 text-white"
                 : isAdmin
-                  ? "bg-emerald-600 text-white hover:bg-emerald-700"
+                  ? "bg-blue-700 text-white hover:bg-blue-800"
                   : "bg-slate-900 text-white hover:bg-slate-800"
             }`}
           >
@@ -199,7 +217,7 @@ export function Navbar() {
             {isAdmin ? "Dashboard Admin" : "Admin"}
             <span
               className={`ml-1 h-2 w-2 rounded-full ${
-                firebaseReady ? "bg-emerald-400" : "bg-amber-400"
+                firebaseReady ? "bg-emerald-400" : "bg-sky-400"
               }`}
               title={firebaseReady ? "Firebase Terhubung" : "Mode Lokal (Firebase Siap Dihubungkan)"}
             />
@@ -209,7 +227,7 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="inline-flex lg:hidden items-center justify-center rounded-xl border border-slate-200 p-2 text-slate-700 hover:bg-slate-100 cursor-pointer"
+          className="inline-flex xl:hidden items-center justify-center rounded-xl border border-slate-200 p-2 text-slate-700 hover:bg-slate-100 cursor-pointer"
           aria-label="Buka menu"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -218,35 +236,58 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white px-4 py-4 max-h-[82vh] overflow-y-auto space-y-4">
+        <div className="xl:hidden border-t border-slate-200 bg-white px-4 py-4 max-h-[82vh] overflow-y-auto space-y-4">
           <div className="grid grid-cols-2 gap-2">
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-sm font-semibold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
             >
-              <Home className="h-4 w-4 text-emerald-600" /> Beranda
+              <Home className="h-4 w-4 text-blue-600" /> Home
+            </Link>
+            <Link
+              href="/#about"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+            >
+              <Sparkles className="h-4 w-4 text-sky-600" /> About Me
+            </Link>
+            <Link
+              href="/#training-journey"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+            >
+              <BookOpen className="h-4 w-4 text-emerald-600" /> Training Journey
             </Link>
             <Link
               href="/portofolio"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-sm font-semibold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
             >
-              <FolderKanban className="h-4 w-4 text-sky-600" /> Portofolio
+              <FolderKanban className="h-4 w-4 text-sky-600" /> My Projects
             </Link>
             <Link
               href="/tutorial"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-sm font-semibold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
             >
-              <BookOpen className="h-4 w-4 text-violet-600" /> Tutorial
+              <BookOpen className="h-4 w-4 text-violet-600" /> Teaching &amp; Learning Hub
             </Link>
+            <Link
+              href="/#pondok-tholabie"
+              onClick={() => setMobileOpen(false)}
+              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+            >
+              <Sparkles className="h-4 w-4 text-blue-700" /> Pondok Tholabie
+            </Link>
+          </div>
+          <div>
             <Link
               href="/admin"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-900 px-3 py-2.5 text-sm font-semibold text-white"
+              className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-3 py-2.5 text-xs font-bold text-white"
             >
-              <ShieldCheck className="h-4 w-4 text-emerald-400" /> Admin
+              <ShieldCheck className="h-4 w-4 text-sky-400" /> Dashboard Admin
             </Link>
           </div>
 

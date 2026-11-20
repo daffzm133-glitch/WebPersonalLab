@@ -75,16 +75,17 @@ export default function TutorialNotesPage() {
       <div className="rounded-3xl border border-slate-200 bg-white p-7 sm:p-9 shadow-sm space-y-5">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-3 py-1 text-xs font-bold text-violet-800">
-              <BookOpen className="h-3.5 w-3.5" /> Pusat Belajar & Siap Ajar
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-900">
+              <BookOpen className="h-3.5 w-3.5" /> Teaching &amp; Learning Hub • Learning Resources
             </span>
             <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Tutorial & Catatan Pelatihan
+              Teaching &amp; Learning Hub
             </h1>
             <p className="text-sm sm:text-base text-slate-600">
-              Cari cepat tutorial langkah demi langkah, catatan konsep, atau shortcut keyboard
-              (coba ketik <em>&quot;Ctrl + D&quot;</em>, <em>&quot;Paddle&quot;</em>, atau{" "}
-              <em>&quot;Motor&quot;</em>).
+              Perpustakaan materi pembelajaran digital terbuka di{" "}
+              <strong>Personal Digital Lab</strong> — berisi materi pembelajaran, tutorial praktik,
+              panduan pembuatan project, dokumentasi hasil praktik, dan referensi belajar teknologi
+              yang dapat dibaca siapa saja.
             </p>
           </div>
 

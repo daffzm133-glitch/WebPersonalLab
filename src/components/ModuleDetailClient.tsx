@@ -469,6 +469,22 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                       <strong className={accent.text}>Tujuan Belajar: </strong>
                       {tut.goal}
                     </div>
+
+                    {tut.tools && tut.tools.length > 0 && (
+                      <div className="flex flex-wrap items-center gap-2 pt-1">
+                        <span className="inline-flex items-center gap-1 text-xs font-bold text-slate-500">
+                          <Wrench className="h-3.5 w-3.5" /> Persiapan Perangkat:
+                        </span>
+                        {tut.tools.map((tool) => (
+                          <span
+                            key={tool}
+                            className="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-semibold text-slate-700"
+                          >
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Numbered Steps */}
@@ -488,7 +504,7 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                             <h3 className="font-display text-lg font-bold text-slate-900">
                               {step.title}
                             </h3>
-                            <p className="text-sm sm:text-base leading-relaxed text-slate-700">
+                            <p className="whitespace-pre-line text-sm sm:text-base leading-relaxed text-slate-700">
                               {step.description}
                             </p>
                           </div>

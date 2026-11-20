@@ -99,6 +99,7 @@ export interface PortfolioProfile {
   year: string;
   bio: string;
   mission: string;
+  avatar?: string;
   email: string;
   github: string;
   instagram: string;

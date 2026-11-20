@@ -21,9 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Daffa STEAM Lab — Catatan, Tutorial & Portofolio Pelatihan 4 Hari",
+  title: "Personal Digital Lab — Daffa Zidan Mahesta | Learning Technology, Creating Possibilities",
   description:
-    "Website catatan belajar, penyimpanan project, tutorial siap ajar, dan portofolio karya Pelatihan Intensif SMS STEAM (Robotika, 3D Tinkercad, Scratch, Tiny:bit, Micro:bit IoT, Minecraft, WebAR, AI PictoBlox, Roblox, Canva, CapCut, Thunkable).",
+    "Personal Portfolio & Learning Documentation milik Daffa Zidan Mahesta (IT Enthusiast & Digital Creator dari Pondok Tholabie). Dokumentasi perjalanan pelatihan IDN SMSIT, My Projects, Learning Resources, dan Teaching & Learning Hub.",
 };
 
 export default function RootLayout({
@@ -36,7 +36,7 @@ export default function RootLayout({
       lang="id"
       className={`${jakarta.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#fafaf7] text-slate-900">
+      <body className="min-h-full flex flex-col bg-[#f8fafc] text-slate-900">
         <PortfolioProvider>
           <Navbar />
           <main className="flex-1">{children}</main>

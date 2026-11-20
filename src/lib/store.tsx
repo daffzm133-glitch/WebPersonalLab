@@ -28,6 +28,16 @@ import type {
 } from "@/types/curriculum";
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
+const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
+const CURRENT_SEED_REV = "2026-11-20-personal-digital-lab-v10";
+const SYNCED_SLUGS = new Set([
+  "lego-wedo-education",
+  "tinkercad-3d-design",
+  "webar-augmented-reality",
+  "robotic-tinybit",
+  "iot-microbit",
+  "minecraft-education",
+]);
 const DEMO_AUTH_KEY = "daffa_steam_demo_admin";
 
 interface PortfolioContextValue {
@@ -131,11 +141,36 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
           }
         } else if (typeof window !== "undefined") {
           const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
+          const savedRev = localStorage.getItem(SEED_REV_KEY);
           if (raw) {
             const parsed = JSON.parse(raw) as PortfolioData;
             if (parsed?.modules?.length === 12 && parsed?.profile) {
-              setData(parsed);
+              if (savedRev !== CURRENT_SEED_REV) {
+                const seedBySlug = new Map(SEED_DATA.modules.map((m) => [m.slug, m]));
+                const merged: PortfolioData = {
+                  ...parsed,
+                  profile: {
+                    ...SEED_DATA.profile,
+                    avatar: parsed.profile.avatar || SEED_DATA.profile.avatar,
+                  },
+                  modules: parsed.modules
+                    .map((m) =>
+                      SYNCED_SLUGS.has(m.slug) && seedBySlug.has(m.slug)
+                        ? seedBySlug.get(m.slug)!
+                        : m
+                    )
+                    .sort((a, b) => a.order - b.order),
+                  updatedAt: SEED_DATA.updatedAt,
+                };
+                localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(merged));
+                localStorage.setItem(SEED_REV_KEY, CURRENT_SEED_REV);
+                setData(merged);
+              } else {
+                setData(parsed);
+              }
             }
+          } else {
+            localStorage.setItem(SEED_REV_KEY, CURRENT_SEED_REV);
           }
         }
       } catch (err) {

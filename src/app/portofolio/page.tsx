@@ -48,16 +48,17 @@ export default function PortofolioPage() {
       <div className="rounded-3xl border border-slate-200 bg-white p-7 sm:p-9 shadow-sm">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
-              <FolderKanban className="h-3.5 w-3.5" /> Galeri Portofolio Karya
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-900">
+              <FolderKanban className="h-3.5 w-3.5" /> My Projects • Personal Digital Lab
             </span>
             <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Etalase Project Pelatihan STEAM
+              My Projects &amp; Karya Praktik
             </h1>
             <p className="text-sm sm:text-base text-slate-600">
-              Kumpulan seluruh project yang dikerjakan selama pelatihan 4 hari oleh{" "}
-              <strong>{data.profile.name}</strong> — lengkap dengan dokumentasi, file unduhan,
-              dan preview 3D.
+              Kumpulan hasil karya dan project yang dikembangkan oleh{" "}
+              <strong>{data.profile.name}</strong> selama mengikuti pelatihan di{" "}
+              <strong>IDN SMSIT</strong> maupun eksplorasi teknologi — lengkap dengan dokumentasi
+              proses, file unduhan, dan preview 3D.
             </p>
           </div>
 

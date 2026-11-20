@@ -14,16 +14,21 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
           <div className="md:col-span-4 space-y-3">
             <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-sky-500 text-white">
+              <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-700 to-sky-500 text-white">
                 <Sparkles className="h-5 w-5" />
               </div>
               <div>
                 <p className="font-display text-base font-bold text-white">
                   {data.profile.siteTitle}
                 </p>
-                <p className="text-xs text-slate-400">{data.profile.name}</p>
+                <p className="text-xs text-slate-400">
+                  {data.profile.name} • Pondok Tholabie
+                </p>
               </div>
             </div>
+            <p className="text-xs font-bold uppercase tracking-wider text-sky-400">
+              Learning Technology, Creating Possibilities.
+            </p>
             <p className="text-sm text-slate-400 leading-relaxed">
               {data.profile.mission}
             </p>
