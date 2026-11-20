@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-20T11:26:00+07:00",
+  updatedAt: "2026-11-20T19:53:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -1529,21 +1529,249 @@ Gambar 2D statis dari internet dapat diubah menjadi efek filter wajah interaktif
       title: "AI Pictoblox dan Microbit",
       shortTitle: "AI PictoBlox",
       category: "Artificial Intelligence",
-      tagline: "Menggabungkan kecerdasan buatan (kamera/suara/gesture) di PictoBlox dengan hardware Micro:bit",
+      tagline:
+        "Praktik AI Finger Tracking di PictoBlox dengan extension Human Body Detection untuk melacak 5 jari tangan secara real-time",
       summary:
-        "Eksplorasi Artificial Intelligence (Machine Learning, deteksi wajah, deteksi pose/tangan, atau pengenalan objek) menggunakan PictoBlox yang diintegrasikan langsung dengan aksi fisik pada board Micro:bit.",
+        "Praktik langsung membuat proyek Artificial Intelligence sederhana di PictoBlox: AI Finger Tracking menggunakan extension Human Body Detection. Kamera mendeteksi tangan secara langsung dan menampilkan lima sprite bola warna-warni yang mengikuti koordinat ujung ibu jari, jari telunjuk, jari tengah, jari manis, dan jari kelingking pada Stage.",
       learningGoals: [
-        "Mengenal ekstensi AI & Machine Learning di PictoBlox",
-        "Melatih model sederhana (klasifikasi gambar/gesture) untuk kontrol interaktif",
-        "Menghubungkan hasil deteksi AI di PictoBlox untuk mengendalikan LED/output Micro:bit",
+        "Mengenal lingkungan pemrograman blok PictoBlox dan menambahkan extension Human Body Detection",
+        "Mengaktifkan kamera pada Stage dan menganalisis deteksi tangan secara real-time",
+        "Menghubungkan koordinat X dan Y hasil deteksi 5 ujung jari ke lima sprite bola menggunakan blok If-Else, Go to x: y:, Show, dan Hide",
       ],
-      status: "upcoming",
+      status: "completed",
       accentColor: "violet",
       iconName: "brain",
-      tools: ["PictoBlox", "BBC Micro:bit", "Webcam / Machine Learning"],
-      projects: [],
-      notes: [],
-      tutorials: [],
+      tools: [
+        "PictoBlox (Mode Blocks)",
+        "Extension Human Body Detection",
+        "Webcam / Kamera Laptop",
+        "5 Sprite Bola & Backdrop",
+      ],
+      projects: [
+        {
+          id: "pictoblox-ai-finger-tracking",
+          title: "AI Finger Tracking — PictoBlox",
+          subtitle: "Deteksi & Pelacakan 5 Jari Tangan Real-Time dengan Human Body Detection",
+          description:
+            "Proyek praktik langsung AI di PictoBlox menggunakan extension Human Body Detection: kamera laptop mendeteksi posisi tangan secara real-time dan menggerakkan lima objek bola warna-warni (Ball hingga Ball5) agar mengikuti koordinat ujung kelima jari — ibu jari (Thumb), telunjuk (Index), jari tengah (Middle), jari manis (Ring), dan kelingking (Pinky).",
+          image: "/assets/pictoblox/15-hasil-ai-finger-tracking.png",
+          gallery: [
+            {
+              src: "/assets/pictoblox/15-hasil-ai-finger-tracking.png",
+              caption:
+                "Hasil Akhir — AI Finger Tracking aktif: 5 bola warna-warni mengikuti ujung kelima jari tangan di kamera secara real-time.",
+            },
+            {
+              src: "/assets/pictoblox/01-mode-blocks.png",
+              caption: "01 — Membuka PictoBlox dan memilih mode pemrograman Blocks.",
+            },
+            {
+              src: "/assets/pictoblox/02-nama-proyek.png",
+              caption: "02 — Memberikan nama proyek 'AI Finger Tracking'.",
+            },
+            {
+              src: "/assets/pictoblox/03-workspace-awal.png",
+              caption: "03 — Tampilan awal workspace PictoBlox dengan sprite Tobi.",
+            },
+            {
+              src: "/assets/pictoblox/04-menu-backdrop.png",
+              caption: "04 — Membuka tombol menu Choose a Backdrop di pojok kanan bawah.",
+            },
+            {
+              src: "/assets/pictoblox/05-pilih-backdrop.jpg",
+              caption: "05 — Memilih backdrop 'Blue Sky 2' dari galeri PictoBlox.",
+            },
+            {
+              src: "/assets/pictoblox/06-stage-backdrop.png",
+              caption: "06 — Stage berhasil menampilkan backdrop Blue Sky 2.",
+            },
+            {
+              src: "/assets/pictoblox/07-extension-human-body.jpg",
+              caption: "07 — Menambahkan extension Human Body Detection dari menu Extensions.",
+            },
+            {
+              src: "/assets/pictoblox/08-sprite-ball-looks.png",
+              caption: "08 — Menambahkan sprite Ball dan membuka kategori blok Looks.",
+            },
+            {
+              src: "/assets/pictoblox/09-lima-sprite-bola.png",
+              caption: "09 — Menyiapkan 5 sprite bola (Ball, Ball2, Ball3, Ball4, Ball5) berukuran 50%.",
+            },
+            {
+              src: "/assets/pictoblox/10-kode-ibu-jari.jpg",
+              caption: "10 — Program Ball: mengaktifkan kamera, analisis tangan, dan melacak top of thumb (ibu jari).",
+            },
+            {
+              src: "/assets/pictoblox/11-kode-telunjuk.jpg",
+              caption: "11 — Program Ball2: melacak posisi top of index finger (jari telunjuk).",
+            },
+            {
+              src: "/assets/pictoblox/12-kode-jari-tengah.jpg",
+              caption: "12 — Program Ball3: melacak posisi top of middle finger (jari tengah).",
+            },
+            {
+              src: "/assets/pictoblox/13-kode-jari-manis.jpg",
+              caption: "13 — Program Ball4: melacak posisi top of ring finger (jari manis).",
+            },
+            {
+              src: "/assets/pictoblox/14-kode-kelingking.jpg",
+              caption: "14 — Program Ball5: melacak posisi top of pinky finger (jari kelingking).",
+            },
+          ],
+          tags: [
+            "PictoBlox",
+            "AI Finger Tracking",
+            "Human Body Detection",
+            "Computer Vision",
+            "Block Coding",
+          ],
+          date: "20 November 2026",
+          featured: true,
+        },
+      ],
+      notes: [
+        {
+          id: "note-pictoblox-finger-tracking",
+          title: "Dokumentasi Praktik — AI Finger Tracking di PictoBlox",
+          category: "Catatan Praktik & Hasil Proyek",
+          summary:
+            "Identitas proyek, alat & bahan, pemetaan 5 sprite bola ke 5 jari tangan, logika blok Human Body Detection, refleksi praktik, serta status proyek.",
+          content: `DOKUMENTASI PRAKTIK — AI FINGER TRACKING (PICTOBLOX)
+
+1. Identitas Kegiatan
+• Nama Proyek: AI Finger Tracking
+• Platform: PictoBlox (Mode Blocks)
+• Extension: Human Body Detection
+• Jenis Kegiatan: Praktik langsung
+• Topik: Pendeteksian dan pelacakan posisi jari tangan menggunakan kamera
+• Kategori Arsip: AI Pictoblox dan Micro:bit
+
+2. Tujuan Praktik
+Membuat proyek sederhana di PictoBlox yang dapat mendeteksi tangan melalui kamera dan menampilkan lima objek bola yang mengikuti posisi masing-masing jari:
+1. Ibu jari (Thumb) → Ball
+2. Jari telunjuk (Index Finger) → Ball2
+3. Jari tengah (Middle Finger) → Ball3
+4. Jari manis (Ring Finger) → Ball4
+5. Jari kelingking (Pinky Finger) → Ball5
+
+3. Alat dan Bahan
+• Komputer atau laptop dengan kamera (webcam)
+• Aplikasi PictoBlox
+• Extension Human Body Detection
+• Lima sprite berbentuk bola (Ball – Ball5)
+• Backdrop (Blue Sky 2)
+
+4. Logika Blok Program Utama
+• when green flag clicked — memulai program.
+• set size to 50% — menyesuaikan ukuran bola agar proporsional di ujung jari.
+• turn on video on stage with 0% transparency — menampilkan kamera langsung pada Stage.
+• forever — menjalankan proses deteksi secara berulang.
+• analyse image for hand from camera — menganalisis gambar tangan dari kamera.
+• is hand detected — memeriksa apakah tangan terdeteksi di kamera.
+• if ... else ... — mengatur kondisi ketika tangan terdeteksi atau tidak terdeteksi.
+• go to x: [x position of top of ...] y: [y position of top of ...] — menggerakkan sprite mengikuti koordinat ujung masing-masing jari.
+• show & hide — menampilkan bola saat tangan terdeteksi dan menyembunyikannya saat tangan tidak terdeteksi.
+
+5. Pengalaman dan Refleksi Praktik
+Kegiatan ini dilakukan dengan metode praktik langsung tanpa pembahasan teori terlebih dahulu. Proses pembelajaran berfokus pada mengikuti langkah pembuatan proyek, menambahkan extension, menyusun blok program, dan melihat hasilnya secara langsung.
+
+Dari kegiatan ini, saya mendapatkan pengalaman menggunakan PictoBlox untuk membuat proyek berbasis AI sederhana serta menghubungkan koordinat hasil deteksi jari dengan posisi sprite pada Stage. Praktik ini menjadi pengalaman awal dalam menggunakan fitur Human Body Detection untuk menciptakan interaksi antara gerakan tangan dan objek digital.
+
+6. Status Proyek
+✓ Membuat proyek baru di PictoBlox
+✓ Menambahkan backdrop
+✓ Menambahkan extension Human Body Detection
+✓ Menambahkan lima sprite bola
+✓ Menyusun program untuk lima jari
+✓ Menyusun dokumentasi 15 screenshot
+☐ Menambahkan file proyek PictoBlox (.sb3) ke arsip
+☐ Melengkapi catatan pengujian lanjutan jika tersedia`,
+          tips: [
+            "Blok 'turn on video on stage' dan 'analyse image for hand from camera' cukup dijalankan di sprite pertama (Ball), sementara Ball2–Ball5 langsung membaca kondisi 'is hand detected' dan koordinat jari masing-masing.",
+            "Pastikan pencahayaan ruangan cukup terang agar extension Human Body Detection dapat mengenali kerangka tangan dan ujung kelima jari dengan stabil.",
+          ],
+          updatedAt: "2026-11-20",
+        },
+      ],
+      tutorials: [
+        {
+          id: "tut-pictoblox-finger-tracking",
+          title: "Tutorial Praktik: Membuat AI Finger Tracking di PictoBlox",
+          subtitle:
+            "Panduan langkah demi langkah melacak 5 ujung jari tangan secara real-time dengan extension Human Body Detection",
+          difficulty: "Pemula",
+          duration: "35 menit",
+          tools: [
+            "Laptop dengan Kamera",
+            "Aplikasi PictoBlox (Mode Blocks)",
+            "Extension Human Body Detection",
+            "5 Sprite Bola & Backdrop",
+          ],
+          goal: "Peserta mampu menambahkan extension Human Body Detection di PictoBlox, menyiapkan lima sprite bola, dan memprogram masing-masing bola agar mengikuti koordinat ujung 5 jari tangan secara real-time.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Membuat Proyek Baru di Mode Blocks",
+              description:
+                "Buka aplikasi PictoBlox, pilih mode Blocks, buat proyek baru, lalu beri nama proyek 'AI Finger Tracking' pada kolom judul di bagian atas.",
+              image: "/assets/pictoblox/02-nama-proyek.png",
+            },
+            {
+              stepNumber: 2,
+              title: "Menambahkan Backdrop pada Stage",
+              description:
+                "Klik ikon Choose a Backdrop di pojok kanan bawah, pilih latar belakang yang diinginkan (pada praktik ini memilih Blue Sky 2), lalu pastikan backdrop sudah tampil pada Stage.",
+              image: "/assets/pictoblox/06-stage-backdrop.png",
+            },
+            {
+              stepNumber: 3,
+              title: "Menambahkan Extension Human Body Detection",
+              description:
+                "Klik tombol Add Extension di pojok kiri bawah, lalu pilih extension Human Body Detection. Pastikan kategori blok Human Body sudah muncul di panel kiri area pemrograman.",
+              image: "/assets/pictoblox/07-extension-human-body.jpg",
+            },
+            {
+              stepNumber: 4,
+              title: "Menambahkan Lima Sprite Bola",
+              description:
+                "Hapus sprite default (Tobi), lalu tambahkan lima sprite berbentuk bola dengan warna berbeda (Ball, Ball2, Ball3, Ball4, Ball5) dan atur ukuran (Size) menjadi 50 agar pas sebagai penanda ujung jari.",
+              image: "/assets/pictoblox/09-lima-sprite-bola.png",
+            },
+            {
+              stepNumber: 5,
+              title: "Menyusun Program Pelacakan Ibu Jari (Ball)",
+              description:
+                "Pada sprite pertama (Ball), susun blok untuk mengatur ukuran 50%, menyalakan kamera (turn on video on stage with 0% transparency), menganalisis tangan di dalam loop forever, lalu menggerakkan bola ke koordinat X dan Y 'top of thumb' jika tangan terdeteksi (Show) atau menyembunyikannya jika tidak (Hide).",
+              image: "/assets/pictoblox/10-kode-ibu-jari.jpg",
+              codeSnippet: `when green flag clicked
+set size to (50) %
+turn [on] video on stage with (0) % transparency
+forever
+  analyse image for hand from [camera]
+  if <is hand detected> then
+    go to x: (x position of [top of thumb]) y: (y position of [top of thumb])
+    show
+  else
+    hide`,
+            },
+            {
+              stepNumber: 6,
+              title: "Menyusun Program 4 Jari Lainnya (Ball2 – Ball5)",
+              description:
+                "Salin atau susun blok yang sama pada keempat sprite bola lainnya, lalu ubah pilihan titik jari pada blok koordinat X dan Y:\n• Ball2 → top of index finger (jari telunjuk)\n• Ball3 → top of middle finger (jari tengah)\n• Ball4 → top of ring finger (jari manis)\n• Ball5 → top of pinky finger (jari kelingking)",
+              image: "/assets/pictoblox/14-kode-kelingking.jpg",
+              tip: "Kamu bisa menduplikasi blok dari Ball ke Ball2–Ball5 lalu cukup menghapus blok 'turn on video' & 'analyse image' pada Ball2–Ball5 dan mengganti nama jarinya.",
+            },
+            {
+              stepNumber: 7,
+              title: "Menjalankan & Menguji AI Finger Tracking",
+              description:
+                "Klik tombol bendera hijau (Green Flag) untuk menjalankan program, lalu arahkan telapak tangan ke depan kamera laptop. Kelima sprite bola akan otomatis muncul dan mengikuti gerakan masing-masing ujung jari secara real-time.",
+              image: "/assets/pictoblox/15-hasil-ai-finger-tracking.png",
+            },
+          ],
+        },
+      ],
     },
     {
       slug: "roblox-game-coding",

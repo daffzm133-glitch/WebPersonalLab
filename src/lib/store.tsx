@@ -29,7 +29,7 @@ import type {
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
 const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
-const CURRENT_SEED_REV = "2026-11-20-personal-digital-lab-v10";
+const CURRENT_SEED_REV = "2026-11-20-pictoblox-finger-tracking-v11";
 const SYNCED_SLUGS = new Set([
   "lego-wedo-education",
   "tinkercad-3d-design",
@@ -37,6 +37,7 @@ const SYNCED_SLUGS = new Set([
   "robotic-tinybit",
   "iot-microbit",
   "minecraft-education",
+  "ai-pictoblox-microbit",
 ]);
 const DEMO_AUTH_KEY = "daffa_steam_demo_admin";
 
