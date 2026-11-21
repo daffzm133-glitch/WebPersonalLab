@@ -29,7 +29,7 @@ import type {
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
 const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
-const CURRENT_SEED_REV = "2026-11-21-thunkable-live-v13";
+const CURRENT_SEED_REV = "2026-11-21-thunkable-ai-generator-v14";
 const SYNCED_SLUGS = new Set([
   "lego-wedo-education",
   "tinkercad-3d-design",

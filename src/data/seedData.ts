@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-21T11:30:00+07:00",
+  updatedAt: "2026-11-21T20:45:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -1852,26 +1852,64 @@ forever
       shortTitle: "Android Thunkable",
       category: "Mobile App",
       tagline:
-        "Pengembangan aplikasi kuis mobile interaktif 'SOAL (Kuis Pengetahuan Teknologi)' dengan Drag & Drop dan Block Coding di Thunkable",
+        "Pengembangan aplikasi mobile di Thunkable: Kuis 'SOAL' (Drag & Drop + Block Coding) dan 'Gather Planner' (Thunkable AI App Generator)",
       summary:
-        "Dokumentasi praktik pengembangan aplikasi mobile bernama SOAL (Kuis Pengetahuan Teknologi) menggunakan platform Thunkable dengan pendekatan No-Code Development / Visual Block Programming. Mencakup pembuatan proyek, perancangan antarmuka (Design Editor) untuk layar awal, halaman soal pilihan ganda, dan layar skor, penyusunan logika interaksi & variabel skor (Blocks Editor), hingga pengujian melalui fitur Preview.",
+        "Dokumentasi praktik pengembangan aplikasi mobile di Thunkable melalui dua pendekatan: (1) perancangan manual aplikasi kuis interaktif 'SOAL (Kuis Pengetahuan Teknologi)' menggunakan Design Editor, Blocks Editor, Preview, dan Thunkable Live; serta (2) pembuatan struktur aplikasi mobile otomatis 'Gather Planner' menggunakan fitur Thunkable AI App Generator berbasis prompt.",
       learningGoals: [
-        "Memahami lingkungan kerja dan fitur utama platform Thunkable (Design Editor, Blocks Editor, Preview)",
-        "Mengenal proses pembuatan aplikasi mobile menggunakan metode visual programming (Drag and Drop & Block Coding)",
-        "Merancang antarmuka pengguna (UI) yang rapi dengan komponen tombol, teks, gambar, dan latar belakang",
-        "Menyusun blok logika event, navigasi layar, efek suara, serta variabel skor untuk interaksi kuis",
-        "Melakukan pengujian aplikasi melalui fitur Preview dan mendokumentasikan hasil pengembangan secara sistematis",
+        "Memahami lingkungan kerja dan fitur utama platform Thunkable (Design Editor, Blocks Editor, Preview, AI App Generator)",
+        "Merancang antarmuka (UI) dan menyusun blok logika event, navigasi, audio, serta variabel skor untuk aplikasi kuis 'SOAL'",
+        "Membuat struktur aplikasi mobile secara otomatis menggunakan prompt dan fitur Ideas di Thunkable AI App Generator",
+        "Menguji aplikasi langsung di smartphone Android menggunakan Thunkable Live",
       ],
       status: "completed",
       accentColor: "amber",
       iconName: "smartphone",
       tools: [
-        "Thunkable (Web)",
-        "Design Editor (UI Components)",
-        "Blocks Editor (Block Coding)",
-        "Preview & Mobile Device",
+        "Thunkable (Web & AI App Generator)",
+        "Design Editor & Blocks Editor",
+        "Preview & Thunkable Live",
+        "Mobile Device (Android)",
       ],
       projects: [
+        {
+          id: "thunkable-ai-gather-planner",
+          title: "Gather Planner — Aplikasi Mobile Otomatis (Thunkable AI Generator)",
+          subtitle: "Mobile App Development & AI • Pembuatan Struktur Aplikasi Otomatis Berbasis Prompt",
+          description:
+            "Eksplorasi fitur Thunkable AI App Generator pada 21 November 2026: hanya dengan memasukkan deskripsi aplikasi (prompt) dari templat Event Planning App, AI menyusun secara otomatis proyek 'Gather Planner' lengkap dengan Bottom Tab Navigator, 4 halaman layar terstruktur (Events, Plan, Guests, Schedule), tombol aksi (+ Create Event), serta formulir input detail acara yang siap dikembangkan di tab BLOCKS.",
+          image: "/assets/thunkable/ai-04-hasil-gather-planner.png",
+          gallery: [
+            {
+              src: "/assets/thunkable/ai-04-hasil-gather-planner.png",
+              caption:
+                "Hasil Akhir — Proyek 'Gather Planner' terbuka otomatis di Design Editor dengan Bottom Tab Navigator, 4 layar (Events, Plan, Guests, Schedule), tombol + Create Event, dan form input acara.",
+            },
+            {
+              src: "/assets/thunkable/ai-01-dashboard-prompt.png",
+              caption:
+                "01 — Fitur AI App Generator di halaman My Projects dengan kotak 'Describe the app you want to generate' dan tombol Ideas.",
+            },
+            {
+              src: "/assets/thunkable/ai-02-ideas-event-prompt.png",
+              caption:
+                "02 — Memilih ide 'Event Planning App' sehingga prompt terisi otomatis, mengatur Privacy ke Public, dan menekan Generate project.",
+            },
+            {
+              src: "/assets/thunkable/ai-03-generating-structure.png",
+              caption:
+                "03 — Proses penyusunan struktur aplikasi otomatis ('Determining the structure of your app...') disertai QR Code Thunkable Live.",
+            },
+          ],
+          tags: [
+            "Thunkable AI",
+            "AI App Generator",
+            "Gather Planner",
+            "No-Code",
+            "Mobile App",
+          ],
+          date: "21 November 2026",
+          featured: true,
+        },
         {
           id: "thunkable-aplikasi-soal",
           title: "Aplikasi Kuis Pengetahuan Teknologi (SOAL)",
@@ -2042,6 +2080,41 @@ Personal Digital Lab — Learning · Building · Documenting · Improving`,
           ],
           updatedAt: "2026-11-21",
         },
+        {
+          id: "note-thunkable-ai-generator",
+          title: "Catatan Praktik — Membuat Aplikasi Otomatis dengan Thunkable AI Generator",
+          category: "Mobile App & AI Generator",
+          summary:
+            "Dokumentasi praktik 21 November 2026: membuat struktur aplikasi mobile 'Gather Planner' secara otomatis menggunakan prompt, tombol Ideas, dan fitur AI App Generator Thunkable.",
+          content: `MEMBUAT APLIKASI MOBILE OTOMATIS DENGAN THUNKABLE AI GENERATOR
+• Kategori: Mobile App Development & Artificial Intelligence (AI)
+• Platform: Thunkable (AI App Generator)
+• Tanggal Praktik: 21 November 2026
+• Dokumentasi: Personal Digital Lab — Daffa Zidan Mahesta
+
+Ringkasan Praktik
+Fitur AI App Generator bawaan Thunkable memungkinkan pembuatan struktur aplikasi mobile secara otomatis dalam hitungan detik cukup dengan memasukkan deskripsi aplikasi (prompt) atau memilih ide yang tersedia.
+
+1. Menyiapkan Deskripsi Aplikasi (Prompt)
+• Buka fitur AI Generator di halaman utama My Projects ('Describe the app you want to generate').
+• Gunakan tombol Ideas untuk melihat templat ide siap pakai (Event Planning App, Travel App, Inventory Management App, Meditation App).
+• Memilih 'Event Planning App' otomatis mengisi prompt:
+  "I want an app that helps me plan events, manage guest lists, send invitations and create event schedules."
+
+2. Proses Pembuatan Struktur Aplikasi (Generating)
+• Pastikan Privacy diatur ke Public, lalu klik tombol ungu 'Generate project'.
+• Thunkable AI memproses prompt pada tahap 'Determining the structure of your app...' sambil menampilkan QR Code untuk mengunduh Thunkable Live di ponsel.
+
+3. Hasil Proyek Otomatis (Gather Planner)
+• Navigasi Bawah (Bottom Tab Navigator): Terpasang otomatis untuk berpindah antarhalaman utama.
+• 4 Halaman Layar Terstruktur: Events, Plan, Guests, dan Schedule sesuai deskripsi prompt.
+• Komponen Antarmuka (UI) Siap Pakai: Layar Events dilengkapi header judul, ikon ilustrasi, dan tombol utama (+ Create Event), serta layar Plan dilengkapi formulir input detail acara (Event Name, Description, Date, Venue) yang siap dikembangkan di tab BLOCKS.`,
+          tips: [
+            "Gunakan AI App Generator untuk mempercepat pembuatan kerangka UI dan navigasi awal (prototyping cepat), lalu sempurnakan logikanya secara manual di tab BLOCKS.",
+            "Tuliskan prompt yang menyebutkan fitur dan halaman utama aplikasi agar AI langsung membuatkan struktur layar dan tab navigasi yang sesuai.",
+          ],
+          updatedAt: "2026-11-21",
+        },
       ],
       tutorials: [
         {
@@ -2131,6 +2204,52 @@ do:
               description:
                 "Setelah masuk ke aplikasi Thunkable Live, buka bagian My Projects lalu ketuk proyek 'Soal'. Aplikasi kuis kini dapat dijalankan dan diuji langsung secara real-time di layar smartphone Android.",
               image: "/assets/thunkable/12-thunkable-live-myprojects.jpg",
+            },
+          ],
+        },
+        {
+          id: "tut-thunkable-ai-generator",
+          title: "Tutorial Praktik: Membuat Aplikasi Mobile Otomatis dengan Thunkable AI Generator",
+          subtitle:
+            "Panduan 4 langkah menghasilkan proyek aplikasi 'Gather Planner' lengkap dengan 4 layar dan navigasi otomatis berbasis prompt AI",
+          difficulty: "Pemula",
+          duration: "15 menit",
+          tools: [
+            "Browser + Akun Thunkable",
+            "Fitur AI App Generator (My Projects)",
+            "Thunkable Live (opsional untuk uji di HP)",
+          ],
+          goal: "Peserta mampu memanfaatkan fitur Ideas dan AI App Generator di Thunkable untuk menghasilkan kerangka UI, 4 halaman layar, dan Bottom Tab Navigator secara otomatis.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Membuka Fitur AI Generator di Dasbor Thunkable",
+              description:
+                "Pada halaman utama My Projects di Thunkable, temukan kotak formulir 'Describe the app you want to generate' di bagian tengah layar. Jika belum memiliki konsep spesifik, klik tombol Ideas di pojok kanan bawah kolom teks.",
+              image: "/assets/thunkable/ai-01-dashboard-prompt.png",
+            },
+            {
+              stepNumber: 2,
+              title: "Memilih Ide Aplikasi & Mengatur Privasi",
+              description:
+                "Dari daftar templat ide (Event Planning App, Travel App, Inventory Management App, Meditation App), klik opsi Event Planning App agar prompt terisi otomatis. Pastikan opsi Privacy disetel ke Public, lalu klik tombol ungu 'Generate project'.",
+              image: "/assets/thunkable/ai-02-ideas-event-prompt.png",
+              codeSnippet:
+                "Prompt: \"I want an app that helps me plan events, manage guest lists, send invitations and create event schedules.\"",
+            },
+            {
+              stepNumber: 3,
+              title: "Menunggu Proses Penyusunan Struktur AI",
+              description:
+                "Tunggu sistem Thunkable AI memproses prompt melalui tahapan 'Determining the structure of your app...'. Selama menunggu, kamu juga bisa memindai kode QR yang tampil di layar untuk mengunduh Thunkable Live di ponsel.",
+              image: "/assets/thunkable/ai-03-generating-structure.png",
+            },
+            {
+              stepNumber: 4,
+              title: "Memeriksa Hasil Proyek Otomatis (Gather Planner)",
+              description:
+                "Setelah selesai, proyek baru bernama Gather Planner otomatis terbuka di ruang kerja DESIGN lengkap dengan:\n• Bottom Tab Navigator (navigasi bawah otomatis).\n• 4 Halaman Layar Terstruktur: Events, Plan, Guests, dan Schedule.\n• Komponen UI Siap Pakai: header judul, ikon ilustrasi, tombol '+ Create Event', serta form input acara (Event Name, Description, Date, Venue) yang siap dilanjutkan ke tab BLOCKS.",
+              image: "/assets/thunkable/ai-04-hasil-gather-planner.png",
             },
           ],
         },
