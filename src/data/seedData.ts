@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-21T11:02:00+07:00",
+  updatedAt: "2026-11-21T11:30:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -1930,6 +1930,16 @@ forever
               caption:
                 "09 — Blocks Editor layar skor: menampilkan nilai akhir dari app variable Score saat halaman dibuka.",
             },
+            {
+              src: "/assets/thunkable/11-playstore-thunkable-live.jpg",
+              caption:
+                "11 — Menginstal aplikasi Thunkable Live dari Google Play Store pada smartphone Android untuk pengujian langsung.",
+            },
+            {
+              src: "/assets/thunkable/12-thunkable-live-myprojects.jpg",
+              caption:
+                "12 — Proyek 'Soal' muncul di daftar My Projects pada aplikasi Thunkable Live di HP Android dan siap dijalankan langsung.",
+            },
           ],
           tags: [
             "Thunkable",
@@ -2038,7 +2048,7 @@ Personal Digital Lab — Learning · Building · Documenting · Improving`,
           id: "tut-thunkable-aplikasi-soal",
           title: "Tutorial Praktik: Membuat Aplikasi Kuis 'SOAL' di Thunkable",
           subtitle:
-            "Panduan 6 tahap pengembangan aplikasi kuis mobile dari persiapan proyek, Design Editor, Blocks Editor, hingga pengujian Preview",
+            "Panduan 8 tahap pengembangan aplikasi kuis mobile dari persiapan proyek, Design Editor, Blocks Editor, Preview, hingga uji langsung di HP via Thunkable Live",
           difficulty: "Pemula",
           duration: "60 menit",
           tools: [
@@ -2106,6 +2116,21 @@ do:
               description:
                 "Klik tombol Preview di pojok kanan atas untuk menjalankan aplikasi SOAL dalam mode pratinjau. Periksa kesesuaian posisi dan ukuran komponen, uji tombol Mulai serta alur pilihan jawaban hingga layar skor, lalu catat bagian yang masih dapat disempurnakan pada tahap pengembangan berikutnya.",
               image: "/assets/thunkable/10-preview-aplikasi-soal.png",
+            },
+            {
+              stepNumber: 7,
+              title: "Menginstal Aplikasi Thunkable Live di HP Android",
+              description:
+                "Buka Google Play Store pada smartphone Android, cari dan instal aplikasi resmi Thunkable Live, lalu klik Open untuk menghubungkan akun Thunkable yang sama dengan yang dipakai di laptop.",
+              image: "/assets/thunkable/11-playstore-thunkable-live.jpg",
+              tip: "Gunakan akun Google/email yang sama antara Thunkable Web di laptop dan Thunkable Live di HP agar daftar proyek otomatis tersinkronisasi.",
+            },
+            {
+              stepNumber: 8,
+              title: "Membuka & Menguji Proyek 'Soal' Langsung di Smartphone",
+              description:
+                "Setelah masuk ke aplikasi Thunkable Live, buka bagian My Projects lalu ketuk proyek 'Soal'. Aplikasi kuis kini dapat dijalankan dan diuji langsung secara real-time di layar smartphone Android.",
+              image: "/assets/thunkable/12-thunkable-live-myprojects.jpg",
             },
           ],
         },
