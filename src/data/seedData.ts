@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-20T19:53:00+07:00",
+  updatedAt: "2026-11-21T11:02:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -1851,21 +1851,265 @@ forever
       title: "Aplikasi Android dengan Thunkable",
       shortTitle: "Android Thunkable",
       category: "Mobile App",
-      tagline: "Merancang antarmuka & logika aplikasi Android tanpa ribet pakai drag-and-drop Thunkable",
+      tagline:
+        "Pengembangan aplikasi kuis mobile interaktif 'SOAL (Kuis Pengetahuan Teknologi)' dengan Drag & Drop dan Block Coding di Thunkable",
       summary:
-        "Membuat aplikasi mobile Android fungsional menggunakan platform no-code/low-code Thunkable. Mulai dari desain layar (UI), navigasi antar halaman, pemrograman blok logika, uji langsung di HP via Thunkable Live, hingga build file .APK.",
+        "Dokumentasi praktik pengembangan aplikasi mobile bernama SOAL (Kuis Pengetahuan Teknologi) menggunakan platform Thunkable dengan pendekatan No-Code Development / Visual Block Programming. Mencakup pembuatan proyek, perancangan antarmuka (Design Editor) untuk layar awal, halaman soal pilihan ganda, dan layar skor, penyusunan logika interaksi & variabel skor (Blocks Editor), hingga pengujian melalui fitur Preview.",
       learningGoals: [
-        "Merancang tampilan antarmuka (UI) aplikasi mobile yang ramah pengguna di Thunkable",
-        "Menghubungkan tombol, input, media, dan logika blok pada aplikasi",
-        "Menguji aplikasi langsung di smartphone Android dan melakukan build .APK",
+        "Memahami lingkungan kerja dan fitur utama platform Thunkable (Design Editor, Blocks Editor, Preview)",
+        "Mengenal proses pembuatan aplikasi mobile menggunakan metode visual programming (Drag and Drop & Block Coding)",
+        "Merancang antarmuka pengguna (UI) yang rapi dengan komponen tombol, teks, gambar, dan latar belakang",
+        "Menyusun blok logika event, navigasi layar, efek suara, serta variabel skor untuk interaksi kuis",
+        "Melakukan pengujian aplikasi melalui fitur Preview dan mendokumentasikan hasil pengembangan secara sistematis",
       ],
-      status: "upcoming",
+      status: "completed",
       accentColor: "amber",
       iconName: "smartphone",
-      tools: ["Thunkable (Web)", "Thunkable Live App", "Android .APK"],
-      projects: [],
-      notes: [],
-      tutorials: [],
+      tools: [
+        "Thunkable (Web)",
+        "Design Editor (UI Components)",
+        "Blocks Editor (Block Coding)",
+        "Preview & Mobile Device",
+      ],
+      projects: [
+        {
+          id: "thunkable-aplikasi-soal",
+          title: "Aplikasi Kuis Pengetahuan Teknologi (SOAL)",
+          subtitle: "Aplikasi Mobile Kuis Interaktif — No-Code / Visual Block Programming di Thunkable",
+          description:
+            "Aplikasi mobile interaktif bernama SOAL (Kuis Pengetahuan Teknologi) yang dibangun di Thunkable menggunakan metode Drag and Drop dan Block Coding. Terdiri dari layar Tampilan Awal (Latihan Soal + tombol Mulai), halaman soal pilihan ganda (Q.1–Q.4) dengan efek suara benar/salah, penghitungan skor otomatis menggunakan app variable Score, layar hasil 'SCORE KAMU', serta pengujian langsung melalui fitur Preview.",
+          image: "/assets/thunkable/10-preview-aplikasi-soal.png",
+          gallery: [
+            {
+              src: "/assets/thunkable/10-preview-aplikasi-soal.png",
+              caption:
+                "Preview Aplikasi SOAL — Tampilan pratinjau interaktif layar awal 'Latihan Soal' dengan tombol Mulai.",
+            },
+            {
+              src: "/assets/thunkable/01-dashboard-proyek.png",
+              caption:
+                "01 — Halaman Workspace Thunkable (My Projects) untuk membuat proyek aplikasi baru (Create Blank Project).",
+            },
+            {
+              src: "/assets/thunkable/02-setup-background.png",
+              caption:
+                "02 — Mengatur gambar latar belakang (Background Image) layar Tampilan Awal pada Design Editor.",
+            },
+            {
+              src: "/assets/thunkable/03-design-tampilan-awal.png",
+              caption:
+                "03 — Merancang UI layar Tampilan Awal dengan komponen Image karakter dan tombol Button.",
+            },
+            {
+              src: "/assets/thunkable/04-design-soal-q1.png",
+              caption:
+                "04 — Desain layar kuis Q.1 ('Apa fungsi utama komputer?') dengan 4 tombol pilihan jawaban A–D.",
+            },
+            {
+              src: "/assets/thunkable/05-design-soal-q4.png",
+              caption:
+                "05 — Desain layar soal lanjutan ('4. Apa kegunaan internet?') beserta variasi tema latar belakang.",
+            },
+            {
+              src: "/assets/thunkable/06-design-layar-skor.png",
+              caption:
+                "06 — Desain halaman akhir 'SCORE KAMU' untuk menampilkan total nilai pengguna.",
+            },
+            {
+              src: "/assets/thunkable/07-blocks-navigasi.png",
+              caption:
+                "07 — Blocks Editor Tampilan Awal: event klik tombol Mulai → putar audio → jeda 1 detik → navigasi ke layar Q.1.",
+            },
+            {
+              src: "/assets/thunkable/08-blocks-logika-skor.png",
+              caption:
+                "08 — Blocks Editor Q.1: inisialisasi app variable Score, cek jawaban A/B/C/D, ubah warna teks, efek suara, tambah skor +20, dan pindah ke Q.2.",
+            },
+            {
+              src: "/assets/thunkable/09-blocks-tampil-skor.png",
+              caption:
+                "09 — Blocks Editor layar skor: menampilkan nilai akhir dari app variable Score saat halaman dibuka.",
+            },
+          ],
+          tags: [
+            "Thunkable",
+            "Mobile App",
+            "Aplikasi Kuis SOAL",
+            "No-Code",
+            "Block Coding",
+          ],
+          date: "21 November 2026",
+          featured: true,
+        },
+      ],
+      notes: [
+        {
+          id: "note-thunkable-soal-dokumentasi",
+          title: "Dokumentasi Proyek — Aplikasi Kuis Pengetahuan Teknologi (SOAL)",
+          category: "Identitas, Komponen & Konsep",
+          summary:
+            "Identitas proyek SOAL, latar belakang pengembangan aplikasi kuis mobile, komponen Thunkable yang digunakan, serta 8 konsep penting pengembangan aplikasi.",
+          content: `DOKUMENTASI PRAKTIK PENGEMBANGAN APLIKASI MOBILE
+APLIKASI KUIS PENGETAHUAN TEKNOLOGI (SOAL) — PERSONAL DIGITAL LAB
+
+1. Identitas Proyek
+• Nama Proyek: Kuis Pengetahuan Teknologi
+• Nama Aplikasi: SOAL
+• Kategori: Pengembangan Aplikasi Mobile
+• Platform: Thunkable
+• Metode Pengembangan: No-Code Development / Drag and Drop & Block Coding
+• Jenis Aplikasi: Aplikasi Kuis Interaktif
+• Tujuan: Media pembelajaran dan pengujian pengetahuan teknologi
+
+2. Latar Belakang
+Perkembangan teknologi digital mendorong kebutuhan terhadap media pembelajaran yang interaktif, mudah digunakan, dan dapat diakses melalui perangkat mobile. Melalui aplikasi kuis interaktif SOAL yang dikembangkan di Thunkable, pengguna dapat menguji pengetahuan teknologi sekaligus mempelajari tahapan dasar pengembangan aplikasi mobile — mulai dari pembuatan proyek, perancangan antarmuka, penyusunan logika blok, hingga pengujian aplikasi.
+
+3. Teknologi dan Komponen Utama Thunkable
+• Thunkable — Platform visual programming untuk mengembangkan aplikasi mobile.
+• Design Editor — Area untuk merancang tampilan antarmuka (UI) aplikasi.
+• Blocks Editor — Area untuk menyusun logika dan fungsi interaksi aplikasi.
+• UI Components — Elemen pembentuk antarmuka (Button, Text Input, Label, Image, Screen).
+• Blocks — Instruksi visual untuk menjalankan navigasi, audio, dan penghitungan skor.
+• Preview — Fitur untuk melihat dan menguji jalannya aplikasi secara langsung.
+• Mobile Device — Perangkat untuk melakukan pengujian aplikasi.
+
+4. Konsep Penting yang Dipelajari
+• User Interface (UI): Tampilan aplikasi yang berinteraksi langsung dengan pengguna.
+• Component: Elemen penyusun tampilan dan fungsi aplikasi.
+• Design Editor: Area untuk merancang tampilan aplikasi.
+• Blocks Editor: Area untuk menyusun logika aplikasi.
+• Event: Kejadian yang memicu suatu tindakan dalam aplikasi (misal: when Button Click, when Screen Opens).
+• Logic: Aturan yang menentukan bagaimana aplikasi bekerja dan merespons pilihan jawaban.
+• Block Coding: Metode pemrograman menggunakan blok instruksi visual.
+• Preview: Fasilitas untuk melihat dan menguji aplikasi sebelum tahap lanjutan.`,
+          tips: [
+            "Pisahkan penamaan setiap Screen (Tampilan Awal, Q.1, Q.2, Q.3, Q.4) dan komponen (Button A, B, C, D) agar penyusunan logika di Blocks Editor jauh lebih cepat dan tidak tertukar.",
+            "Gunakan app variable (seperti 'Score') agar nilai skor dapat dibaca dan diperbarui lintas halaman layar.",
+          ],
+          updatedAt: "2026-11-21",
+        },
+        {
+          id: "note-thunkable-soal-evaluasi",
+          title: "Hasil Praktik, Evaluasi, Kesimpulan & Rencana Pengembangan SOAL",
+          category: "Evaluasi & Roadmap",
+          summary:
+            "Ringkasan hasil praktik aplikasi SOAL, 7 poin evaluasi pembelajaran, kesimpulan, serta 8 rencana pengembangan fitur tahap berikutnya.",
+          content: `HASIL PRAKTIK, EVALUASI & RENCANA PENGEMBANGAN — APLIKASI SOAL
+
+1. Hasil Praktik
+Proyek aplikasi mobile SOAL (Kuis Pengetahuan Teknologi) berhasil dikembangkan di Thunkable dengan mencakup:
+• Pembuatan proyek dan struktur layar aplikasi.
+• Perancangan antarmuka pada Design Editor (Tampilan Awal, halaman soal pilihan ganda, dan halaman skor).
+• Penyusunan logika navigasi, efek suara, pemeriksaan jawaban, dan penghitungan skor pada Blocks Editor.
+• Pemeriksaan dan pengujian interaksi melalui fitur Preview.
+
+2. Evaluasi dan Pembelajaran
+1. Pengembangan aplikasi mobile dapat dilakukan menggunakan pendekatan No-Code Development.
+2. Thunkable menyediakan lingkungan kerja visual yang memudahkan proses pembuatan aplikasi.
+3. Perancangan tampilan (UI) dan penyusunan logika merupakan dua bagian yang saling berkaitan erat.
+4. Setiap komponen aplikasi perlu memiliki fungsi yang jelas.
+5. Penyusunan blok harus memperhatikan urutan dan hubungan logika.
+6. Pengujian melalui Preview diperlukan untuk mengetahui kesesuaian hasil pengembangan.
+7. Dokumentasi setiap tahapan praktik membantu proses evaluasi dan pengembangan berikutnya.
+
+3. Kesimpulan
+Praktik pengembangan aplikasi SOAL memberikan pengalaman awal dalam memahami proses pembuatan aplikasi mobile secara visual menggunakan Drag and Drop dan Block Coding tanpa menulis seluruh kode secara manual. Kegiatan ini menjadi fondasi untuk membangun aplikasi mobile yang lebih kompleks pada tahap berikutnya.
+
+4. Rencana Pengembangan Selanjutnya
+1. Menambahkan kumpulan pertanyaan seputar pengetahuan teknologi.
+2. Membuat mekanisme pemilihan dan penampilan soal yang lebih dinamis.
+3. Menambahkan variasi pilihan jawaban interaktif.
+4. Menyempurnakan sistem pemeriksaan jawaban benar dan salah.
+5. Menyempurnakan sistem penghitungan skor.
+6. Menampilkan ringkasan hasil akhir kuis dan tombol ulangi.
+7. Memperbaiki desain antarmuka agar semakin menarik dan konsisten.
+8. Melakukan pengujian menyeluruh pada berbagai perangkat mobile.
+
+Personal Digital Lab — Learning · Building · Documenting · Improving`,
+          tips: [
+            "Lakukan pengujian Preview setiap selesai menambahkan satu halaman soal untuk memastikan tombol navigasi dan penambahan skor berjalan akurat.",
+            "Dokumentasikan setiap perubahan fitur dan pengujian sebagai referensi pengembangan versi berikutnya.",
+          ],
+          updatedAt: "2026-11-21",
+        },
+      ],
+      tutorials: [
+        {
+          id: "tut-thunkable-aplikasi-soal",
+          title: "Tutorial Praktik: Membuat Aplikasi Kuis 'SOAL' di Thunkable",
+          subtitle:
+            "Panduan 6 tahap pengembangan aplikasi kuis mobile dari persiapan proyek, Design Editor, Blocks Editor, hingga pengujian Preview",
+          difficulty: "Pemula",
+          duration: "60 menit",
+          tools: [
+            "Browser + Akun Thunkable",
+            "Design Editor & Blocks Editor",
+            "Aset Gambar Latar & Efek Suara (.mp3)",
+            "Fitur Preview / Thunkable Live",
+          ],
+          goal: "Peserta mampu merancang antarmuka aplikasi kuis mobile (layar awal, soal pilihan ganda, dan layar skor), menyusun logika blok navigasi serta variabel skor di Blocks Editor, dan menguji aplikasi melalui fitur Preview.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Persiapan dan Pembuatan Proyek Baru",
+              description:
+                "Buka platform Thunkable melalui browser, masuk ke akun workspace, lalu klik Create Blank Project untuk membuat proyek aplikasi baru. Beri nama proyek 'Soal' sebagai identitas aplikasi dan pastikan lingkungan kerja siap digunakan.",
+              image: "/assets/thunkable/01-dashboard-proyek.png",
+            },
+            {
+              stepNumber: 2,
+              title: "Merancang Layar Tampilan Awal (Design Editor)",
+              description:
+                "Pada tab Design Editor, atur gambar latar belakang (Background Image) untuk layar 'Tampilan Awal'. Tambahkan komponen antarmuka seperti judul 'Latihan Soal', komponen Image karakter, dan tombol Button 'Mulai'. Atur posisi, ukuran, warna, serta kerapian tata letak.",
+              image: "/assets/thunkable/03-design-tampilan-awal.png",
+              tip: "Perhatikan keterbacaan teks terhadap warna background agar antarmuka nyaman dilihat di layar HP.",
+            },
+            {
+              stepNumber: 3,
+              title: "Merancang Halaman Soal Kuis & Layar Skor",
+              description:
+                "Tambahkan layar baru untuk setiap pertanyaan kuis (Q.1, Q.2, Q.3, Q.4) serta halaman skor ('SCORE KAMU'). Pada tiap layar soal, masukkan teks pertanyaan (misal: 'Apa fungsi utama komputer?') dan 4 tombol pilihan jawaban (A, B, C, D) yang tersusun rapi secara vertikal.",
+              image: "/assets/thunkable/04-design-soal-q1.png",
+            },
+            {
+              stepNumber: 4,
+              title: "Menyusun Blok Navigasi Layar Awal (Blocks Editor)",
+              description:
+                "Beralih ke tab Blocks Editor pada layar 'Tampilan Awal'. Susun blok event ketika tombol 'Mulai' (Button1) diklik untuk memutar efek suara pembuka, memberi jeda 1 detik, lalu berpindah (navigate to) ke layar soal pertama (Q.1).",
+              image: "/assets/thunkable/07-blocks-navigasi.png",
+              codeSnippet: `when [Button1] Click
+do:
+  play [sound.mp3]
+  wait (1) seconds
+  navigate to [Q.1]`,
+            },
+            {
+              stepNumber: 5,
+              title: "Menyusun Logika Jawaban & Variabel Skor",
+              description:
+                "Pada Blocks Editor layar soal (Q.1), buat variabel 'initialize app variable Score to 0'. Untuk setiap tombol pilihan (A, B, C, D), atur warna teks umpan balik (hijau untuk benar, merah/putih untuk salah), putar efek suara benar/salah, tambahkan 'change app variable Score by 20' pada jawaban yang benar, lalu navigasi ke layar soal berikutnya. Pada layar skor, tampilkan nilai akhir dari 'app variable Score' saat layar dibuka.",
+              image: "/assets/thunkable/08-blocks-logika-skor.png",
+              codeSnippet: `initialize app variable [Score] to (0)
+
+when [B] Click  // Jawaban Benar
+do:
+  set [B]'s Text Color to [Green]
+  play [correct.mp3]
+  wait (1) seconds
+  navigate to [Q.2]
+  change app variable [Score] by (20)`,
+              tip: "Pastikan urutan blok konsisten di setiap layar soal dan pastikan layar skor menampilkan nilai terbaru dari app variable Score.",
+            },
+            {
+              stepNumber: 6,
+              title: "Pengujian Aplikasi (Preview) & Pemeriksaan Hasil Akhir",
+              description:
+                "Klik tombol Preview di pojok kanan atas untuk menjalankan aplikasi SOAL dalam mode pratinjau. Periksa kesesuaian posisi dan ukuran komponen, uji tombol Mulai serta alur pilihan jawaban hingga layar skor, lalu catat bagian yang masih dapat disempurnakan pada tahap pengembangan berikutnya.",
+              image: "/assets/thunkable/10-preview-aplikasi-soal.png",
+            },
+          ],
+        },
+      ],
     },
   ],
 };
