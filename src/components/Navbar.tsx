@@ -35,6 +35,7 @@ export function Navbar() {
   }, []);
 
   const completedCount = data.modules.filter((m) => m.status === "completed").length;
+  const totalCount = data.modules.length;
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
@@ -85,7 +86,7 @@ export function Navbar() {
                   : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
               }`}
             >
-              Training Journey ({completedCount}/12)
+              Training Journey ({completedCount}/{totalCount})
               <ChevronDown
                 className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
               />
@@ -99,7 +100,7 @@ export function Navbar() {
                       Training Journey — Dokumentasi Pelatihan IDN SMSIT
                     </p>
                     <p className="text-xs text-slate-500">
-                      12 topik materi pelatihan beserta dokumentasi project, catatan belajar, dan panduan praktik
+                      {totalCount} topik materi pelatihan beserta dokumentasi project, catatan belajar, dan panduan praktik
                     </p>
                   </div>
                   <Link
@@ -107,7 +108,7 @@ export function Navbar() {
                     onClick={() => setDropdownOpen(false)}
                     className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 hover:bg-blue-100 transition"
                   >
-                    Lihat Roadmap ({completedCount}/12 Selesai)
+                    Lihat Roadmap ({completedCount}/{totalCount} Selesai)
                   </Link>
                 </div>
 
@@ -293,7 +294,7 @@ export function Navbar() {
 
           <div className="space-y-3">
             <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              12 Halaman Materi (Hari 1 – 4)
+              {totalCount} Halaman Materi (Hari 1 – 4)
             </p>
             {DAYS_META.map((dayInfo) => {
               const accent = ACCENT_STYLES[dayInfo.accentColor];

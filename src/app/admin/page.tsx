@@ -323,7 +323,7 @@ function AdminContent() {
               Dashboard Admin Portofolio
             </h1>
             <p className="text-sm text-slate-600">
-              Kelola 12 materi pelatihan, tambah project, catatan, shortcut, dan tutorial langsung
+              Kelola {data.modules.length} materi pelatihan, tambah project, catatan, shortcut, dan tutorial langsung
               dari browser.
             </p>
           </div>
@@ -431,7 +431,7 @@ function AdminContent() {
             </span>
           </div>
           <p className="mt-1 text-xs text-slate-500">
-            Pilih salah satu dari 12 materi untuk menambah Project, Catatan, Tutorial, atau ubah
+            Pilih salah satu dari {data.modules.length} materi untuk menambah Project, Catatan, Tutorial, atau ubah
             status progres belajar.
           </p>
         </div>
@@ -483,7 +483,7 @@ function AdminContent() {
               : "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50"
           }`}
         >
-          <FolderKanban className="h-4 w-4" /> Kelola 12 Materi
+          <FolderKanban className="h-4 w-4" /> Kelola {data.modules.length} Materi
         </button>
         <button
           onClick={() => setSection("profile")}
@@ -606,10 +606,10 @@ function AdminContent() {
       ) : (
         /* ==================== SECTION: MANAGE 12 MODULES ==================== */
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-          {/* Left: 12 Modules Selector */}
+          {/* Left: Modules Selector */}
           <aside className="lg:col-span-4 rounded-3xl border border-slate-200 bg-white p-4 shadow-sm space-y-4 h-fit">
             <p className="px-2 text-xs font-bold uppercase tracking-wider text-slate-400">
-              Pilih Materi (12 Halaman)
+              Pilih Materi ({data.modules.length} Halaman)
             </p>
             {DAYS_META.map((dayInfo) => {
               const accent = ACCENT_STYLES[dayInfo.accentColor];

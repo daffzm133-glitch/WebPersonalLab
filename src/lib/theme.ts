@@ -20,17 +20,17 @@ export const DAYS_META: DayMeta[] = [
   {
     day: 3,
     label: "Hari Ke-3",
-    themeTitle: "Dunia Virtual, AI & 3D Game Coding",
+    themeTitle: "Artificial Intelligence & 3D Game Coding",
     description:
-      "Coding game kreatif di Minecraft Education, kecerdasan buatan dengan PictoBlox + Micro:bit, dan pembuatan game 3D di Roblox.",
+      "Kecerdasan buatan & Computer Vision dengan PictoBlox + Micro:bit, serta pembuatan game 3D di Roblox Studio.",
     accentColor: "violet",
   },
   {
     day: 4,
     label: "Hari Ke-4",
-    themeTitle: "Kreasi Digital & Aplikasi Android",
+    themeTitle: "Desain Visual & Aplikasi Android",
     description:
-      "Merancang materi visual profesional dengan Canva, produksi video kreatif di CapCut, hingga merakit aplikasi Android sendiri pakai Thunkable.",
+      "Merancang materi visual profesional dengan Canva hingga membangun aplikasi mobile Android dengan Thunkable.",
     accentColor: "amber",
   },
 ];

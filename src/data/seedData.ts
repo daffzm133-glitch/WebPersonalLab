@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-21T20:45:00+07:00",
+  updatedAt: "2026-11-23T11:20:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -22,12 +22,10 @@ export const SEED_DATA: PortfolioData = {
       "Scratch Game Coding",
       "Tiny:bit Robotics",
       "Micro:bit IoT",
-      "Minecraft Education",
       "WebAR",
       "AI PictoBlox",
       "Roblox Studio",
       "Canva",
-      "CapCut",
       "Thunkable Android",
     ],
   },
@@ -1500,54 +1498,91 @@ Gambar 2D statis dari internet dapat diubah menjadi efek filter wajah interaktif
 
     // ==================== HARI KE-3 ====================
     {
-      slug: "minecraft-education",
-      day: 3,
-      order: 7,
-      title: "Game Coding Minecraft Education",
-      shortTitle: "Minecraft Education",
-      category: "Game Coding",
-      tagline: "Coding dunia 3D Minecraft menggunakan Agent & Code Builder berbasis blok/Python",
-      summary:
-        "Belajar computational thinking dan pemrograman di dalam dunia Minecraft Education Edition. Memanfaatkan Code Builder untuk memerintahkan Agent membangun struktur otomatis, bertani, hingga membuat mini-game edukatif.",
-      learningGoals: [
-        "Menggunakan Code Builder di dalam Minecraft Education",
-        "Memprogram Agent untuk bergerak dan membangun struktur otomatis dengan loop",
-        "Merancang skenario pembelajaran berbasis game (Game-Based Learning) di Minecraft",
-      ],
-      status: "upcoming",
-      accentColor: "violet",
-      iconName: "blocks",
-      tools: ["Minecraft Education Edition", "MakeCode / Code Builder"],
-      projects: [],
-      notes: [],
-      tutorials: [],
-    },
-    {
       slug: "ai-pictoblox-microbit",
       day: 3,
-      order: 8,
+      order: 7,
       title: "AI Pictoblox dan Microbit",
       shortTitle: "AI PictoBlox",
       category: "Artificial Intelligence",
       tagline:
-        "Praktik AI Finger Tracking di PictoBlox dengan extension Human Body Detection untuk melacak 5 jari tangan secara real-time",
+        "Praktik Artificial Intelligence & Computer Vision di PictoBlox: Magic AI Mirror (Face Recognition) dan AI Finger Tracking (Human Body Detection)",
       summary:
-        "Praktik langsung membuat proyek Artificial Intelligence sederhana di PictoBlox: AI Finger Tracking menggunakan extension Human Body Detection. Kamera mendeteksi tangan secara langsung dan menampilkan lima sprite bola warna-warni yang mengikuti koordinat ujung ibu jari, jari telunjuk, jari tengah, jari manis, dan jari kelingking pada Stage.",
+        "Dokumentasi praktik Artificial Intelligence (AI) dan Computer Vision di PictoBlox (Stage Mode): (1) Magic AI Mirror yang memanfaatkan ekstensi Artificial Intelligence (Face Recognition) bersama sprite Tobi untuk mendeteksi jumlah wajah, perkiraan usia (age), jenis kelamin (gender), dan ekspresi emosi (emotion) secara otomatis melalui kamera; serta (2) AI Finger Tracking menggunakan ekstensi Human Body Detection untuk melacak posisi 5 ujung jari tangan secara real-time.",
       learningGoals: [
-        "Mengenal lingkungan pemrograman blok PictoBlox dan menambahkan extension Human Body Detection",
-        "Mengaktifkan kamera pada Stage dan menganalisis deteksi tangan secara real-time",
+        "Mengenal lingkungan pemrograman blok PictoBlox (Stage Mode) serta menambahkan ekstensi Artificial Intelligence dan Human Body Detection",
+        "Mengaktifkan kamera pada Stage dan mengatur transparansi video untuk analisis Computer Vision secara real-time",
+        "Membuat proyek Magic AI Mirror (Face Recognition) pada sprite Tobi untuk mendeteksi jumlah wajah, perkiraan usia (age), jenis kelamin (gender), dan ekspresi emosi (emotion)",
         "Menghubungkan koordinat X dan Y hasil deteksi 5 ujung jari ke lima sprite bola menggunakan blok If-Else, Go to x: y:, Show, dan Hide",
       ],
       status: "completed",
       accentColor: "violet",
       iconName: "brain",
       tools: [
-        "PictoBlox (Mode Blocks)",
+        "PictoBlox (Stage Mode)",
+        "Extension Artificial Intelligence (Face Recognition)",
         "Extension Human Body Detection",
         "Webcam / Kamera Laptop",
-        "5 Sprite Bola & Backdrop",
+        "Sprite Tobi & 5 Sprite Bola",
       ],
       projects: [
+        {
+          id: "pictoblox-magic-ai-mirror",
+          title: "Magic AI Mirror (Face Recognition) dengan PictoBlox",
+          subtitle: "Artificial Intelligence (AI) & Computer Vision • Analisis Wajah, Usia, Gender & Emosi Real-Time",
+          description:
+            "Magic AI Mirror merupakan proyek cermin pintar berbasis Artificial Intelligence (AI) yang memanfaatkan teknologi Face Recognition atau pengenalan wajah di PictoBlox (Stage Mode). Melalui kamera dengan transparansi 0%, sprite Tobi di pojok kiri bawah stage (x: -180, y: -80) mendeteksi wajah manusia yang tertangkap kamera, kemudian menganalisis jumlah wajah (face count), perkiraan usia (age), jenis kelamin (gender), dan ekspresi emosi (emotion) lalu menampilkannya secara bergantian melalui balon percakapan (speech bubble) selama 3 detik.",
+          image: "/assets/pictoblox/mirror-05-hasil-age.png",
+          demoUrl: "/assets/pictoblox/magic-ai-mirror-demo.mp4",
+          downloadUrl: "/assets/pictoblox/Magic-AI-Mirror-Dokumentasi.docx",
+          downloadLabel: "Download Dokumentasi (DOCX)",
+          gallery: [
+            {
+              src: "/assets/pictoblox/mirror-01-stage-nama-proyek.png",
+              caption:
+                "01 — Persiapan Proyek: Membuka PictoBlox pada mode Stage Mode, menggunakan sprite bawaan Tobi, dan memberi nama proyek 'Magic AI Mirror'.",
+            },
+            {
+              src: "/assets/pictoblox/mirror-02-extension-ai.png",
+              caption:
+                "02 — Ekstensi Artificial Intelligence: Memilih ekstensi Artificial Intelligence pada menu Choose an Extension dengan fitur Speech, Text & Face Recognition.",
+            },
+            {
+              src: "/assets/pictoblox/mirror-03-blok-kode-tobi.png",
+              caption:
+                "03 — Susunan Blok Kode Sprite Tobi: Inisialisasi posisi (x: -180, y: -80), aktivasi kamera transparansi 0%, serta perulangan forever untuk analisis face details (jumlah wajah, age, gender, emotion).",
+            },
+            {
+              src: "/assets/pictoblox/mirror-04-hasil-face-count.png",
+              caption:
+                "04 — Uji Coba Face Count: Sprite Tobi mendeteksi jumlah wajah di depan kamera dan menampilkan balon percakapan '1 face detected'.",
+            },
+            {
+              src: "/assets/pictoblox/mirror-05-hasil-age.png",
+              caption:
+                "05 — Uji Coba Age Recognition: Sprite Tobi menampilkan hasil estimasi usia wajah pertama yang terdeteksi ('age is 18').",
+            },
+            {
+              src: "/assets/pictoblox/mirror-06-hasil-gender.png",
+              caption:
+                "06 — Uji Coba Gender Recognition: Sprite Tobi menampilkan hasil klasifikasi jenis kelamin dari wajah pertama ('gender is male').",
+            },
+            {
+              src: "/assets/pictoblox/mirror-07-hasil-emotion.png",
+              caption:
+                "07 — Uji Coba Emotion Recognition: Sprite Tobi menampilkan hasil pengenalan ekspresi emosi wajah pertama ('emotion is neutral').",
+            },
+          ],
+          tags: [
+            "PictoBlox",
+            "Magic AI Mirror",
+            "Face Recognition",
+            "Computer Vision",
+            "Age & Emotion AI",
+            "Block-Based Programming",
+          ],
+          date: "20 November 2026",
+          featured: true,
+        },
         {
           id: "pictoblox-ai-finger-tracking",
           title: "AI Finger Tracking — PictoBlox",
@@ -1631,6 +1666,92 @@ Gambar 2D statis dari internet dapat diubah menjadi efek filter wajah interaktif
       ],
       notes: [
         {
+          id: "note-pictoblox-magic-ai-mirror",
+          title: "Dokumentasi Proyek — Magic AI Mirror (Face Recognition) dengan PictoBlox",
+          category: "Artificial Intelligence (AI) & Computer Vision",
+          summary:
+            "Deskripsi proyek Magic AI Mirror, persiapan ekstensi Artificial Intelligence, penjelasan blok pemrograman Face Recognition pada sprite Tobi, tabel hasil uji coba (Face Count, Age, Gender, Emotion), dan kesimpulan praktik.",
+          content: `MAGIC AI MIRROR (FACE RECOGNITION) DENGAN PICTOBLOX
+• Kategori: Artificial Intelligence (AI) & Computer Vision
+• Platform: PictoBlox (Stage Mode)
+• Dokumentasi: Personal Digital Lab — Daffa Zidan Mahesta
+• Status: Praktik dan dokumentasi proyek Magic AI Mirror
+
+DESKRIPSI PROYEK
+Magic AI Mirror merupakan proyek cermin pintar berbasis Artificial Intelligence (AI) yang memanfaatkan teknologi Face Recognition atau pengenalan wajah di PictoBlox.
+Melalui kamera, sprite Tobi akan mendeteksi wajah manusia yang tertangkap oleh kamera, kemudian menganalisis beberapa informasi seperti jumlah wajah, perkiraan usia (age), jenis kelamin (gender), dan ekspresi emosi (emotion). Hasil analisis akan ditampilkan melalui balon percakapan (speech bubble) pada sprite Tobi secara otomatis.
+
+1. PERSIAPAN PROYEK & EKSTENSI
+1. Buka PictoBlox
+   • Jalankan aplikasi PictoBlox.
+   • Pilih mode Stage Mode.
+   • Gunakan sprite bawaan Tobi.
+2. Beri Nama Proyek
+   • Klik kolom judul proyek di bagian atas.
+   • Ubah nama proyek menjadi Magic AI Mirror.
+3. Tambahkan Ekstensi Artificial Intelligence
+   • Klik menu Choose an Extension.
+   • Pilih ekstensi Artificial Intelligence.
+   • Pastikan fitur Speech, Text & Face Recognition tersedia.
+4. Aktifkan Akses Kamera
+   • Izinkan PictoBlox menggunakan kamera perangkat.
+   • Pastikan perangkat terhubung ke internet agar fitur AI dapat berjalan.
+
+2. PEMROGRAMAN BLOK PADA SPRITE TOBI
+A. Inisialisasi Posisi dan Kamera
+   • when green flag clicked
+   • go to x: (-180) y: (-80)
+   • turn [on] video on stage with (0) % transparency
+   Fungsi:
+   - Menjalankan program ketika bendera hijau diklik.
+   - Memindahkan Tobi ke pojok kiri bawah stage agar tidak menghalangi wajah.
+   - Mengaktifkan kamera dengan transparansi 0% sehingga tampilan kamera terlihat jelas.
+
+B. Proses Pengenalan Wajah (Face Recognition) di dalam blok forever:
+   1. Menganalisis Wajah:
+      recognize [face details] in image from [stage]
+      → Memerintahkan AI untuk menganalisis gambar dari stage dan mengenali detail wajah yang tertangkap kamera.
+   2. Mendeteksi Jumlah Wajah:
+      say (join (recognized face count) [ face detected]) for (3) seconds
+      → Menampilkan jumlah wajah yang berhasil dideteksi oleh kamera.
+   3. Mendeteksi Perkiraan Usia (Age):
+      say (join [age is ] (recognized [age] of face (1))) for (3) seconds
+      → Mengambil informasi perkiraan usia dari wajah pertama yang terdeteksi.
+   4. Mendeteksi Jenis Kelamin (Gender):
+      say (join [gender is ] (recognized [gender] of face (1))) for (3) seconds
+      → Menampilkan hasil perkiraan jenis kelamin berdasarkan analisis AI terhadap wajah pertama.
+   5. Mendeteksi Ekspresi Emosi (Emotion):
+      say (join [emotion is ] (recognized [emotion] of face (1))) for (3) seconds
+      → Menampilkan perkiraan ekspresi emosi wajah pertama yang berhasil dikenali.
+
+   Catatan: Angka (1) menunjukkan wajah pertama yang terdeteksi. Jika tidak ada wajah yang terdeteksi, informasi usia, gender, dan emosi mungkin tidak dapat ditampilkan dengan benar.
+
+3. UJI COBA & HASIL YANG DIHARAPKAN
+• Face Count → Contoh Hasil: "1 face detected"
+• Age Recognition → Contoh Hasil: "age is 18"
+• Gender Recognition → Contoh Hasil: "gender is male"
+• Emotion Recognition → Contoh Hasil: "emotion is neutral"
+(Catatan: Hasil usia, jenis kelamin, dan emosi merupakan estimasi dari model AI, bukan informasi identitas atau kondisi seseorang yang pasti.)
+
+4. KESIMPULAN PRAKTIK & TEKNOLOGI YANG DIPELAJARI
+Melalui proyek Magic AI Mirror, saya berhasil mempraktikkan penggunaan teknologi Artificial Intelligence (AI) dan Computer Vision di PictoBlox. Saya mempelajari cara mengaktifkan kamera, menggunakan ekstensi Artificial Intelligence, serta menyusun blok pemrograman untuk melakukan pengenalan dan analisis wajah secara otomatis. Proyek ini menunjukkan bagaimana AI dapat digunakan untuk mengolah gambar dari kamera dan menghasilkan informasi berdasarkan objek wajah yang terdeteksi.
+
+Teknologi yang Dipelajari:
+• Artificial Intelligence (AI)
+• Computer Vision
+• Face Recognition
+• Age Estimation
+• Gender Classification
+• Emotion Recognition
+• Block-Based Programming`,
+          tips: [
+            "Pastikan seluruh blok pengenalan wajah berada di dalam blok forever dan disusun secara berurutan agar informasi ditampilkan satu per satu.",
+            "Perhatikan penggunaan spasi pada teks di dalam blok join — misalnya gunakan 'age is ' (dengan spasi di akhir) bukan 'age is' tanpa spasi, agar hasilnya tidak menempel seperti 'age is18'.",
+            "Pastikan kamera sudah aktif (turn on video on stage with 0% transparency) dan perangkat terhubung ke internet sebelum proses pengenalan wajah dimulai.",
+          ],
+          updatedAt: "2026-11-20",
+        },
+        {
           id: "note-pictoblox-finger-tracking",
           title: "Dokumentasi Praktik — AI Finger Tracking di PictoBlox",
           category: "Catatan Praktik & Hasil Proyek",
@@ -1694,6 +1815,87 @@ Dari kegiatan ini, saya mendapatkan pengalaman menggunakan PictoBlox untuk membu
         },
       ],
       tutorials: [
+        {
+          id: "tut-pictoblox-magic-ai-mirror",
+          title: "Tutorial Praktik: Membuat Magic AI Mirror (Face Recognition) di PictoBlox",
+          subtitle:
+            "Panduan langkah demi langkah membuat cermin pintar berbasis AI & Computer Vision untuk mendeteksi jumlah wajah, usia, jenis kelamin, dan ekspresi emosi bersama sprite Tobi",
+          difficulty: "Pemula",
+          duration: "30 menit",
+          tools: [
+            "Aplikasi PictoBlox (Stage Mode)",
+            "Ekstensi Artificial Intelligence (Speech, Text & Face Recognition)",
+            "Kamera / Webcam Perangkat",
+            "Koneksi Internet & Sprite Bawaan Tobi",
+          ],
+          goal: "Peserta mampu mengaktifkan kamera di PictoBlox Stage Mode, menambahkan ekstensi Artificial Intelligence, serta menyusun blok pemrograman pada sprite Tobi untuk menganalisis dan menampilkan jumlah wajah, perkiraan usia (age), jenis kelamin (gender), dan ekspresi emosi (emotion) secara otomatis.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Buka PictoBlox (Stage Mode) & Beri Nama Proyek",
+              description:
+                "1. Jalankan aplikasi PictoBlox dan pilih mode Stage Mode.\n2. Gunakan sprite bawaan Tobi.\n3. Klik kolom judul proyek di bagian atas, lalu ubah nama proyek menjadi Magic AI Mirror.",
+              image: "/assets/pictoblox/mirror-01-stage-nama-proyek.png",
+              tip: "Pastikan perangkat memiliki akses kamera (webcam) dan terhubung ke internet agar layanan analisis AI pada PictoBlox dapat berjalan.",
+            },
+            {
+              stepNumber: 2,
+              title: "Tambahkan Ekstensi Artificial Intelligence",
+              description:
+                "1. Klik menu Choose an Extension (Add Extension) di pojok kiri bawah.\n2. Pilih ekstensi Artificial Intelligence.\n3. Pastikan fitur Speech, Text & Face Recognition tersedia, dan izinkan PictoBlox menggunakan kamera perangkat.",
+              image: "/assets/pictoblox/mirror-02-extension-ai.png",
+              tip: "Perhatikan label 'Requires Internet' pada kartu ekstensi Artificial Intelligence — pastikan koneksi internet stabil saat memuat model AI.",
+            },
+            {
+              stepNumber: 3,
+              title: "Susun Blok Inisialisasi & Pengenalan Wajah pada Sprite Tobi",
+              description:
+                "Pada sprite Tobi, susun blok inisialisasi posisi dan kamera diikuti blok perulangan forever untuk menjalankan pengenalan wajah secara terus-menerus:\n\nA. Inisialisasi Posisi dan Kamera:\n• Menjalankan program ketika bendera hijau diklik (when green flag clicked).\n• Memindahkan Tobi ke pojok kiri bawah stage (x: -180, y: -80) agar tidak menghalangi wajah.\n• Mengaktifkan kamera dengan transparansi 0% (turn on video on stage with 0% transparency) sehingga tampilan kamera terlihat jelas.\n\nB. Proses Pengenalan Wajah di dalam forever:\n1. recognize [face details] in image from [stage] — memerintahkan AI menganalisis gambar dari stage.\n2. say (join (recognized face count) [ face detected]) for (3) seconds — menampilkan jumlah wajah yang terdeteksi.\n3. say (join [age is ] (recognized [age] of face (1))) for (3) seconds — menampilkan perkiraan usia wajah pertama.\n4. say (join [gender is ] (recognized [gender] of face (1))) for (3) seconds — menampilkan perkiraan jenis kelamin wajah pertama.\n5. say (join [emotion is ] (recognized [emotion] of face (1))) for (3) seconds — menampilkan perkiraan ekspresi emosi wajah pertama.",
+              image: "/assets/pictoblox/mirror-03-blok-kode-tobi.png",
+              codeSnippet: `when green flag clicked
+go to x: (-180) y: (-80)
+turn [on] video on stage with (0) % transparency
+forever
+  recognize [face details] in image from [stage]
+  say (join (recognized face count) [ face detected]) for (3) seconds
+  say (join [age is ] (recognized [age] of face (1))) for (3) seconds
+  say (join [gender is ] (recognized [gender] of face (1))) for (3) seconds
+  say (join [emotion is ] (recognized [emotion] of face (1))) for (3) seconds`,
+              tip: "Perhatikan penggunaan spasi pada teks di dalam blok join! Gunakan 'age is ', 'gender is ', dan 'emotion is ' (dengan spasi di belakang) serta ' face detected' (dengan spasi di depan) agar teks hasil gabungan tidak menempel seperti 'age is18' atau '1face detected'.",
+            },
+            {
+              stepNumber: 4,
+              title: "Uji Coba 1 — Deteksi Jumlah Wajah (Face Count)",
+              description:
+                "Klik tombol Green Flag untuk menjalankan program, pastikan tampilan kamera muncul pada stage, lalu hadapkan wajah ke kamera perangkat. Setelah AI selesai menganalisis gambar dari stage, sprite Tobi pertama-tama akan menampilkan jumlah wajah yang terdeteksi (contoh: '1 face detected') selama 3 detik.",
+              image: "/assets/pictoblox/mirror-04-hasil-face-count.png",
+            },
+            {
+              stepNumber: 5,
+              title: "Uji Coba 2 — Deteksi Perkiraan Usia (Age Recognition)",
+              description:
+                "Selanjutnya, blok ketiga di dalam forever akan mengambil informasi perkiraan usia dari wajah pertama (face 1) yang terdeteksi dan menampilkannya pada balon percakapan sprite Tobi (contoh hasil: 'age is 18') selama 3 detik.",
+              image: "/assets/pictoblox/mirror-05-hasil-age.png",
+            },
+            {
+              stepNumber: 6,
+              title: "Uji Coba 3 — Deteksi Jenis Kelamin (Gender Recognition)",
+              description:
+                "Setelah menampilkan usia, sprite Tobi melanjutkan ke blok berikutnya untuk menampilkan hasil klasifikasi jenis kelamin berdasarkan analisis AI terhadap wajah pertama (contoh hasil: 'gender is male') selama 3 detik.",
+              image: "/assets/pictoblox/mirror-06-hasil-gender.png",
+            },
+            {
+              stepNumber: 7,
+              title: "Uji Coba 4 — Deteksi Ekspresi Emosi (Emotion Recognition)",
+              description:
+                "Terakhir dalam satu siklus perulangan forever, sprite Tobi menampilkan hasil pengenalan ekspresi emosi wajah pertama yang berhasil dikenali oleh kamera (contoh hasil: 'emotion is neutral') selama 3 detik, lalu proses analisis diulang kembali secara otomatis.",
+              image: "/assets/pictoblox/mirror-07-hasil-emotion.png",
+              tip: "Coba ubah ekspresi wajah di depan kamera (tersenyum, terkejut, atau netral) dan amati bagaimana hasil estimasi emosi pada balon percakapan Tobi ikut berubah pada siklus berikutnya!",
+            },
+          ],
+          downloadUrl: "/assets/pictoblox/Magic-AI-Mirror-Dokumentasi.docx",
+          downloadLabel: "Download Modul Dokumentasi Magic AI Mirror (DOCX)",
+        },
         {
           id: "tut-pictoblox-finger-tracking",
           title: "Tutorial Praktik: Membuat AI Finger Tracking di PictoBlox",
@@ -1776,7 +1978,7 @@ forever
     {
       slug: "roblox-game-coding",
       day: 3,
-      order: 9,
+      order: 8,
       title: "Game Coding dengan Roblox",
       shortTitle: "Roblox Studio",
       category: "Game Coding",
@@ -1801,7 +2003,7 @@ forever
     {
       slug: "design-canva",
       day: 4,
-      order: 10,
+      order: 9,
       title: "Design dengan Canva",
       shortTitle: "Design Canva",
       category: "Desain Grafis",
@@ -1822,32 +2024,9 @@ forever
       tutorials: [],
     },
     {
-      slug: "video-editing-capcut",
-      day: 4,
-      order: 11,
-      title: "Video Editing dengan CapCut",
-      shortTitle: "CapCut Video",
-      category: "Video & Konten",
-      tagline: "Mengedit video pembelajaran, tutorial singkat, dan dokumentasi project yang dinamis",
-      summary:
-        "Teknik editing video kreatif untuk konten pendidikan dan showcase karya menggunakan CapCut: pemotongan ritmis, teks/subtitle otomatis, transisi halus, efek suara, dan ekspor optimal untuk media sosial & YouTube.",
-      learningGoals: [
-        "Menyusun alur storytelling video tutorial atau dokumentasi project",
-        "Menggunakan cut, transisi, keyframe, audio mixing, dan auto-caption di CapCut",
-        "Mengekspor video berkualitas tinggi dengan rasio sesuai platform (16:9 / 9:16)",
-      ],
-      status: "upcoming",
-      accentColor: "amber",
-      iconName: "video",
-      tools: ["CapCut Desktop / Mobile", "Audio & Subtitle"],
-      projects: [],
-      notes: [],
-      tutorials: [],
-    },
-    {
       slug: "android-thunkable",
       day: 4,
-      order: 12,
+      order: 10,
       title: "Aplikasi Android dengan Thunkable",
       shortTitle: "Android Thunkable",
       category: "Mobile App",

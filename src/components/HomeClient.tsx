@@ -311,7 +311,7 @@ export function HomeClient() {
               Dokumentasi Perjalanan Pelatihan 4 Hari
             </h2>
             <p className="mt-2 max-w-2xl text-sm text-slate-600">
-              Pilih salah satu dari <strong>12 topik materi pelatihan</strong> di bawah untuk melihat
+              Pilih salah satu dari <strong>{totalModules} topik materi pelatihan</strong> di bawah untuk melihat
               dokumentasi <strong>My Projects</strong>, <strong>Learning Resources (Catatan)</strong>,
               serta <strong>Panduan Praktik (Tutorial)</strong>.
             </p>

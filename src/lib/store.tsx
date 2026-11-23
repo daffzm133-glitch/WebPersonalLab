@@ -4,6 +4,7 @@ import React, { createContext, useContext, useEffect, useState, useCallback } fr
 import {
   collection,
   doc,
+  deleteDoc,
   getDoc,
   getDocs,
   setDoc,
@@ -29,15 +30,17 @@ import type {
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
 const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
-const CURRENT_SEED_REV = "2026-11-21-thunkable-ai-generator-v14";
+const CURRENT_SEED_REV = "2026-11-23-remove-minecraft-capcut-v16";
+const REMOVED_SLUGS = new Set(["minecraft-education", "video-editing-capcut"]);
 const SYNCED_SLUGS = new Set([
   "lego-wedo-education",
   "tinkercad-3d-design",
   "webar-augmented-reality",
   "robotic-tinybit",
   "iot-microbit",
-  "minecraft-education",
   "ai-pictoblox-microbit",
+  "roblox-game-coding",
+  "design-canva",
   "android-thunkable",
 ]);
 const DEMO_AUTH_KEY = "daffa_steam_demo_admin";
@@ -125,7 +128,10 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
             SEED_DATA.modules.forEach((m) => modMap.set(m.slug, m));
             modulesSnap.forEach((d) => {
               const mod = d.data() as LearningModule;
-              modMap.set(mod.slug, mod);
+              if (!REMOVED_SLUGS.has(mod.slug) && modMap.has(mod.slug)) {
+                const seedOrder = modMap.get(mod.slug)!.order;
+                modMap.set(mod.slug, { ...mod, order: seedOrder });
+              }
             });
 
             const sortedModules = Array.from(modMap.values()).sort(
@@ -146,22 +152,33 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
           const savedRev = localStorage.getItem(SEED_REV_KEY);
           if (raw) {
             const parsed = JSON.parse(raw) as PortfolioData;
-            if (parsed?.modules?.length === 12 && parsed?.profile) {
-              if (savedRev !== CURRENT_SEED_REV) {
+            if (Array.isArray(parsed?.modules) && parsed?.profile) {
+              if (savedRev !== CURRENT_SEED_REV || parsed.modules.length !== SEED_DATA.modules.length) {
                 const seedBySlug = new Map(SEED_DATA.modules.map((m) => [m.slug, m]));
+                const parsedBySlug = new Map(
+                  parsed.modules
+                    .filter((m) => !REMOVED_SLUGS.has(m.slug))
+                    .map((m) => [m.slug, m])
+                );
+                const mergedModules = SEED_DATA.modules
+                  .map((seedMod) => {
+                    if (SYNCED_SLUGS.has(seedMod.slug) || !parsedBySlug.has(seedMod.slug)) {
+                      return seedMod;
+                    }
+                    return {
+                      ...parsedBySlug.get(seedMod.slug)!,
+                      order: seedMod.order,
+                    };
+                  })
+                  .sort((a, b) => a.order - b.order);
+
                 const merged: PortfolioData = {
                   ...parsed,
                   profile: {
                     ...SEED_DATA.profile,
                     avatar: parsed.profile.avatar || SEED_DATA.profile.avatar,
                   },
-                  modules: parsed.modules
-                    .map((m) =>
-                      SYNCED_SLUGS.has(m.slug) && seedBySlug.has(m.slug)
-                        ? seedBySlug.get(m.slug)!
-                        : m
-                    )
-                    .sort((a, b) => a.order - b.order),
+                  modules: mergedModules,
                   updatedAt: SEED_DATA.updatedAt,
                 };
                 localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(merged));
@@ -384,9 +401,12 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
       data.modules.forEach((mod) => {
         batch.set(doc(db!, "smsit_modules", mod.slug), mod);
       });
+      REMOVED_SLUGS.forEach((removedSlug) => {
+        batch.delete(doc(db!, "smsit_modules", removedSlug));
+      });
       await batch.commit();
       setFirebaseHasData(true);
-      showToast("Semua 12 materi & profil berhasil disinkronkan ke Firestore!");
+      showToast(`Semua ${data.modules.length} materi & profil berhasil disinkronkan ke Firestore!`);
     } finally {
       setSyncing(false);
     }
