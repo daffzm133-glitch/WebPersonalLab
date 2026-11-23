@@ -25,6 +25,7 @@ import { ACCENT_STYLES, DAYS_META, STATUS_META } from "@/lib/theme";
 import { ModuleIcon } from "@/components/ModuleIcon";
 import { StlViewer } from "@/components/StlViewer";
 import { ImageLightbox } from "@/components/ImageLightbox";
+import { MathBattleShowcase } from "@/components/MathBattleShowcase";
 
 type TabKey = "projects" | "notes" | "tutorials";
 
@@ -211,6 +212,11 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
         {/* ==================== TAB 1: PROJECTS ==================== */}
         {activeTab === "projects" && (
           <div className="space-y-8">
+            {mod.slug === "design-canva" && (
+              <MathBattleShowcase
+                onOpenImage={(src, caption) => setLightbox({ src, caption })}
+              />
+            )}
             {mod.projects.length === 0 ? (
               <EmptyModuleBox
                 moduleSlug={mod.slug}

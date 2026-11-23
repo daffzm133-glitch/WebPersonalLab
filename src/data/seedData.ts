@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-23T11:20:00+07:00",
+  updatedAt: "2026-11-23T19:15:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -2006,22 +2006,141 @@ forever
       order: 9,
       title: "Design dengan Canva",
       shortTitle: "Design Canva",
-      category: "Desain Grafis",
-      tagline: "Membuat poster, presentasi interaktif, dan bahan ajar visual yang memikat dengan Canva",
+      category: "Educational Technology & Desain",
+      tagline:
+        "Pengembangan MATH BATTLE (Educational Game Website) — website permainan edukasi matematika interaktif menggunakan Canva",
       summary:
-        "Mengasah keterampilan desain komunikasi visual untuk kebutuhan edukasi dan portofolio menggunakan Canva. Mencakup tata letak, hierarki tipografi, palet warna, elemen interaktif, hingga template modul ajar.",
+        "Dokumentasi proyek dan produk digital hasil praktik pelatihan IDN SMSIT menggunakan Canva: pengembangan MATH BATTLE (Educational Game Website), sebuah website permainan edukasi matematika yang menggabungkan permainan dan pembelajaran berhitung secara interaktif, dilengkapi navigasi Beranda, Cara Bermain, Leaderboard, Profil Pemain, publikasi domain Canva Website, serta QR Code akses langsung.",
       learningGoals: [
-        "Menerapkan prinsip desain visual (kontras, keseimbangan, tipografi, warna)",
-        "Merancang poster edukasi, infografis, dan slide presentasi menarik di Canva",
-        "Memanfaatkan fitur AI & kolaborasi Canva untuk mempercepat pembuatan bahan ajar",
+        "Merancang antarmuka visual (UI) dan pengalaman belajar interaktif untuk website permainan edukasi matematika di Canva",
+        "Menyusun struktur navigasi dan fitur permainan edukasi (Beranda, Cara Bermain, Leaderboard, dan Profil / Login Pemain)",
+        "Mempublikasikan proyek Canva menjadi Educational Game Website publik yang responsif beserta QR Code akses cepat",
+        "Mendokumentasikan proyek sebagai portofolio pembelajaran IDN SMSIT sekaligus produk digital yang dapat dicoba langsung oleh pengunjung",
       ],
-      status: "upcoming",
+      status: "completed",
       accentColor: "amber",
       iconName: "palette",
-      tools: ["Canva", "Template Edukasi", "Brand Kit"],
-      projects: [],
-      notes: [],
-      tutorials: [],
+      tools: [
+        "Canva (Canva Websites)",
+        "Educational Game UI Design",
+        "Interactive Web Publishing",
+        "QR Code Sharing",
+      ],
+      projects: [
+        {
+          id: "canva-math-battle-edu-game",
+          title: "MATH BATTLE — Educational Game Website",
+          subtitle: "Educational Technology • Website Permainan Edukasi Matematika Interaktif dengan Canva",
+          description:
+            "MATH BATTLE merupakan proyek hasil praktik dan pembelajaran selama mengikuti pelatihan IDN SMSIT berupa website permainan edukasi matematika yang dikembangkan menggunakan Canva. Mengusung konsep 'Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka!', website ini menggabungkan permainan dan pembelajaran matematika secara interaktif dengan menu Beranda, Cara Bermain, Leaderboard, Profil/Login Pemain, tombol aksi 'Main Sekarang' & '+ Buat Game', serta dapat dimainkan langsung oleh pengunjung melalui link publikasi Canva maupun QR Code.",
+          image: "/assets/canva/math-battle-canva-preview.jpg",
+          demoUrl: "https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
+          gallery: [
+            {
+              src: "/assets/canva/math-battle-canva-preview.jpg",
+              caption:
+                "Dokumentasi 01 — Tampilan Desain & Antarmuka MATH BATTLE Edu Game Website di Canva ('Asah Otak, Taklukkan Angka!') lengkap dengan navigasi Beranda, Cara Bermain, Leaderboard, Profil/Login, serta tombol Main Sekarang & + Buat Game.",
+            },
+            {
+              src: "/assets/canva/math-battle-qrcode.png",
+              caption:
+                "Dokumentasi 02 — QR Code Publikasi Resmi MATH BATTLE untuk mengakses dan memainkan website permainan edukasi matematika secara langsung melalui smartphone atau perangkat mobile.",
+            },
+          ],
+          tags: [
+            "MATH BATTLE",
+            "Canva Website",
+            "Educational Technology",
+            "Educational Game",
+            "IDN SMSIT",
+            "Pondok Tholabie",
+          ],
+          date: "23 November 2026",
+          featured: true,
+        },
+      ],
+      notes: [
+        {
+          id: "note-canva-math-battle-documentation",
+          title: "Dokumentasi Proyek — MATH BATTLE (Educational Game Website dengan Canva)",
+          category: "Educational Technology • Project Documentation",
+          summary:
+            "Dokumentasi lengkap proyek MATH BATTLE: pengenalan proyek, overview konsep pembelajaran interaktif, fitur berdasarkan implementasi nyata, hubungan dengan pelatihan IDN SMSIT, dan informasi proyek.",
+          content: `DIGITAL LAB — DOKUMENTASI PROYEK MATH BATTLE
+• Project: MATH BATTLE
+• Category: Educational Technology
+• Type: Educational Game Website
+• Platform: Canva (Canva Websites)
+• Learning Program: IDN SMSIT
+• Creator: Daffa Zidan
+• Affiliation: Pondok Tholabie
+• Public Game Link: https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website
+
+1. PROJECT INTRODUCTION
+MATH BATTLE merupakan proyek website permainan edukasi matematika (Educational Game) yang dikembangkan menggunakan Canva sebagai hasil praktik dan pembelajaran selama mengikuti pelatihan IDN SMSIT.
+Di dalam Personal Digital Lab, proyek ini memiliki dua fungsi utama:
+• Project Documentation — mendokumentasikan latar belakang, tujuan pengembangan, proses pembelajaran, dan hasil karya selama pelatihan.
+• Product Showcase — menampilkan produk digital MATH BATTLE agar pengunjung dapat melihat hasil karya sekaligus mencoba permainannya secara langsung.
+
+Tujuan Pengembangan:
+Menghadirkan media pembelajaran matematika berbasis web yang interaktif, menarik secara visual, dan mudah diakses sehingga siswa lebih termotivasi dalam melatih kemampuan berhitung.
+
+2. PROJECT OVERVIEW
+MATH BATTLE menggabungkan elemen permainan dan pembelajaran matematika dengan slogan "Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka! Belajar matematika jadi lebih seru. Tantang temanmu dan buktikan siapa yang paling jago!".
+Melalui pendekatan ini, materi latihan angka disajikan dalam suasana permainan yang bersahabat, kompetitif, dan menyenangkan.
+
+3.PROJECT FEATURES (BERDASARKAN IMPLEMENTASI NYATA)
+• Header & Navigasi Utama: Menampilkan identitas logo MATH BATTLE, menu navigasi Beranda, Cara Bermain, Leaderboard, dan Profil / Login, serta indikator status Pemain.
+• Hero Section Interaktif: Menampilkan badge "Petualangan Matematika Dimulai!", headline utama "Asah Otak, Taklukkan Angka!", deskripsi motivasi belajar, serta ilustrasi karakter bersama ikon operasi matematika (+), angka (7), trofi, dan bintang.
+• Tombol Aksi Permainan: Menyediakan tombol utama "MAIN SEKARANG" untuk memulai permainan serta tombol "+ BUAT GAME".
+• Publikasi Website Canva & QR Code: Dipublikasikan sebagai website publik di domain my.canva.site (bukan link editor) dan dilengkapi QR Code agar dapat dibuka dengan cepat di laptop maupun smartphone.
+
+4. LEARNING & DEVELOPMENT (IDN SMSIT & PONDOK THOLABIE)
+MATH BATTLE merupakan bentuk penerapan langsung pembelajaran desain kreatif dan pengembangan teknologi pendidikan (Educational Technology) selama pelatihan IDN SMSIT. Proyek ini juga menjadi referensi media pembelajaran digital interaktif yang dapat diterapkan dan dikembangkan untuk mendukung kegiatan edukasi di Pondok Tholabie.`,
+          tips: [
+            "Gunakan link publikasi Canva Website (my.canva.site) atau QR Code saat membagikan proyek ke siswa/pengunjung, bukan link editor Canva, agar permainan langsung tampil penuh dan siap dimainkan.",
+            "Kombinasikan kontras warna latar (biru-ungu) dengan tombol aksi berwarna kuning terang (MAIN SEKARANG) agar fokus utama pemain langsung tertuju pada tombol mulai permainan.",
+          ],
+          updatedAt: "2026-11-23",
+        },
+      ],
+      tutorials: [
+        {
+          id: "tut-canva-math-battle",
+          title: "Panduan Proyek: Merancang & Mempublikasikan MATH BATTLE Edu Game Website di Canva",
+          subtitle:
+            "Dokumentasi tahapan perancangan antarmuka, penyusunan struktur navigasi permainan, hingga publikasi website dan QR Code di Canva",
+          difficulty: "Pemula",
+          duration: "40 menit",
+          tools: [
+            "Canva (Mode Website)",
+            "Komponen UI & Ilustrasi Canva",
+            "Fitur Publish Website Canva",
+            "QR Code Generator",
+          ],
+          goal: "Memahami alur pembuatan dan publikasi website permainan edukasi matematika MATH BATTLE menggunakan Canva hingga siap diakses oleh pengunjung melalui link publik dan QR Code.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Merancang Antarmuka & Navigasi MATH BATTLE di Canva",
+              description:
+                "Buka Canva dan siapkan proyek desain bertipe Website dengan judul 'MATH BATTLE Edu Game Website'.\n\nSusun struktur tampilan utama yang terdiri dari:\n1. Bar navigasi atas: Logo MATH BATTLE, menu Beranda, Cara Bermain, Leaderboard, Profil / Login, dan tombol status Pemain.\n2. Area Hero utama: Badge 'Petualangan Matematika Dimulai!', judul 'ASAH OTAK, TAKLUKKAN ANGKA!', teks ajakan belajar matematika, tombol aksi 'MAIN SEKARANG' dan '+ BUAT GAME', serta ilustrasi karakter dengan ikon matematika.",
+              image: "/assets/canva/math-battle-canva-preview.jpg",
+              tip: "Pastikan hierarki ukuran teks judul, subjudul, dan tombol aksi terlihat kontras agar nyaman dibaca baik di layar laptop maupun HP.",
+            },
+            {
+              stepNumber: 2,
+              title: "Mempublikasikan Proyek Menjadi Website Publik & QR Code",
+              description:
+                "Setelah desain dan elemen permainan selesai disusun, klik tombol Publish Website di pojok kanan atas Canva untuk menerbitkan proyek ke domain publik Canva (https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website).\n\nSelanjutnya, buat QR Code dari link publikasi tersebut agar pengunjung atau siswa dapat langsung memindai dan mencoba permainan MATH BATTLE melalui perangkat masing-masing.",
+              image: "/assets/canva/math-battle-qrcode.png",
+              codeSnippet:
+                "Canva Public Game Link: https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
+              tip: "Selalu uji link publikasi di tab penyamaran (incognito) atau perangkat lain untuk memastikan pengunjung dapat mengakses permainan tanpa perlu login ke editor Canva.",
+            },
+          ],
+        },
+      ],
     },
     {
       slug: "android-thunkable",
