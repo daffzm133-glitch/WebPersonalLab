@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import {
+  ArrowRight,
   Award,
   BookOpen,
   Building2,
@@ -12,16 +13,20 @@ import {
   Info,
   Laptop,
   Layout,
+  Lightbulb,
+  MessageSquareCode,
   Monitor,
   Play,
   QrCode,
   RefreshCw,
+  Rocket,
   Smartphone,
   Sparkles,
   Tablet,
   Target,
   Trophy,
   User,
+  Wand2,
   Zap,
 } from "lucide-react";
 
@@ -34,6 +39,59 @@ type PreviewMode = "showcase" | "embed";
 interface MathBattleShowcaseProps {
   onOpenImage?: (src: string, caption: string) => void;
 }
+
+const DEVELOPMENT_PROCESS_STEPS = [
+  {
+    step: "01",
+    label: "IDEA",
+    title: "Perumusan Ide",
+    desc: "Menentukan konsep permainan matematika interaktif yang menggabungkan edukasi, tantangan, dan pengalaman bermain.",
+    icon: Lightbulb,
+  },
+  {
+    step: "02",
+    label: "PROMPT",
+    title: "Instruksi / Prompt",
+    desc: "Mendeskripsikan ide, konsep permainan, aturan, mekanisme, dan tampilan yang diinginkan ke dalam prompt.",
+    icon: MessageSquareCode,
+  },
+  {
+    step: "03",
+    label: "CANVA AI",
+    title: "Pemrosesan Canva AI",
+    desc: "Memanfaatkan Canva AI (Prompt-Based Creation) untuk mengolah instruksi teks menjadi struktur permainan digital.",
+    icon: Wand2,
+  },
+  {
+    step: "04",
+    label: "GAME CREATION",
+    title: "Pembuatan Game",
+    desc: "Menghasilkan antarmuka, navigasi, dan mekanisme permainan matematika interaktif di dalam Canva.",
+    icon: Gamepad2,
+  },
+  {
+    step: "05",
+    label: "TESTING",
+    title: "Uji Coba Interaksi",
+    desc: "Menguji alur permainan, tantangan berhitung, dan tampilan responsif sebelum dipublikasikan.",
+    icon: Target,
+  },
+  {
+    step: "06",
+    label: "RESULT",
+    title: "Publikasi Produk",
+    desc: "Menerbitkan game sebagai website publik Canva beserta QR Code agar siap dimainkan siapa saja.",
+    icon: Rocket,
+  },
+];
+
+const PROJECT_OBJECTIVES = [
+  "Mengenal pemanfaatan Canva AI dalam pembuatan game.",
+  "Memahami konsep prompt-based creation.",
+  "Mengembangkan ide menjadi produk digital interaktif.",
+  "Mengeksplorasi penggunaan game sebagai media pembelajaran.",
+  "Mengenal potensi AI dalam mendukung kreativitas dan pengembangan teknologi pendidikan.",
+];
 
 export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
   const [previewMode, setPreviewMode] = useState<PreviewMode>("showcase");
@@ -64,21 +122,21 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
       {/* ==================== 1. PROJECT INTRODUCTION & 6. PROJECT INFORMATION ==================== */}
       <section className="overflow-hidden rounded-3xl border border-amber-200/90 bg-white shadow-sm">
         <div className="bg-gradient-to-r from-indigo-950 via-blue-900 to-indigo-900 px-6 py-5 sm:px-8 text-white flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-amber-400 text-slate-950 font-display font-black text-lg shadow-md">
+          <div className="flex items-center gap-3.5">
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-amber-400 text-slate-950 font-display font-black text-xl shadow-md">
               ✦
             </div>
             <div>
               <div className="flex flex-wrap items-center gap-2">
                 <span className="rounded-full bg-amber-400/20 border border-amber-300/40 px-2.5 py-0.5 text-[11px] font-extrabold uppercase tracking-wider text-amber-300">
-                  Educational Technology • Educational Game
+                  AI-Powered Educational Game Development
                 </span>
                 <span className="rounded-full bg-white/15 px-2.5 py-0.5 text-[11px] font-bold text-sky-200">
-                  IDN SMSIT Training Project
+                  Canva AI • Prompt-Based Creation
                 </span>
               </div>
               <h2 className="mt-1 font-display text-2xl sm:text-3xl font-extrabold tracking-tight">
-                MATH BATTLE — Educational Game Website
+                MATH BATTLE — Create with AI, Learn through Play!
               </h2>
             </div>
           </div>
@@ -105,51 +163,62 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
         </div>
 
         <div className="p-6 sm:p-8 grid grid-cols-1 gap-8 lg:grid-cols-12">
-          {/* 1. Project Introduction */}
+          {/* 1. Project Introduction & Project Objectives */}
           <div className="lg:col-span-7 space-y-5">
-            <div className="space-y-2">
-              <p className="text-xs font-extrabold uppercase tracking-widest text-amber-600">
-                01 • Project Introduction
-              </p>
+            <div className="space-y-3">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <p className="text-xs font-extrabold uppercase tracking-widest text-amber-600">
+                  01 • Project Introduction
+                </p>
+                <span className="rounded-lg bg-indigo-50 border border-indigo-200 px-2.5 py-1 text-[11px] font-extrabold text-indigo-800">
+                  Create with AI, Learn through Play!
+                </span>
+              </div>
+
               <h3 className="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
-                Dokumentasi Proyek &amp; Produk Permainan Edukasi Matematika
+                MATH BATTLE — AI-Powered Educational Game Development
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                <strong>MATH BATTLE</strong> merupakan proyek website permainan edukasi matematika
-                (<em>Educational Game Website</em>) yang dikembangkan menggunakan{" "}
-                <strong>Canva</strong> sebagai hasil praktik dan pembelajaran selama mengikuti
-                pelatihan intensif <strong>IDN SMSIT</strong>. Proyek ini dihadirkan di{" "}
-                <strong>Personal Digital Lab</strong> dengan dua fungsi utama: sebagai{" "}
-                <strong>dokumentasi proyek pembelajaran</strong> sekaligus{" "}
-                <strong>produk digital interaktif</strong> yang dapat dicoba langsung oleh
-                pengunjung.
-              </p>
+
+              <div className="space-y-2.5 text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p>
+                  <strong>MATH BATTLE</strong> merupakan proyek eksplorasi pengembangan game edukasi
+                  menggunakan <strong>Canva AI</strong>. Proyek ini memperkenalkan pendekatan baru
+                  dalam pembuatan permainan digital, di mana proses pengembangan dapat dilakukan
+                  melalui instruksi atau <strong>prompt</strong> yang diberikan kepada AI.
+                </p>
+                <p>
+                  Dengan mendeskripsikan ide, konsep permainan, aturan, mekanisme, dan tampilan yang
+                  diinginkan, pengguna dapat memanfaatkan <strong>Canva AI</strong> untuk membantu
+                  menghasilkan sebuah game interaktif.
+                </p>
+                <p>
+                  <strong>MATH BATTLE</strong> mengambil konsep permainan matematika sebagai media
+                  pembelajaran yang menggabungkan edukasi, tantangan, dan pengalaman bermain. Proyek
+                  ini merupakan bagian dari hasil pembelajaran dan praktik selama mengikuti pelatihan
+                  di <strong>IDN SMSIT</strong>, sekaligus menjadi bentuk eksplorasi pemanfaatan{" "}
+                  <strong>Artificial Intelligence</strong> dalam pengembangan media pembelajaran
+                  digital.
+                </p>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-blue-800">
-                  <Target className="h-4 w-4 text-blue-600" />
-                  Tujuan Pengembangan
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Menciptakan media belajar matematika berbasis web yang lebih seru, kompetitif, dan
-                  mudah diakses oleh siswa untuk melatih ketangkasan berhitung melalui konsep
-                  petualangan &amp; tantangan angka.
-                </p>
+            {/* Project Objectives Box */}
+            <div className="rounded-2xl border border-amber-200/90 bg-amber-50/60 p-5 space-y-3">
+              <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-amber-900">
+                <Target className="h-4 w-4 text-amber-600" />
+                Project Objectives (Tujuan Proyek)
               </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-4 space-y-1.5">
-                <div className="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-amber-800">
-                  <GraduationCap className="h-4 w-4 text-amber-600" />
-                  Latar Belakang Pelatihan
-                </div>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Dikembangkan pada modul <em>Design dengan Canva</em> dalam pelatihan{" "}
-                  <strong>IDN SMSIT</strong> untuk mempraktikkan pemanfaatan Canva dalam merancang
-                  dan mempublikasikan website edukasi interaktif.
-                </p>
-              </div>
+              <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+                {PROJECT_OBJECTIVES.map((obj, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start gap-2 text-xs sm:text-sm font-medium text-slate-700 leading-snug"
+                  >
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-amber-600" />
+                    <span>{obj}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
 
@@ -176,16 +245,22 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
                   <dd className="font-display font-extrabold text-slate-900">MATH BATTLE</dd>
                 </div>
                 <div className="py-2.5 flex items-center justify-between gap-3">
+                  <dt className="font-semibold text-slate-500">Subtitle</dt>
+                  <dd className="font-bold text-indigo-800 text-right">
+                    AI-Powered Educational Game Development
+                  </dd>
+                </div>
+                <div className="py-2.5 flex items-center justify-between gap-3">
                   <dt className="font-semibold text-slate-500">Category</dt>
-                  <dd className="font-bold text-blue-800">Educational Technology</dd>
+                  <dd className="font-bold text-blue-800">Educational Technology &amp; AI</dd>
                 </div>
                 <div className="py-2.5 flex items-center justify-between gap-3">
                   <dt className="font-semibold text-slate-500">Type</dt>
                   <dd className="font-bold text-slate-800">Educational Game Website</dd>
                 </div>
                 <div className="py-2.5 flex items-center justify-between gap-3">
-                  <dt className="font-semibold text-slate-500">Platform</dt>
-                  <dd className="font-semibold text-slate-700">Canva (Canva Websites)</dd>
+                  <dt className="font-semibold text-slate-500">Platform &amp; Method</dt>
+                  <dd className="font-semibold text-slate-700">Canva AI (Prompt-Based Creation)</dd>
                 </div>
                 <div className="py-2.5 flex items-center justify-between gap-3">
                   <dt className="font-semibold text-slate-500">Learning Program</dt>
@@ -228,66 +303,72 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
         </div>
       </section>
 
-      {/* ==================== 2. PROJECT OVERVIEW ==================== */}
-      <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-5">
-        <div className="space-y-1.5">
-          <p className="text-xs font-extrabold uppercase tracking-widest text-amber-600">
-            02 • Project Overview
-          </p>
-          <h3 className="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
-            Menggabungkan Permainan &amp; Pembelajaran Matematika Secara Interaktif
-          </h3>
+      {/* ==================== 2. PROJECT OVERVIEW & DEVELOPMENT PROCESS ==================== */}
+      <section className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-6">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div className="space-y-1.5">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-amber-600">
+              02 • Project Overview &amp; Development Process
+            </p>
+            <h3 className="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
+              Alur Pengembangan Berbasis Prompt (Prompt-Based Creation dengan Canva AI)
+            </h3>
+          </div>
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-900 px-4 py-1.5 text-xs font-extrabold text-amber-300">
+            <Sparkles className="h-3.5 w-3.5" />
+            Create with AI, Learn through Play!
+          </span>
         </div>
 
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          <strong>MATH BATTLE</strong> dirancang dengan semangat{" "}
-          <em>&ldquo;Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka!&rdquo;</em> untuk
-          mengubah latihan matematika dari aktivitas yang terasa kaku menjadi tantangan permainan
-          digital yang menyenangkan. Melalui antarmuka visual yang cerah dan terstruktur, pemain
-          diajak untuk mengasah kemampuan berhitung, menantang teman, dan membuktikan ketangkasan
-          mereka dalam menyelesaikan soal matematika.
+          Melalui pendekatan <strong>Prompt-Based Creation</strong> di <strong>Canva AI</strong>,
+          pengembangan permainan tidak lagi dimulai dari kanvas kosong secara manual, melainkan
+          dari perumusan ide dan penyusunan instruksi (<em>prompt</em>) yang mendeskripsikan konsep
+          permainan matematika, aturan main, mekanisme tantangan, serta tampilan visual yang
+          diinginkan hingga menjadi produk game interaktif.
         </p>
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-3">
-          <div className="rounded-2xl border border-indigo-100 bg-indigo-50/50 p-5 space-y-2">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white">
-              <Zap className="h-5 w-5" />
-            </div>
-            <h4 className="font-display text-base font-bold text-slate-900">
-              Gamifikasi Latihan Berhitung
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Mengemas latihan angka dan operasi matematika ke dalam format permainan interaktif
-              agar siswa terdorong untuk terus berlatih tanpa merasa cepat bosan.
-            </p>
+        {/* Visual Pipeline: IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT */}
+        <div className="rounded-2xl border border-indigo-100 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 p-4 sm:p-5 text-white">
+          <p className="text-[11px] font-extrabold uppercase tracking-widest text-amber-300 mb-3">
+            Development Process Pipeline
+          </p>
+          <div className="flex flex-wrap items-center gap-2 text-xs sm:text-sm font-display font-extrabold">
+            {DEVELOPMENT_PROCESS_STEPS.map((item, idx) => (
+              <div key={item.label} className="flex items-center gap-2">
+                <span className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 border border-white/15 px-3 py-1.5 text-white">
+                  <span className="text-amber-300">{item.step}.</span> {item.label}
+                </span>
+                {idx < DEVELOPMENT_PROCESS_STEPS.length - 1 && (
+                  <ArrowRight className="h-4 w-4 text-amber-400 shrink-0" />
+                )}
+              </div>
+            ))}
           </div>
+        </div>
 
-          <div className="rounded-2xl border border-amber-200/80 bg-amber-50/50 p-5 space-y-2">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-white">
-              <Trophy className="h-5 w-5" />
-            </div>
-            <h4 className="font-display text-base font-bold text-slate-900">
-              Semangat Kompetisi Sehat
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Dilengkapi konsep papan peringkat (<em>Leaderboard</em>) dan identitas pemain untuk
-              memotivasi siswa menantang teman serta meningkatkan capaian hasil belajar.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-sky-200/80 bg-sky-50/50 p-5 space-y-2">
-            <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-sky-600 text-white">
-              <Laptop className="h-5 w-5" />
-            </div>
-            <h4 className="font-display text-base font-bold text-slate-900">
-              Akses Web Instan (Canva Site)
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Dipublikasikan sebagai website publik melalui Canva sehingga dapat langsung dibuka dan
-              dimainkan melalui browser laptop, tablet, maupun smartphone melalui tautan atau QR
-              Code.
-            </p>
-          </div>
+        {/* 6 Step Cards */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {DEVELOPMENT_PROCESS_STEPS.map((item) => {
+            const Icon = item.icon;
+            return (
+              <div
+                key={item.label}
+                className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2.5 hover:border-amber-400 hover:bg-white transition"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 border border-amber-200 px-2.5 py-0.5 text-[11px] font-extrabold text-amber-900">
+                    STEP {item.step} • {item.label}
+                  </span>
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 text-amber-300">
+                    <Icon className="h-4 w-4" />
+                  </div>
+                </div>
+                <h4 className="font-display text-base font-bold text-slate-900">{item.title}</h4>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
@@ -306,7 +387,7 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
               </p>
             </div>
             <h3 className="font-display text-lg sm:text-xl font-extrabold">
-              Uji Coba &amp; Mainkan MATH BATTLE
+              Uji Coba &amp; Mainkan MATH BATTLE (Canva AI Game)
             </h3>
           </div>
 
@@ -403,7 +484,7 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
           <div className="flex-1 max-w-2xl rounded-lg border border-slate-200 bg-white px-3 py-1 text-xs font-mono text-slate-600 flex items-center justify-between gap-2 truncate">
             <span className="truncate">{MATH_BATTLE_PUBLIC_URL}</span>
             <span className="shrink-0 rounded bg-emerald-50 px-1.5 py-0.5 text-[10px] font-sans font-bold text-emerald-700 border border-emerald-200">
-              Canva Public Site
+              Canva AI Public Site
             </span>
           </div>
 
@@ -496,7 +577,8 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
 
                     <p className="text-xs text-blue-200/90 pt-1">
                       Klik <strong>&ldquo;MAIN SEKARANG&rdquo;</strong> untuk membuka jendela
-                      permainan interaktif MATH BATTLE atau buka di tab baru.
+                      permainan interaktif MATH BATTLE hasil pengembangan dengan{" "}
+                      <strong>Canva AI</strong>.
                     </p>
                   </div>
 
@@ -506,7 +588,7 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
                       onClick={() =>
                         onOpenImage?.(
                           "/assets/canva/math-battle-canva-preview.jpg",
-                          "Tampilan Antarmuka Website Permainan Edukasi MATH BATTLE di Canva"
+                          "Tampilan Antarmuka Website Permainan Edukasi MATH BATTLE yang Dikembangkan dengan Canva AI"
                         )
                       }
                       className="group relative overflow-hidden rounded-2xl border-2 border-white/25 bg-slate-950 shadow-xl cursor-zoom-in"
@@ -514,12 +596,12 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src="/assets/canva/math-battle-canva-preview.jpg"
-                        alt="MATH BATTLE Canva Game Preview"
+                        alt="MATH BATTLE Canva AI Game Preview"
                         className="w-full h-52 sm:h-60 object-cover group-hover:scale-105 transition duration-300"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent flex items-end justify-between p-3.5">
                         <span className="text-xs font-bold text-white">
-                          Preview Antarmuka MATH BATTLE
+                          Preview MATH BATTLE (Canva AI)
                         </span>
                         <span className="rounded-lg bg-amber-400 px-2.5 py-1 text-[11px] font-extrabold text-slate-950">
                           Klik Perbesar
@@ -560,7 +642,7 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
                   <iframe
                     key={iframeKey}
                     src={MATH_BATTLE_PUBLIC_URL}
-                    title="MATH BATTLE — Educational Game Website (Canva)"
+                    title="MATH BATTLE — AI-Powered Educational Game Website (Canva AI)"
                     className="h-[560px] w-full border-0"
                     loading="lazy"
                     allow="fullscreen"
@@ -607,22 +689,35 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
             04 • Project Features
           </p>
           <h3 className="font-display text-xl sm:text-2xl font-extrabold text-slate-900">
-            Fitur &amp; Komponen Antarmuka MATH BATTLE
+            Fitur &amp; Karakteristik Permainan MATH BATTLE
           </h3>
           <p className="text-sm text-slate-600">
-            Berdasarkan implementasi nyata pada website permainan{" "}
-            <strong>MATH BATTLE Edu Game Website</strong> yang dirancang dan dipublikasikan di
-            Canva:
+            Berdasarkan implementasi nyata pada <strong>MATH BATTLE Edu Game Website</strong> yang
+            dihasilkan dengan bantuan <strong>Canva AI</strong>:
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-2.5 py-0.5 text-[11px] font-extrabold text-blue-800">
-              01 • Navigation Bar
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-indigo-100 px-2.5 py-0.5 text-[11px] font-extrabold text-indigo-800">
+              01 • Prompt-Based AI Generation
             </span>
             <h4 className="font-display text-base font-bold text-slate-900">
-              Navigasi Multi-Menu Terstruktur
+              Dibangun Melalui Instruksi Canva AI
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Antarmuka, aturan, dan mekanisme permainan dihasilkan melalui deskripsi prompt kepada{" "}
+              <strong>Canva AI</strong> yang menerjemahkan ide permainan matematika menjadi produk
+              web interaktif.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-2.5 py-0.5 text-[11px] font-extrabold text-blue-800">
+              02 • Navigation Bar
+            </span>
+            <h4 className="font-display text-base font-bold text-slate-900">
+              Navigasi Permainan Terstruktur
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Header website dilengkapi identitas logo <strong>MATH BATTLE</strong> serta menu
@@ -634,55 +729,42 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
 
           <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-extrabold text-amber-800">
-              02 • Interactive Actions
+              03 • Interactive Actions
             </span>
             <h4 className="font-display text-base font-bold text-slate-900">
               Aksi &ldquo;Main Sekarang&rdquo; &amp; &ldquo;+ Buat Game&rdquo;
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Halaman utama menyediakan dua tombol aksi utama yang jelas bagi pengguna: tombol{" "}
-              <strong>MAIN SEKARANG</strong> untuk memulai sesi permainan matematika dan tombol{" "}
+              Halaman utama menyediakan dua tombol aksi interaktif bagi pemain: tombol{" "}
+              <strong>MAIN SEKARANG</strong> untuk memulai tantangan matematika dan tombol{" "}
               <strong>+ BUAT GAME</strong>.
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-extrabold text-violet-800">
-              03 • Visual Identity
+              04 • Visual Identity
             </span>
             <h4 className="font-display text-base font-bold text-slate-900">
-              Ilustrasi Karakter &amp; Ikon Matematika
+              Visual Edukatif &amp; Elemen Matematika
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Menggunakan tema visual biru-ungu dengan tipografi kontras tinggi{" "}
-              <em>&ldquo;ASAH OTAK, TAKLUKKAN ANGKA!&rdquo;</em> serta elemen kartu melayang (simbol{" "}
-              <code>+</code>, angka <code>7</code>, trofi juara, dan bintang).
+              Mengusung slogan <em>&ldquo;ASAH OTAK, TAKLUKKAN ANGKA!&rdquo;</em> dengan ilustrasi
+              karakter serta elemen simbol matematika (<code>+</code>), angka (<code>7</code>),
+              trofi, dan bintang.
             </p>
           </div>
 
           <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-100 px-2.5 py-0.5 text-[11px] font-extrabold text-emerald-800">
-              04 • Gameplay &amp; Guide
+              05 • Challenge &amp; Leaderboard
             </span>
             <h4 className="font-display text-base font-bold text-slate-900">
-              Bagian Cara Bermain &amp; Tantangan Soal
+              Edukasi, Tantangan &amp; Kompetisi
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Memandu pemain memahami aturan permainan matematika serta menyajikan tantangan
-              berhitung yang interaktif di dalam halaman web.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 bg-slate-50/70 p-5 space-y-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-sky-100 px-2.5 py-0.5 text-[11px] font-extrabold text-sky-800">
-              05 • Leaderboard &amp; Player
-            </span>
-            <h4 className="font-display text-base font-bold text-slate-900">
-              Papan Peringkat (Leaderboard) &amp; Profil
-            </h4>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Menyediakan struktur bagian <em>Leaderboard</em> dan <em>Profil / Login</em> untuk
-              menampilkan pencapaian pemain serta mendorong semangat berkompetisi dengan teman.
+              Menggabungkan latihan soal matematika dengan panduan <em>Cara Bermain</em> dan{" "}
+              <em>Leaderboard</em> untuk menghadirkan pengalaman belajar sambil bermain yang seru.
             </p>
           </div>
 
@@ -695,8 +777,7 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
             </h4>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
               Dipublikasikan ke domain publik Canva (<code className="font-mono">my.canva.site</code>)
-              dan dilengkapi QR Code sehingga mudah dibagikan di kelas maupun diakses melalui
-              perangkat mobile.
+              dan dilengkapi QR Code sehingga mudah diakses dari laptop maupun perangkat mobile.
             </p>
           </div>
         </div>
@@ -710,19 +791,19 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
               05 • Learning &amp; Development — IDN SMSIT Training Journey
             </p>
             <h3 className="font-display text-xl sm:text-2xl font-extrabold">
-              Penerapan Pembelajaran &amp; Praktik Teknologi Pendidikan
+              Eksplorasi Artificial Intelligence dalam Media Pembelajaran Digital
             </h3>
             <p className="text-sm text-slate-300 leading-relaxed">
-              Proyek <strong>MATH BATTLE</strong> menjadi bukti nyata bagaimana keterampilan desain
-              komunikasi visual dan fitur publikasi web di <strong>Canva</strong> yang dipelajari
-              selama pelatihan <strong>IDN SMSIT</strong> dapat diwujudkan menjadi produk{" "}
-              <em>Educational Technology</em> yang siap digunakan untuk mendukung kegiatan belajar.
+              Proyek <strong>MATH BATTLE</strong> merupakan bagian dari hasil pembelajaran dan
+              praktik selama mengikuti pelatihan di <strong>IDN SMSIT</strong>, sekaligus menjadi
+              bentuk eksplorasi pemanfaatan <strong>Artificial Intelligence (Canva AI)</strong>{" "}
+              dalam mempercepat pengembangan media pembelajaran digital interaktif.
             </p>
           </div>
 
           <div className="inline-flex items-center gap-2 rounded-2xl bg-white/10 border border-white/15 px-4 py-2.5 text-xs font-bold text-amber-300">
             <Award className="h-4 w-4" />
-            Pondok Tholabie • Educational Media
+            Create with AI, Learn through Play!
           </div>
         </div>
 
@@ -730,58 +811,44 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
           <div className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-3">
             <h4 className="font-display text-base font-bold text-white flex items-center gap-2">
               <Sparkles className="h-4 w-4 text-amber-400" />
-              Kompetensi yang Dipelajari &amp; Diterapkan
+              Capaian Pembelajaran (Project Objectives)
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                <span>
-                  Merancang tata letak antarmuka pengguna (<em>UI Layout</em>), hierarki tipografi,
-                  dan palet warna untuk website permainan edukasi di Canva.
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                <span>
-                  Menyusun struktur navigasi halaman web edukasi (Beranda, Cara Bermain,
-                  Leaderboard, dan Profil Pemain).
-                </span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
-                <span>
-                  Mempublikasikan proyek Canva menjadi website publik interaktif beserta pembuatan
-                  QR Code akses cepat.
-                </span>
-              </li>
+              {PROJECT_OBJECTIVES.map((obj, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                  <span>{obj}</span>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div className="rounded-2xl bg-white/5 border border-white/10 p-5 space-y-3">
             <h4 className="font-display text-base font-bold text-white flex items-center gap-2">
               <BookOpen className="h-4 w-4 text-sky-400" />
-              Manfaat &amp; Potensi Implementasi di Pondok Tholabie
+              Potensi Penerapan di Pondok Tholabie
             </h4>
             <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
                 <span>
-                  Menjadi media pembelajaran matematika interaktif yang dapat dicoba langsung oleh
-                  santri/siswa melalui browser komputer maupun HP.
+                  Memperkenalkan pendekatan <strong>prompt-based creation</strong> dengan{" "}
+                  <strong>Canva AI</strong> kepada santri dan pengajar untuk mewujudkan ide media
+                  edukasi menjadi produk interaktif.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
                 <span>
-                  Menjadi referensi bagi pengajar dan santri di <strong>Pondok Tholabie</strong>{" "}
-                  dalam mengembangkan media edukasi digital kreatif menggunakan Canva.
+                  Menghadirkan permainan matematika <strong>MATH BATTLE</strong> sebagai sarana
+                  belajar sambil bermain (<em>Learn through Play</em>) yang menyenangkan.
                 </span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-sky-400" />
                 <span>
-                  Menghubungkan dokumentasi pelatihan <strong>IDN SMSIT</strong> dengan produk nyata
-                  yang dapat dibagikan secara terbuka di <strong>Personal Digital Lab</strong>.
+                  Mendorong pemanfaatan AI secara kreatif dan produktif dalam pengembangan
+                  teknologi pendidikan di lingkungan <strong>Pondok Tholabie</strong>.
                 </span>
               </li>
             </ul>

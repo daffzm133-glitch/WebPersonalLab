@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-23T19:15:00+07:00",
+  updatedAt: "2026-11-24T11:40:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -2006,51 +2006,52 @@ forever
       order: 9,
       title: "Design dengan Canva",
       shortTitle: "Design Canva",
-      category: "Educational Technology & Desain",
+      category: "Educational Technology & AI",
       tagline:
-        "Pengembangan MATH BATTLE (Educational Game Website) — website permainan edukasi matematika interaktif menggunakan Canva",
+        "MATH BATTLE — AI-Powered Educational Game Development menggunakan Canva AI (Prompt-Based Creation). Create with AI, Learn through Play!",
       summary:
-        "Dokumentasi proyek dan produk digital hasil praktik pelatihan IDN SMSIT menggunakan Canva: pengembangan MATH BATTLE (Educational Game Website), sebuah website permainan edukasi matematika yang menggabungkan permainan dan pembelajaran berhitung secara interaktif, dilengkapi navigasi Beranda, Cara Bermain, Leaderboard, Profil Pemain, publikasi domain Canva Website, serta QR Code akses langsung.",
+        "Eksplorasi pengembangan game edukasi matematika MATH BATTLE menggunakan Canva AI melalui pendekatan prompt-based creation. Dengan mendeskripsikan ide, konsep permainan, aturan, mekanisme, dan tampilan melalui prompt kepada AI, proyek hasil pelatihan IDN SMSIT ini menghasilkan game interaktif (IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT) yang menggabungkan edukasi, tantangan, dan pengalaman bermain.",
       learningGoals: [
-        "Merancang antarmuka visual (UI) dan pengalaman belajar interaktif untuk website permainan edukasi matematika di Canva",
-        "Menyusun struktur navigasi dan fitur permainan edukasi (Beranda, Cara Bermain, Leaderboard, dan Profil / Login Pemain)",
-        "Mempublikasikan proyek Canva menjadi Educational Game Website publik yang responsif beserta QR Code akses cepat",
-        "Mendokumentasikan proyek sebagai portofolio pembelajaran IDN SMSIT sekaligus produk digital yang dapat dicoba langsung oleh pengunjung",
+        "Mengenal pemanfaatan Canva AI dalam pembuatan game",
+        "Memahami konsep prompt-based creation",
+        "Mengembangkan ide menjadi produk digital interaktif",
+        "Mengeksplorasi penggunaan game sebagai media pembelajaran",
+        "Mengenal potensi AI dalam mendukung kreativitas dan pengembangan teknologi pendidikan",
       ],
       status: "completed",
       accentColor: "amber",
       iconName: "palette",
       tools: [
-        "Canva (Canva Websites)",
-        "Educational Game UI Design",
-        "Interactive Web Publishing",
+        "Canva AI",
+        "Prompt-Based Creation",
+        "Canva Websites",
         "QR Code Sharing",
       ],
       projects: [
         {
           id: "canva-math-battle-edu-game",
-          title: "MATH BATTLE — Educational Game Website",
-          subtitle: "Educational Technology • Website Permainan Edukasi Matematika Interaktif dengan Canva",
+          title: "MATH BATTLE — AI-Powered Educational Game Development",
+          subtitle: "Canva AI & Prompt-Based Creation • Create with AI, Learn through Play!",
           description:
-            "MATH BATTLE merupakan proyek hasil praktik dan pembelajaran selama mengikuti pelatihan IDN SMSIT berupa website permainan edukasi matematika yang dikembangkan menggunakan Canva. Mengusung konsep 'Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka!', website ini menggabungkan permainan dan pembelajaran matematika secara interaktif dengan menu Beranda, Cara Bermain, Leaderboard, Profil/Login Pemain, tombol aksi 'Main Sekarang' & '+ Buat Game', serta dapat dimainkan langsung oleh pengunjung melalui link publikasi Canva maupun QR Code.",
+            "MATH BATTLE merupakan proyek eksplorasi pengembangan game edukasi menggunakan Canva AI. Proyek ini memperkenalkan pendekatan baru dalam pembuatan permainan digital melalui instruksi atau prompt (IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT). Dengan mendeskripsikan ide, konsep permainan, aturan, mekanisme, dan tampilan yang diinginkan, Canva AI membantu menghasilkan game matematika interaktif sebagai media pembelajaran yang menggabungkan edukasi, tantangan, dan pengalaman bermain.",
           image: "/assets/canva/math-battle-canva-preview.jpg",
           demoUrl: "https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
           gallery: [
             {
               src: "/assets/canva/math-battle-canva-preview.jpg",
               caption:
-                "Dokumentasi 01 — Tampilan Desain & Antarmuka MATH BATTLE Edu Game Website di Canva ('Asah Otak, Taklukkan Angka!') lengkap dengan navigasi Beranda, Cara Bermain, Leaderboard, Profil/Login, serta tombol Main Sekarang & + Buat Game.",
+                "Dokumentasi 01 — Hasil Pembuatan Game MATH BATTLE dengan Canva AI ('Asah Otak, Taklukkan Angka!') melalui pendekatan prompt-based creation, lengkap dengan menu Beranda, Cara Bermain, Leaderboard, Profil/Login, serta tombol Main Sekarang & + Buat Game.",
             },
             {
               src: "/assets/canva/math-battle-qrcode.png",
               caption:
-                "Dokumentasi 02 — QR Code Publikasi Resmi MATH BATTLE untuk mengakses dan memainkan website permainan edukasi matematika secara langsung melalui smartphone atau perangkat mobile.",
+                "Dokumentasi 02 — QR Code Publikasi Resmi MATH BATTLE untuk mengakses dan memainkan game edukasi matematika hasil Canva AI secara langsung melalui smartphone atau perangkat mobile.",
             },
           ],
           tags: [
             "MATH BATTLE",
-            "Canva Website",
-            "Educational Technology",
+            "Canva AI",
+            "Prompt-Based Creation",
             "Educational Game",
             "IDN SMSIT",
             "Pondok Tholabie",
@@ -2062,81 +2063,94 @@ forever
       notes: [
         {
           id: "note-canva-math-battle-documentation",
-          title: "Dokumentasi Proyek — MATH BATTLE (Educational Game Website dengan Canva)",
-          category: "Educational Technology • Project Documentation",
+          title: "MATH BATTLE — AI-Powered Educational Game Development (Canva AI)",
+          category: "Canva AI • Prompt-Based Creation",
           summary:
-            "Dokumentasi lengkap proyek MATH BATTLE: pengenalan proyek, overview konsep pembelajaran interaktif, fitur berdasarkan implementasi nyata, hubungan dengan pelatihan IDN SMSIT, dan informasi proyek.",
-          content: `DIGITAL LAB — DOKUMENTASI PROYEK MATH BATTLE
+            "Dokumentasi proyek MATH BATTLE: eksplorasi pengembangan game edukasi menggunakan Canva AI, 5 Project Objectives, serta alur Development Process (IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT).",
+          content: `MATH BATTLE — AI-POWERED EDUCATIONAL GAME DEVELOPMENT
 • Project: MATH BATTLE
-• Category: Educational Technology
-• Type: Educational Game Website
-• Platform: Canva (Canva Websites)
+• Subtitle: AI-Powered Educational Game Development
+• Category: Educational Technology & Artificial Intelligence
+• Platform & Method: Canva AI (Prompt-Based Creation)
 • Learning Program: IDN SMSIT
 • Creator: Daffa Zidan
 • Affiliation: Pondok Tholabie
+• Tagline: Create with AI, Learn through Play!
 • Public Game Link: https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website
 
-1. PROJECT INTRODUCTION
-MATH BATTLE merupakan proyek website permainan edukasi matematika (Educational Game) yang dikembangkan menggunakan Canva sebagai hasil praktik dan pembelajaran selama mengikuti pelatihan IDN SMSIT.
-Di dalam Personal Digital Lab, proyek ini memiliki dua fungsi utama:
-• Project Documentation — mendokumentasikan latar belakang, tujuan pengembangan, proses pembelajaran, dan hasil karya selama pelatihan.
-• Product Showcase — menampilkan produk digital MATH BATTLE agar pengunjung dapat melihat hasil karya sekaligus mencoba permainannya secara langsung.
+1. DESKRIPSI & KONSEP PROYEK
+MATH BATTLE merupakan proyek eksplorasi pengembangan game edukasi menggunakan Canva AI.
+Proyek ini memperkenalkan pendekatan baru dalam pembuatan permainan digital, di mana proses pengembangan dapat dilakukan melalui instruksi atau prompt yang diberikan kepada AI.
+Dengan mendeskripsikan ide, konsep permainan, aturan, mekanisme, dan tampilan yang diinginkan, pengguna dapat memanfaatkan Canva AI untuk membantu menghasilkan sebuah game interaktif.
+MATH BATTLE mengambil konsep permainan matematika sebagai media pembelajaran yang menggabungkan edukasi, tantangan, dan pengalaman bermain.
+Proyek ini merupakan bagian dari hasil pembelajaran dan praktik selama mengikuti pelatihan di IDN SMSIT, sekaligus menjadi bentuk eksplorasi pemanfaatan Artificial Intelligence dalam pengembangan media pembelajaran digital.
 
-Tujuan Pengembangan:
-Menghadirkan media pembelajaran matematika berbasis web yang interaktif, menarik secara visual, dan mudah diakses sehingga siswa lebih termotivasi dalam melatih kemampuan berhitung.
+2. PROJECT OBJECTIVES
+• Mengenal pemanfaatan Canva AI dalam pembuatan game.
+• Memahami konsep prompt-based creation.
+• Mengembangkan ide menjadi produk digital interaktif.
+• Mengeksplorasi penggunaan game sebagai media pembelajaran.
+• Mengenal potensi AI dalam mendukung kreativitas dan pengembangan teknologi pendidikan.
 
-2. PROJECT OVERVIEW
-MATH BATTLE menggabungkan elemen permainan dan pembelajaran matematika dengan slogan "Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka! Belajar matematika jadi lebih seru. Tantang temanmu dan buktikan siapa yang paling jago!".
-Melalui pendekatan ini, materi latihan angka disajikan dalam suasana permainan yang bersahabat, kompetitif, dan menyenangkan.
+3. DEVELOPMENT PROCESS
+IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT
 
-3.PROJECT FEATURES (BERDASARKAN IMPLEMENTASI NYATA)
-• Header & Navigasi Utama: Menampilkan identitas logo MATH BATTLE, menu navigasi Beranda, Cara Bermain, Leaderboard, dan Profil / Login, serta indikator status Pemain.
-• Hero Section Interaktif: Menampilkan badge "Petualangan Matematika Dimulai!", headline utama "Asah Otak, Taklukkan Angka!", deskripsi motivasi belajar, serta ilustrasi karakter bersama ikon operasi matematika (+), angka (7), trofi, dan bintang.
-• Tombol Aksi Permainan: Menyediakan tombol utama "MAIN SEKARANG" untuk memulai permainan serta tombol "+ BUAT GAME".
-• Publikasi Website Canva & QR Code: Dipublikasikan sebagai website publik di domain my.canva.site (bukan link editor) dan dilengkapi QR Code agar dapat dibuka dengan cepat di laptop maupun smartphone.
+1. IDEA: Merumuskan ide permainan matematika interaktif yang menggabungkan edukasi, tantangan, dan pengalaman bermain.
+2. PROMPT: Menyusun instruksi/prompt yang mendeskripsikan konsep permainan, aturan, mekanisme, dan tampilan yang diinginkan.
+3. CANVA AI: Memanfaatkan Canva AI untuk memproses prompt dan menyusun struktur permainan digital.
+4. GAME CREATION: Menghasilkan antarmuka, navigasi (Beranda, Cara Bermain, Leaderboard, Profil/Login), dan interaksi permainan MATH BATTLE.
+5. TESTING: Menguji coba fungsi permainan dan interaksi langsung di browser.
+6. RESULT: Mempublikasikan game menjadi website publik Canva beserta QR Code agar dapat dimainkan siapa saja.
 
-4. LEARNING & DEVELOPMENT (IDN SMSIT & PONDOK THOLABIE)
-MATH BATTLE merupakan bentuk penerapan langsung pembelajaran desain kreatif dan pengembangan teknologi pendidikan (Educational Technology) selama pelatihan IDN SMSIT. Proyek ini juga menjadi referensi media pembelajaran digital interaktif yang dapat diterapkan dan dikembangkan untuk mendukung kegiatan edukasi di Pondok Tholabie.`,
+Create with AI, Learn through Play!`,
           tips: [
-            "Gunakan link publikasi Canva Website (my.canva.site) atau QR Code saat membagikan proyek ke siswa/pengunjung, bukan link editor Canva, agar permainan langsung tampil penuh dan siap dimainkan.",
-            "Kombinasikan kontras warna latar (biru-ungu) dengan tombol aksi berwarna kuning terang (MAIN SEKARANG) agar fokus utama pemain langsung tertuju pada tombol mulai permainan.",
+            "Dalam prompt-based creation di Canva AI, deskripsikan secara jelas ide, aturan permainan, mekanisme skor/tantangan, dan gaya visual yang diinginkan agar hasil game sesuai dengan tujuan pembelajaran.",
+            "Selalu lakukan tahap TESTING pada hasil Game Creation dari Canva AI sebelum mempublikasikannya sebagai RESULT (link publik & QR Code).",
           ],
-          updatedAt: "2026-11-23",
+          updatedAt: "2026-11-24",
         },
       ],
       tutorials: [
         {
           id: "tut-canva-math-battle",
-          title: "Panduan Proyek: Merancang & Mempublikasikan MATH BATTLE Edu Game Website di Canva",
+          title: "Panduan Praktik: Mengembangkan Game Edukasi MATH BATTLE dengan Canva AI",
           subtitle:
-            "Dokumentasi tahapan perancangan antarmuka, penyusunan struktur navigasi permainan, hingga publikasi website dan QR Code di Canva",
+            "Alur lengkap Prompt-Based Creation: IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT",
           difficulty: "Pemula",
           duration: "40 menit",
           tools: [
-            "Canva (Mode Website)",
-            "Komponen UI & Ilustrasi Canva",
-            "Fitur Publish Website Canva",
+            "Canva AI (Prompt-Based Creation)",
+            "Canva Websites",
+            "Browser untuk Testing & Publikasi",
             "QR Code Generator",
           ],
-          goal: "Memahami alur pembuatan dan publikasi website permainan edukasi matematika MATH BATTLE menggunakan Canva hingga siap diakses oleh pengunjung melalui link publik dan QR Code.",
+          goal: "Peserta mampu memanfaatkan Canva AI dengan pendekatan prompt-based creation untuk mengembangkan ide permainan matematika menjadi produk game edukasi interaktif yang siap dimainkan.",
           steps: [
             {
               stepNumber: 1,
-              title: "Merancang Antarmuka & Navigasi MATH BATTLE di Canva",
+              title: "IDEA & PROMPT — Merumuskan Ide dan Menyusun Instruksi AI",
               description:
-                "Buka Canva dan siapkan proyek desain bertipe Website dengan judul 'MATH BATTLE Edu Game Website'.\n\nSusun struktur tampilan utama yang terdiri dari:\n1. Bar navigasi atas: Logo MATH BATTLE, menu Beranda, Cara Bermain, Leaderboard, Profil / Login, dan tombol status Pemain.\n2. Area Hero utama: Badge 'Petualangan Matematika Dimulai!', judul 'ASAH OTAK, TAKLUKKAN ANGKA!', teks ajakan belajar matematika, tombol aksi 'MAIN SEKARANG' dan '+ BUAT GAME', serta ilustrasi karakter dengan ikon matematika.",
-              image: "/assets/canva/math-battle-canva-preview.jpg",
-              tip: "Pastikan hierarki ukuran teks judul, subjudul, dan tombol aksi terlihat kontras agar nyaman dibaca baik di layar laptop maupun HP.",
+                "Tentukan konsep permainan matematika (MATH BATTLE) sebagai media pembelajaran yang menggabungkan edukasi, tantangan, dan pengalaman bermain.\n\nSelanjutnya, susun prompt (instruksi teks) untuk Canva AI yang mendeskripsikan:\n• Ide dan tema permainan ('Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka!').\n• Aturan dan mekanisme permainan matematika.\n• Struktur tampilan dan navigasi yang diinginkan (Beranda, Cara Bermain, Leaderboard, Profil / Login, serta tombol Main Sekarang & + Buat Game).",
+              tip: "Semakin terstruktur deskripsi ide, aturan, mekanisme, dan tampilan di dalam prompt, semakin presisi hasil game yang dibuat oleh Canva AI.",
             },
             {
               stepNumber: 2,
-              title: "Mempublikasikan Proyek Menjadi Website Publik & QR Code",
+              title: "CANVA AI & GAME CREATION — Menghasilkan Game Interaktif",
               description:
-                "Setelah desain dan elemen permainan selesai disusun, klik tombol Publish Website di pojok kanan atas Canva untuk menerbitkan proyek ke domain publik Canva (https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website).\n\nSelanjutnya, buat QR Code dari link publikasi tersebut agar pengunjung atau siswa dapat langsung memindai dan mencoba permainan MATH BATTLE melalui perangkat masing-masing.",
+                "Masukkan prompt ke dalam fitur Canva AI untuk menghasilkan desain dan struktur permainan MATH BATTLE Edu Game Website secara interaktif. Sesuaikan elemen visual, tata letak, dan navigasi permainan yang telah dihasilkan oleh AI.",
+              image: "/assets/canva/math-battle-canva-preview.jpg",
+              codeSnippet:
+                "Development Flow: IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT",
+            },
+            {
+              stepNumber: 3,
+              title: "TESTING & RESULT — Uji Coba, Publikasi Website, dan QR Code",
+              description:
+                "Lakukan pengujian (Testing) terhadap alur permainan dan tombol interaksi pada pratinjau Canva.\n\nSetelah berjalan baik, publikasikan hasil akhir (Result) menggunakan fitur Publish Website ke link publik Canva (https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website) dan sediakan QR Code agar pengunjung dapat langsung mencoba bermain di laptop maupun smartphone.",
               image: "/assets/canva/math-battle-qrcode.png",
               codeSnippet:
                 "Canva Public Game Link: https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
-              tip: "Selalu uji link publikasi di tab penyamaran (incognito) atau perangkat lain untuk memastikan pengunjung dapat mengakses permainan tanpa perlu login ke editor Canva.",
+              tip: "Create with AI, Learn through Play! Gunakan link publik dan QR Code ini untuk membagikan hasil karya kepada siswa atau pengunjung.",
             },
           ],
         },

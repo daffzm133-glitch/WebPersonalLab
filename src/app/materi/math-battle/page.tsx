@@ -1,9 +1,10 @@
 import { ModuleDetailClient } from "@/components/ModuleDetailClient";
 
 export const metadata = {
-  title: "MATH BATTLE — Educational Game Website (Canva) | Personal Digital Lab — Daffa Zidan",
+  title:
+    "MATH BATTLE — AI-Powered Educational Game Development (Canva AI) | Personal Digital Lab — Daffa Zidan",
   description:
-    "Dokumentasi proyek dan produk permainan edukasi matematika MATH BATTLE yang dikembangkan menggunakan Canva selama pelatihan IDN SMSIT oleh Daffa Zidan (Pondok Tholabie).",
+    "MATH BATTLE merupakan proyek eksplorasi pengembangan game edukasi menggunakan Canva AI (Prompt-Based Creation) hasil pembelajaran di IDN SMSIT oleh Daffa Zidan (Pondok Tholabie). Create with AI, Learn through Play!",
 };
 
 export default function MathBattleProjectPage() {
