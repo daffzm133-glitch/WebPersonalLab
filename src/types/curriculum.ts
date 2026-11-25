@@ -21,6 +21,7 @@ export interface ProjectItem {
   downloadUrl?: string;
   downloadLabel?: string;
   stlUrl?: string;
+  videoUrl?: string;
   demoUrl?: string;
   date: string;
   featured?: boolean;

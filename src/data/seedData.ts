@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-24T11:40:00+07:00",
+  updatedAt: "2026-11-25T19:15:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -1981,22 +1981,191 @@ forever
       order: 8,
       title: "Game Coding dengan Roblox",
       shortTitle: "Roblox Studio",
-      category: "Game Coding",
-      tagline: "Merancang dunia game 3D multiplayer & scripting interaktif di Roblox Studio",
+      category: "Game Coding & 3D World",
+      tagline:
+        "Perancangan dunia game 3D (World Building), eksplorasi Terrain Editor, dan penataan aset lingkungan interaktif di Roblox Studio",
       summary:
-        "Mempelajari pembuatan game 3D modern dengan Roblox Studio: mulai dari membangun arena/obby, mengatur properti part & pencahayaan, menulis skrip dasar Luau untuk rintangan/poin, hingga uji coba main.",
+        "Dokumentasi praktik pembuatan dunia game 3D di Roblox Studio (FirstProject): mulai dari navigasi viewport 3D, pemanfaatan Toolbox dan panel Explorer/Properties, penataan bangunan tepi sungai, menara pantau (watchtower), area perkemahan dengan api unggun dan hutan pohon pinus, hingga pembentukan dan pewarnaan permukaan tanah/air menggunakan fitur Terrain Editor (Create, Edit, Sculpt, Smooth, Paint, Flatten).",
       learningGoals: [
-        "Mengenal workspace, Explorer, dan Properties di Roblox Studio",
-        "Membangun level permainan 3D (Obby / Adventure) dengan Part dan Terrain",
-        "Menambahkan interaksi dasar menggunakan skrip Lua/Luau",
+        "Mengenal antarmuka kerja Roblox Studio (Viewport 3D, Toolbox, Terrain Editor, Explorer, dan Properties)",
+        "Menguasai peralatan transformasi objek 3D (Select, Move, Scale, Rotate) dan pengaturan geometri (Move stud & Rotate degree)",
+        "Merancang lingkungan permainan 3D (3D Environment & World Building) lengkap dengan sungai, perbukitan batu, bangunan, menara pantau, dan area perkemahan",
+        "Memodifikasi kontur permukaan dan tekstur material alam (rumput, pasir, batu, air) menggunakan fitur Sculpt, Smooth, Flatten, dan Paint pada Terrain Editor",
       ],
-      status: "upcoming",
+      status: "completed",
       accentColor: "violet",
       iconName: "joystick",
-      tools: ["Roblox Studio", "Luau Scripting"],
-      projects: [],
-      notes: [],
-      tutorials: [],
+      tools: [
+        "Roblox Studio",
+        "Terrain Editor (Edit, Sculpt, Paint, Smooth)",
+        "Toolbox & Asset 3D",
+        "Explorer & Properties",
+        "Team Create / Live Collaborators",
+      ],
+      projects: [
+        {
+          id: "roblox-3d-world-terrain-design",
+          title: "Perancangan Dunia 3D & Terrain Environment di Roblox Studio (FirstProject)",
+          subtitle: "3D World Building, Terrain Editor (Sculpt & Paint) & Penataan Aset Lingkungan",
+          description:
+            "Proyek praktik pengembangan dunia permainan 3D ('FirstProject') menggunakan Roblox Studio selama pelatihan di IDN SMSIT. Dalam proyek ini, lingkungan 3D dibangun secara utuh meliputi aliran sungai berair jernih, tebing bebatuan, hamparan rumput, menara pantau kayu (watchtower) di tepi sungai, rumah pedesaan, area perkemahan lengkap dengan tenda dan api unggun, serta bangunan batu dua lantai. Kontur daratan dan material tanah dipoles langsung menggunakan fitur Paint dan Brush Settings pada Terrain Editor.",
+          image: "/assets/roblox/roblox-studio-cover.png",
+          videoUrl: "/assets/roblox/roblox-studio-terrain-world.mp4",
+          demoUrl: "/assets/roblox/roblox-studio-terrain-world.mp4",
+          downloadUrl: "/assets/roblox/roblox-studio-terrain-world.mp4",
+          downloadLabel: "Download Video Praktik (.MP4)",
+          tags: [
+            "Roblox Studio",
+            "3D World Building",
+            "Terrain Editor",
+            "Terrain Paint & Sculpt",
+            "Game Environment",
+            "IDN SMSIT",
+          ],
+          date: "20 November 2026",
+          featured: true,
+        },
+      ],
+      notes: [
+        {
+          id: "note-roblox-studio-world-terrain",
+          title: "Dokumentasi Praktik — Perancangan Dunia 3D & Terrain Editor di Roblox Studio",
+          category: "Game Coding • 3D Environment & Terrain",
+          summary:
+            "Identitas kegiatan, pengenalan antarmuka Roblox Studio (Explorer, Toolbox, Terrain Editor), komponen dunia 3D pada proyek FirstProject, penggunaan Brush & Material Settings pada Terrain Paint, serta potensi penerapan di Pondok Tholabie.",
+          content: `DOKUMENTASI PEMBELAJARAN DAN PRAKTIK
+PELATIHAN IT — GAME CODING DENGAN ROBLOX STUDIO
+Perancangan Dunia 3D (World Building) & Eksplorasi Terrain Editor
+
+1. Identitas Kegiatan
+• Program: Pelatihan Intensif IDN SMSIT
+• Materi: Hari Ke-3 — Game Coding dengan Roblox
+• Nama Proyek: FirstProject
+• Platform Utama: Roblox Studio
+• Fokus Praktik: Perancangan lingkungan permainan 3D (World Building), penataan aset objek 3D, dan pemodelan permukaan alam dengan Terrain Editor
+• Hasil Praktik: Lingkungan dunia 3D tepi sungai lengkap dengan menara pantau, bangunan batu, area perkemahan, hutan pinus, serta permukaan terrain yang dipahat dan diwarnai secara interaktif
+
+2. Pengenalan Antarmuka Roblox Studio
+Berdasarkan praktik langsung pada proyek FirstProject, ruang kerja Roblox Studio terdiri dari beberapa bagian utama:
+A. Toolbar & Tab Menu Atas (Home, Avatar, UI, Script, Model, Plugins)
+   • Transform Tools: Select, Move, Scale, Rotate, dan Transform untuk mengatur posisi, ukuran, serta rotasi objek 3D.
+   • Pengaturan Snap Geometri: pengaturan pergeseran jarak (contoh: 1 studs) dan sudut putar (contoh: 45°) agar penempatan objek presisi.
+   • Tombol Part, Terrain, Character, GUI, Script, Import, Material, Color, Group, Lock, dan Anchor.
+   • Tombol Uji Coba (Test / Play) di pojok kiri atas untuk menjalankan simulasi permainan.
+
+B. Panel Explorer & Live Collaborators (Kanan)
+   • Menyusun hierarki seluruh layanan utama game Roblox: Workspace (tempat seluruh objek 3D dan Terrain berada), Players, Lighting (pengaturan langit malam berbintang dan pencahayaan), MaterialService, ReplicatedFirst, ReplicatedStorage, ServerScriptService, dan ServerStorage.
+   • Mendukung kolaborasi waktu nyata (Live Collaborators) di dalam workspace yang sama.
+
+C. Panel Toolbox & Terrain Editor (Kiri)
+   • Toolbox: tempat mencari dan memasukkan berbagai model 3D siap pakai ke dalam Workspace.
+   • Terrain Editor: fasilitas khusus dengan tab Create dan Edit untuk membentuk alam 3D (Select, Transform, Fill, Sea Level, Draw, Sculpt, Smooth, Paint, dan Flatten).
+
+3. Elemen Lingkungan 3D yang Dibangun pada "FirstProject"
+Di dalam rekaman dokumentasi praktik, dunia permainan 3D yang dirancang mencakup:
+• Aliran Sungai & Perairan (Water Terrain): sungai yang membelah daratan dengan efek pantulan cahaya dan riak air.
+• Menara Pantau Kayu (Watchtower): ditempatkan di tepian sungai sebagai titik pengamatan utama.
+• Area Perkemahan & Rumah Pedesaan: dilengkapi rumah beratap biru, tenda kemah putih, kobaran api unggun (campfire) dengan efek cahaya hangat, serta deretan pohon pinus di latar belakang.
+• Bangunan Batu 2 Lantai & Tebing Batu: bangunan struktur batu di seberang sungai yang dikelilingi perbukitan batu dan hamparan rumput hijau.
+
+4. Praktik Menggunakan Terrain Editor (Tab Edit → Paint & Sculpt)
+Pada tahap penyempurnaan kontur tanah di tepi bangunan dan sungai, langkah teknis yang dipraktikkan meliputi:
+• Membuka panel Terrain Editor lalu memilih tab Edit.
+• Memilih alat Paint / Sculpt untuk memodifikasi permukaan tanah secara langsung dengan kursor berbentuk bola (sphere brush) di viewport 3D.
+• Mengatur Brush Settings: menentukan Brush Mode (Add / Subtract), memilih Brush Shape (Sphere / Bola, Box / Kubus, atau Cylinder / Silinder), serta mengatur ukuran kuas (Brush Size, misalnya nilai 4).
+• Mengatur Material Settings: memilih tekstur permukaan alam seperti Grass (rumput), Sand (pasir), Mud (lumpur/tanah), Rock (batu), atau Ground untuk melukis jalur tepi sungai dan bukit kecil agar tampak alami.
+
+5. Potensi Penerapan di Pondok Tholabie & Kesimpulan
+Melalui praktik Roblox Studio ini, peserta mempelajari bagaimana sebuah dunia permainan 3D dibangun dari nol melalui perpaduan penataan objek (asset placement), pengaturan pencahayaan (Lighting), serta pemahatan bentuk bumi (Terrain Editor). Materi ini sangat potensial diajarkan kepada santri di Pondok Tholabie untuk melatih kreativitas spasial 3D, arsitektur lingkungan digital, kerja sama tim (collaborative building), sekaligus menjadi fondasi sebelum melangkah ke pemrograman interaksi menggunakan bahasa skrip Luau.`,
+          shortcuts: [
+            {
+              keys: "W / A / S / D",
+              action: "Navigasi Kamera Viewport 3D",
+              detail: "Menggerakkan kamera maju, kiri, mundur, dan kanan saat menjelajahi dunia 3D di Roblox Studio.",
+            },
+            {
+              keys: "Q / E",
+              action: "Turun / Naikkan Posisi Kamera",
+              detail: "Menggerakkan sudut pandang kamera secara vertikal ke bawah atau ke atas.",
+            },
+            {
+              keys: "Klik Kanan + Geser Mouse",
+              action: "Memutar Arah Pandang Kamera",
+              detail: "Mengubah arah orientasi kamera di dalam viewport 3D.",
+            },
+            {
+              keys: "Ctrl + Z / Ctrl + Y",
+              action: "Undo / Redo Perubahan",
+              detail: "Membatalkan atau mengembalikan langkah penataan objek maupun sapuan kuas Terrain Editor.",
+            },
+          ],
+          tips: [
+            "Gunakan fitur Anchor pada bangunan utama (seperti menara pantau dan gedung batu) agar struktur tidak roboh atau bergeser saat simulasi fisika game dijalankan.",
+            "Saat melukis permukaan tanah dengan alat Paint di Terrain Editor, gunakan Brush Shape berbentuk Sphere (bola) dengan Brush Size kecil (misalnya 4) agar transisi material pasir dan rumput di tepi sungai terlihat halus.",
+            "Kombinasikan alat Sculpt, Smooth, dan Flatten pada Terrain Editor untuk meratakan tanah sebelum meletakkan bangunan di atasnya.",
+          ],
+          updatedAt: "2026-11-25",
+        },
+      ],
+      tutorials: [
+        {
+          id: "tut-roblox-3d-world-terrain",
+          title: "Tutorial Praktik: Merancang Dunia 3D & Menggunakan Terrain Editor di Roblox Studio",
+          subtitle:
+            "Panduan langkah demi langkah membangun lingkungan permainan 3D (FirstProject), menata bangunan & area perkemahan, serta memahat dan mewarnai permukaan alam dengan Terrain Editor",
+          difficulty: "Pemula",
+          duration: "45 menit",
+          tools: [
+            "Aplikasi Roblox Studio",
+            "Panel Toolbox & Explorer",
+            "Terrain Editor (Tab Create & Edit)",
+            "Mouse dengan Scroll Wheel",
+          ],
+          goal: "Peserta mampu membuat proyek dunia 3D baru di Roblox Studio, menavigasikan kamera di viewport 3D, menata aset lingkungan (sungai, menara pantau, bangunan, perkemahan), serta menggunakan alat Sculpt, Smooth, dan Paint pada Terrain Editor untuk memodifikasi bentuk dan material permukaan tanah.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Membuka Roblox Studio & Menyiapkan Proyek 'FirstProject'",
+              description:
+                "1. Jalankan aplikasi Roblox Studio di laptop/PC.\n2. Buat proyek baru sehingga terbuka ruang kerja 3D (pada praktik ini dinamai 'FirstProject').\n3. Kenali panel-panel utama: Toolbar transformasi di bagian atas (Select, Move, Scale, Rotate), panel Toolbox & Terrain Editor di sisi kiri, Viewport 3D di tengah, serta panel Explorer di sisi kanan yang memuat Workspace, Players, Lighting, dan layanan lainnya.",
+              tip: "Gunakan tombol W, A, S, D pada keyboard sambil menahan Klik Kanan mouse untuk terbang dan berkeliling mengamati area kerja 3D dengan leluasa.",
+            },
+            {
+              stepNumber: 2,
+              title: "Membangun Kontur Alam Dasar: Sungai, Daratan & Perbukitan Batu",
+              description:
+                "Buka fitur Terrain di Roblox Studio untuk membentuk bentang alam dasar permainan. Buat alur sungai berair yang membelah dua area daratan berumput hijau, lalu tambahkan formasi tebing dan bebatuan di tepian sungai untuk memberikan batas alami pada arena permainan.",
+              tip: "Atur pencahayaan pada objek Lighting di panel Explorer (misalnya suasana langit malam berbintang dengan pencahayaan bulan) agar pantulan air sungai dan cahaya api unggun terlihat kontras dan hidup.",
+            },
+            {
+              stepNumber: 3,
+              title: "Menata Aset Lingkungan: Menara Pantau, Perkemahan & Bangunan",
+              description:
+                "Susun objek dan model 3D ke dalam Workspace menggunakan bantuan alat Select, Move, Scale, dan Rotate:\n• Tempatkan Menara Pantau Kayu (Watchtower) tepat di bibir sungai sebagai pusat orientasi peta.\n• Di sisi seberang, tata area perkemahan yang terdiri dari rumah pedesaan beratap biru, tenda kemah, api unggun yang menyala, serta barisan pepohonan pinus.\n• Tambahkan bangunan batu dua lantai di area daratan dekat tebing batu.",
+              codeSnippet:
+                "Hierarchy Explorer: Workspace → [Terrain, Watchtower, CampArea, StoneBuilding, PineTrees]",
+              tip: "Perhatikan nilai Move (misalnya 1 studs) dan Rotate (45°) di toolbar kiri atas agar posisi dinding bangunan dan menara sejajar dengan rapi.",
+            },
+            {
+              stepNumber: 4,
+              title: "Membuka Terrain Editor (Tab Edit) & Memilih Alat Paint / Sculpt",
+              description:
+                "1. Klik tombol Terrain pada tab menu atas untuk menampilkan panel Terrain Editor di sebelah kiri bawah.\n2. Pilih tab 'Edit' yang menyediakan alat modifikasi permukaan: Select, Transform, Fill, Sea Level, Draw, Sculpt, Smooth, Paint, dan Flatten.\n3. Klik alat 'Paint' (atau 'Sculpt') untuk mulai menyesuaikan tekstur material dan lekukan tanah di sekitar bangunan batu dan tepian sungai.",
+            },
+            {
+              stepNumber: 5,
+              title: "Mengatur Brush Settings & Melukis Material Tanah/Pasir di Tepi Sungai",
+              description:
+                "1. Pada bagian Brush Settings di Terrain Editor, pilih bentuk kuas (Brush Shape) berupa Sphere (Bola) dan sesuaikan ukuran kuas (Brush Size, contoh: 4).\n2. Gulir ke bawah ke bagian Material Settings, lalu pilih material alam yang diinginkan (seperti Sand/Pasir, Grass/Rumput, atau Ground/Tanah).\n3. Arahkan kursor bola ke permukaan tanah di tepi sungai, lalu klik dan geser untuk melukis variasi tekstur pasir, rumput, serta gundukan tanah hingga lingkungan 3D tampak alami.",
+              codeSnippet:
+                "Terrain Editor → Tab: Edit → Tool: Paint → Brush Shape: Sphere | Brush Size: 4 → Material: Sand / Grass",
+              tip: "Jika permukaan tanah terlihat terlalu tajam setelah di-sculpt, gunakan alat 'Smooth' pada Terrain Editor lalu sapukan perlahan di area tersebut agar kontur bukit menjadi lebih halus.",
+            },
+          ],
+          downloadUrl: "/assets/roblox/roblox-studio-terrain-world.mp4",
+          downloadLabel: "Download Video Rekaman Praktik Roblox Studio (.MP4)",
+        },
+      ],
     },
 
     // ==================== HARI KE-4 ====================
@@ -2038,29 +2207,110 @@ forever
           demoUrl: "https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
           gallery: [
             {
+              src: "/assets/canva/step-01-pilih-menu-code.png",
+              caption:
+                "1.1 Pilih Menu Code di Beranda Canva — Buka halaman utama Canva (What will you Canva today?), lalu klik ikon Code pada deretan menu pilihan desain di bagian tengah layar untuk membuka ruang kerja pemrograman berbasis AI.",
+            },
+            {
+              src: "/assets/canva/step-02-workspace-canva-code.png",
+              caption:
+                "1.2 Ruang Kerja Canva Code — Tampilan kanvas 'Start with an idea or template' beserta panel Canva AI (What will we design today?) di sisi kiri layar.",
+            },
+            {
+              src: "/assets/canva/step-03-panel-canva-ai-prompt.png",
+              caption:
+                "1.3 Tulis Deskripsi Website (Prompt) — Pada panel Canva AI (What will we design today?) di sisi kiri layar, ketik perintah: \"buatkan game edukasi untuk anak tentang matematika\".",
+            },
+            {
+              src: "/assets/canva/step-04-kirim-prompt-matematika.png",
+              caption:
+                "1.4 Kirim Perintah (Generate) — Klik tombol panah ungu di pojok kanan bawah kolom teks agar Canva AI mulai memproses dan membangun tampilan website.",
+            },
+            {
+              src: "/assets/canva/step-05-hasil-generate-math-battle.png",
+              caption:
+                "2. Hasil Desain & Struktur Website (Math Battle) — Menampilkan Navigasi Atas (Beranda, Cara Bermain, Leaderboard, Profil / Login, Pemain), Hero Section (\"ASAH OTAK, TAKLUKKAN ANGKA!\"), serta tombol MAIN SEKARANG & + BUAT GAME.",
+            },
+            {
+              src: "/assets/canva/step-06-klik-publish-changes.png",
+              caption:
+                "3.1 Publikasikan Website — Setelah memeriksa tampilan melalui tombol Preview, klik tombol ungu Publish (atau Publish changes) di pojok kanan atas bilah menu Canva.",
+            },
+            {
+              src: "/assets/canva/step-07-website-live-url-qrcode.png",
+              caption:
+                "3.2 Salin Tautan Website (Website URL) — Setelah status berubah menjadi Live, klik ikon Salin (Copy) atau ikon QR Code di kolom Website URL (pilandok-9yl142.my.canva.site/math-battl...).",
+            },
+            {
               src: "/assets/canva/math-battle-canva-preview.jpg",
               caption:
-                "Dokumentasi 01 — Hasil Pembuatan Game MATH BATTLE dengan Canva AI ('Asah Otak, Taklukkan Angka!') melalui pendekatan prompt-based creation, lengkap dengan menu Beranda, Cara Bermain, Leaderboard, Profil/Login, serta tombol Main Sekarang & + Buat Game.",
+                "Tampilan Penuh Website Game Edukasi Interaktif Math Battle hasil pengembangan Canva Code / Canva AI.",
             },
             {
               src: "/assets/canva/math-battle-qrcode.png",
               caption:
-                "Dokumentasi 02 — QR Code Publikasi Resmi MATH BATTLE untuk mengakses dan memainkan game edukasi matematika hasil Canva AI secara langsung melalui smartphone atau perangkat mobile.",
+                "QR Code Publikasi Resmi Math Battle untuk dibuka dan dimainkan langsung melalui browser smartphone.",
             },
           ],
           tags: [
             "MATH BATTLE",
+            "Canva Code",
             "Canva AI",
+            "Web Development & AI",
             "Prompt-Based Creation",
             "Educational Game",
             "IDN SMSIT",
             "Pondok Tholabie",
           ],
-          date: "23 November 2026",
+          date: "25 November 2026",
           featured: true,
         },
       ],
       notes: [
+        {
+          id: "note-canva-code-math-battle-guide",
+          title: "Membuat Website Game Edukasi Interaktif (Math Battle) dengan Canva Code",
+          category: "Web Development & Artificial Intelligence (AI)",
+          summary:
+            "Catatan pembelajaran dan panduan praktik pembuatan website game edukasi matematika interaktif bernama Math Battle menggunakan fitur Canva Code dan Canva AI (25 November 2026) — mulai dari memasukkan prompt, hasil desain & struktur website, hingga publikasi Website URL.",
+          content: `MEMBUAT WEBSITE GAME EDUKASI INTERAKTIF (MATH BATTLE) DENGAN CANVA CODE
+• Kategori: Web Development & Artificial Intelligence (AI)
+• Platform: Canva (Canva Code / Canva AI)
+• Tanggal Praktik: 25 November 2026
+• Dokumentasi: Personal Digital Lab — Daffa Zidan Mahesta
+
+Panduan ini mendokumentasikan proses pembuatan website game edukasi matematika interaktif bernama Math Battle menggunakan fitur Canva Code dan Canva AI. Cukup dengan menuliskan perintah teks (prompt), Canva AI akan menyusun struktur website lengkap beserta halaman utama (Beranda), panduan cara bermain, papan peringkat (Leaderboard), dan fitur permainan interaktif yang siap dipublikasikan secara online.
+
+1. MEMBUKA FITUR CANVA CODE & MEMASUKKAN PROMPT
+1. Pilih Menu Code di Beranda Canva
+   Buka halaman utama Canva (What will you Canva today?), lalu klik ikon Code pada deretan menu pilihan desain di bagian tengah layar untuk membuka ruang kerja pemrograman berbasis AI.
+
+2. Tulis Deskripsi Website (Prompt)
+   Pada panel Canva AI (What will we design today?) di sisi kiri layar, ketik perintah berikut di dalam kolom teks:
+   "buatkan game edukasi untuk anak tentang matematika"
+
+3. Kirim Perintah (Generate)
+   Klik tombol panah ungu di pojok kanan bawah kolom teks agar Canva AI mulai memproses dan membangun tampilan website.
+
+2. HASIL DESAIN & STRUKTUR WEBSITE (MATH BATTLE)
+Setelah proses generate selesai, Canva AI menghasilkan prototipe website game edukasi Math Battle dengan struktur tampilan berikut:
+• Navigasi Atas (Navbar): Tersedia menu Beranda, Cara Bermain, Leaderboard, Profil / Login, serta status Pemain.
+• Halaman Utama (Hero Section): Menampilkan judul utama "ASAH OTAK, TAKLUKKAN ANGKA!" dengan deskripsi ajakan belajar matematika dan ilustrasi bertema angka.
+• Tombol Aksi Utama: Dilengkapi tombol MAIN SEKARANG untuk langsung memulai permainan dan tombol + BUAT GAME untuk membuat sesi tantangan baru.
+
+3. PUBLIKASI WEBSITE (PUBLISH) & MENDAPATKAN URL
+1. Publikasikan Website
+   Setelah memeriksa tampilan melalui tombol Preview, klik tombol ungu Publish (atau Publish changes) di pojok kanan atas bilah menu Canva.
+
+2. Salin Tautan Website (Website URL)
+   Setelah status berubah menjadi Live, jendela informasi publikasi akan muncul di sisi kanan layar. Klik ikon Salin (Copy) atau ikon QR Code di kolom Website URL (contoh: pilandok-9yl142.my.canva.site/math-battl...) agar website game edukasi dapat langsung dibuka dan dimainkan melalui browser desktop maupun smartphone.`,
+          tips: [
+            "Gunakan perintah teks (prompt) yang jelas pada panel Canva AI (What will we design today?), misalnya: \"buatkan game edukasi untuk anak tentang matematika\".",
+            "Gunakan tombol Preview di bilah menu atas untuk menguji interaksi permainan sebelum menekan tombol Publish / Publish changes.",
+            "Manfaatkan fitur Copy Website URL dan ikon QR Code pada jendela Website Live agar game Math Battle mudah dibagikan ke desktop maupun smartphone.",
+          ],
+          updatedAt: "2026-11-25",
+        },
         {
           id: "note-canva-math-battle-documentation",
           title: "MATH BATTLE — AI-Powered Educational Game Development (Canva AI)",
@@ -2107,50 +2357,78 @@ Create with AI, Learn through Play!`,
             "Dalam prompt-based creation di Canva AI, deskripsikan secara jelas ide, aturan permainan, mekanisme skor/tantangan, dan gaya visual yang diinginkan agar hasil game sesuai dengan tujuan pembelajaran.",
             "Selalu lakukan tahap TESTING pada hasil Game Creation dari Canva AI sebelum mempublikasikannya sebagai RESULT (link publik & QR Code).",
           ],
-          updatedAt: "2026-11-24",
+          updatedAt: "2026-11-25",
         },
       ],
       tutorials: [
         {
           id: "tut-canva-math-battle",
-          title: "Panduan Praktik: Mengembangkan Game Edukasi MATH BATTLE dengan Canva AI",
+          title: "Membuat Website Game Edukasi Interaktif (Math Battle) dengan Canva Code",
           subtitle:
-            "Alur lengkap Prompt-Based Creation: IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT",
+            "Kategori: Web Development & Artificial Intelligence (AI) • Platform: Canva (Canva Code / Canva AI) • Dokumentasi: Personal Digital Lab — Daffa Zidan Mahesta",
           difficulty: "Pemula",
-          duration: "40 menit",
+          duration: "30–40 menit",
           tools: [
-            "Canva AI (Prompt-Based Creation)",
-            "Canva Websites",
-            "Browser untuk Testing & Publikasi",
-            "QR Code Generator",
+            "Canva (Canva Code / Canva AI)",
+            "Prompt-Based Creation",
+            "Preview & Publish Website",
+            "Website URL & QR Code",
           ],
-          goal: "Peserta mampu memanfaatkan Canva AI dengan pendekatan prompt-based creation untuk mengembangkan ide permainan matematika menjadi produk game edukasi interaktif yang siap dimainkan.",
+          goal: "Mendokumentasikan proses pembuatan website game edukasi matematika interaktif bernama Math Battle menggunakan fitur Canva Code dan Canva AI — cukup dengan menuliskan perintah teks (prompt), Canva AI menyusun struktur website lengkap beserta Beranda, Cara Bermain, Leaderboard, dan fitur permainan interaktif yang siap dipublikasikan secara online.",
           steps: [
             {
               stepNumber: 1,
-              title: "IDEA & PROMPT — Merumuskan Ide dan Menyusun Instruksi AI",
+              title: "1.1 Pilih Menu Code di Beranda Canva",
               description:
-                "Tentukan konsep permainan matematika (MATH BATTLE) sebagai media pembelajaran yang menggabungkan edukasi, tantangan, dan pengalaman bermain.\n\nSelanjutnya, susun prompt (instruksi teks) untuk Canva AI yang mendeskripsikan:\n• Ide dan tema permainan ('Petualangan Matematika Dimulai! Asah Otak, Taklukkan Angka!').\n• Aturan dan mekanisme permainan matematika.\n• Struktur tampilan dan navigasi yang diinginkan (Beranda, Cara Bermain, Leaderboard, Profil / Login, serta tombol Main Sekarang & + Buat Game).",
-              tip: "Semakin terstruktur deskripsi ide, aturan, mekanisme, dan tampilan di dalam prompt, semakin presisi hasil game yang dibuat oleh Canva AI.",
+                "Buka halaman utama Canva (What will you Canva today?), lalu klik ikon Code pada deretan menu pilihan desain di bagian tengah layar untuk membuka ruang kerja pemrograman berbasis AI.",
+              image: "/assets/canva/step-01-pilih-menu-code.png",
             },
             {
               stepNumber: 2,
-              title: "CANVA AI & GAME CREATION — Menghasilkan Game Interaktif",
+              title: "1.2 Ruang Kerja Canva Code & Panel Canva AI",
               description:
-                "Masukkan prompt ke dalam fitur Canva AI untuk menghasilkan desain dan struktur permainan MATH BATTLE Edu Game Website secara interaktif. Sesuaikan elemen visual, tata letak, dan navigasi permainan yang telah dihasilkan oleh AI.",
-              image: "/assets/canva/math-battle-canva-preview.jpg",
-              codeSnippet:
-                "Development Flow: IDEA → PROMPT → CANVA AI → GAME CREATION → TESTING → RESULT",
+                "Setelah memilih menu Code, ruang kerja pemrograman berbasis AI akan terbuka menampilkan kanvas 'Start with an idea or template' di bagian tengah dan panel Canva AI (What will we design today?) di sisi kiri layar.",
+              image: "/assets/canva/step-02-workspace-canva-code.png",
             },
             {
               stepNumber: 3,
-              title: "TESTING & RESULT — Uji Coba, Publikasi Website, dan QR Code",
+              title: "1.3 Tulis Deskripsi Website (Prompt)",
               description:
-                "Lakukan pengujian (Testing) terhadap alur permainan dan tombol interaksi pada pratinjau Canva.\n\nSetelah berjalan baik, publikasikan hasil akhir (Result) menggunakan fitur Publish Website ke link publik Canva (https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website) dan sediakan QR Code agar pengunjung dapat langsung mencoba bermain di laptop maupun smartphone.",
-              image: "/assets/canva/math-battle-qrcode.png",
+                "Pada panel Canva AI (What will we design today?) di sisi kiri layar, ketik perintah berikut di dalam kolom teks:\n\n\"buatkan game edukasi untuk anak tentang matematika\"",
+              image: "/assets/canva/step-03-panel-canva-ai-prompt.png",
               codeSnippet:
-                "Canva Public Game Link: https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
-              tip: "Create with AI, Learn through Play! Gunakan link publik dan QR Code ini untuk membagikan hasil karya kepada siswa atau pengunjung.",
+                "\"buatkan game edukasi untuk anak tentang matematika\"",
+            },
+            {
+              stepNumber: 4,
+              title: "1.4 Kirim Perintah (Generate)",
+              description:
+                "Klik tombol panah ungu di pojok kanan bawah kolom teks agar Canva AI mulai memproses dan membangun tampilan website.",
+              image: "/assets/canva/step-04-kirim-prompt-matematika.png",
+            },
+            {
+              stepNumber: 5,
+              title: "2. Hasil Desain & Struktur Website (Math Battle)",
+              description:
+                "Setelah proses generate selesai, Canva AI menghasilkan prototipe website game edukasi Math Battle dengan struktur tampilan berikut:\n\n• Navigasi Atas (Navbar): Tersedia menu Beranda, Cara Bermain, Leaderboard, Profil / Login, serta status Pemain.\n• Halaman Utama (Hero Section): Menampilkan judul utama \"ASAH OTAK, TAKLUKKAN ANGKA!\" dengan deskripsi ajakan belajar matematika dan ilustrasi bertema angka.\n• Tombol Aksi Utama: Dilengkapi tombol MAIN SEKARANG untuk langsung memulai permainan dan tombol + BUAT GAME untuk membuat sesi tantangan baru.",
+              image: "/assets/canva/step-05-hasil-generate-math-battle.png",
+            },
+            {
+              stepNumber: 6,
+              title: "3.1 Publikasikan Website (Publish / Publish changes)",
+              description:
+                "Setelah memeriksa tampilan melalui tombol Preview, klik tombol ungu Publish (atau Publish changes) di pojok kanan atas bilah menu Canva.",
+              image: "/assets/canva/step-06-klik-publish-changes.png",
+            },
+            {
+              stepNumber: 7,
+              title: "3.2 Salin Tautan Website (Website URL) & QR Code",
+              description:
+                "Setelah status berubah menjadi Live, jendela informasi publikasi akan muncul di sisi kanan layar. Klik ikon Salin (Copy) atau ikon QR Code di kolom Website URL (contoh: pilandok-9yl142.my.canva.site/math-battl...) agar website game edukasi dapat langsung dibuka dan dimainkan melalui browser desktop maupun smartphone.",
+              image: "/assets/canva/step-07-website-live-url-qrcode.png",
+              codeSnippet:
+                "Website URL: https://pilandok-9yl142.my.canva.site/math-battle-edu-game-website",
+              tip: "Website game edukasi Math Battle yang sudah berstatus Live dapat langsung diakses lintas perangkat baik melalui tautan URL maupun scan QR Code.",
             },
           ],
         },

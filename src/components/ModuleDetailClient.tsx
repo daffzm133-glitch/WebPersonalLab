@@ -16,7 +16,9 @@ import {
   Keyboard,
   Lightbulb,
   Pencil,
+  Play,
   StickyNote,
+  Video,
   Wrench,
   ZoomIn,
 } from "lucide-react";
@@ -260,6 +262,11 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                               <Box className="h-3.5 w-3.5" /> Tersedia Preview 3D Interaktif
                             </span>
                           )}
+                          {(proj.videoUrl || (proj.demoUrl && proj.demoUrl.endsWith(".mp4"))) && (
+                            <span className="inline-flex items-center gap-1 rounded-full bg-slate-900 px-3 py-1 text-xs font-bold text-violet-300">
+                              <Video className="h-3.5 w-3.5" /> Tersedia Video Dokumentasi Praktik
+                            </span>
+                          )}
                         </div>
 
                         <h2 className="font-display text-2xl font-extrabold text-slate-900">
@@ -301,13 +308,62 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                             rel="noreferrer"
                             className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-xs font-bold text-slate-800 hover:bg-slate-50 transition"
                           >
-                            <ExternalLink className="h-4 w-4" />
-                            Buka Demo / Link
+                            {proj.demoUrl.endsWith(".mp4") ? (
+                              <>
+                                <Play className="h-4 w-4" />
+                                Buka Video di Tab Baru
+                              </>
+                            ) : (
+                              <>
+                                <ExternalLink className="h-4 w-4" />
+                                Buka Demo / Link
+                              </>
+                            )}
                           </a>
                         )}
                       </div>
                     </div>
                   </div>
+
+                  {/* Interactive Video Player if available */}
+                  {(proj.videoUrl || (proj.demoUrl && proj.demoUrl.endsWith(".mp4"))) && (
+                    <div className="border-t border-slate-100 p-5 sm:p-6 bg-slate-950 text-white space-y-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-violet-500/20 border border-violet-400/30 text-violet-300">
+                            <Video className="h-4 w-4" />
+                          </span>
+                          <div>
+                            <p className="text-[11px] font-extrabold uppercase tracking-wider text-violet-300">
+                              Video Dokumentasi Praktik &amp; Hasil Karya
+                            </p>
+                            <h3 className="font-display text-sm sm:text-base font-bold text-white">
+                              Rekaman Layar Praktik — {proj.title}
+                            </h3>
+                          </div>
+                        </div>
+                        <a
+                          href={proj.videoUrl || proj.demoUrl}
+                          download
+                          className="inline-flex items-center gap-1.5 rounded-xl bg-white/10 border border-white/15 px-3 py-1.5 text-xs font-bold text-white hover:bg-white/20 transition"
+                        >
+                          <Download className="h-3.5 w-3.5" />
+                          Unduh Video (.MP4)
+                        </a>
+                      </div>
+                      <div className="overflow-hidden rounded-2xl border border-white/15 bg-black shadow-2xl">
+                        <video
+                          src={proj.videoUrl || proj.demoUrl}
+                          poster={proj.image}
+                          controls
+                          preload="metadata"
+                          className="w-full max-h-[540px] object-contain"
+                        >
+                          Browser Anda tidak mendukung pemutar video HTML5.
+                        </video>
+                      </div>
+                    </div>
+                  )}
 
                   {/* Interactive 3D STL Viewer if available */}
                   {proj.stlUrl && (

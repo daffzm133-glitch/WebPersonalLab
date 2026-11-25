@@ -30,7 +30,7 @@ import type {
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
 const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
-const CURRENT_SEED_REV = "2026-11-24-math-battle-canva-ai-v18";
+const CURRENT_SEED_REV = "2026-11-25-canva-code-math-battle-guide-v20";
 const REMOVED_SLUGS = new Set(["minecraft-education", "video-editing-capcut"]);
 const SYNCED_SLUGS = new Set([
   "lego-wedo-education",

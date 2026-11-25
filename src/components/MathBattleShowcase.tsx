@@ -85,6 +85,65 @@ const DEVELOPMENT_PROCESS_STEPS = [
   },
 ];
 
+const CANVA_CREATION_SCREENSHOTS = [
+  {
+    step: "1.1",
+    section: "1. Membuka Fitur Canva Code & Memasukkan Prompt",
+    title: "Pilih Menu Code di Beranda Canva",
+    caption:
+      "Buka halaman utama Canva (What will you Canva today?), lalu klik ikon Code pada deretan menu pilihan desain di bagian tengah layar untuk membuka ruang kerja pemrograman berbasis AI.",
+    src: "/assets/canva/step-01-pilih-menu-code.png",
+  },
+  {
+    step: "1.2",
+    section: "1. Membuka Fitur Canva Code & Memasukkan Prompt",
+    title: "Ruang Kerja Canva Code & Panel Canva AI",
+    caption:
+      "Tampilan ruang kerja pemrograman berbasis AI di Canva Code ('Start with an idea or template') dengan panel Canva AI (What will we design today?) di sisi kiri layar.",
+    src: "/assets/canva/step-02-workspace-canva-code.png",
+  },
+  {
+    step: "1.3",
+    section: "1. Membuka Fitur Canva Code & Memasukkan Prompt",
+    title: "Tulis Deskripsi Website (Prompt)",
+    caption:
+      "Pada panel Canva AI (What will we design today?) di sisi kiri layar, ketik perintah di dalam kolom teks: \"buatkan game edukasi untuk anak tentang matematika\".",
+    src: "/assets/canva/step-03-panel-canva-ai-prompt.png",
+  },
+  {
+    step: "1.4",
+    section: "1. Membuka Fitur Canva Code & Memasukkan Prompt",
+    title: "Kirim Perintah (Generate)",
+    caption:
+      "Klik tombol panah ungu di pojok kanan bawah kolom teks agar Canva AI mulai memproses dan membangun tampilan website.",
+    src: "/assets/canva/step-04-kirim-prompt-matematika.png",
+  },
+  {
+    step: "2.0",
+    section: "2. Hasil Desain & Struktur Website (Math Battle)",
+    title: "Prototipe Website Game Edukasi Math Battle",
+    caption:
+      "Menampilkan Navigasi Atas (Beranda, Cara Bermain, Leaderboard, Profil / Login, Pemain), Hero Section (\"ASAH OTAK, TAKLUKKAN ANGKA!\"), serta tombol MAIN SEKARANG & + BUAT GAME.",
+    src: "/assets/canva/step-05-hasil-generate-math-battle.png",
+  },
+  {
+    step: "3.1",
+    section: "3. Publikasi Website (Publish) & Mendapatkan URL",
+    title: "Publikasikan Website (Publish / Publish changes)",
+    caption:
+      "Setelah memeriksa tampilan melalui tombol Preview, klik tombol ungu Publish (atau Publish changes) di pojok kanan atas bilah menu Canva.",
+    src: "/assets/canva/step-06-klik-publish-changes.png",
+  },
+  {
+    step: "3.2",
+    section: "3. Publikasi Website (Publish) & Mendapatkan URL",
+    title: "Salin Tautan Website (Website URL) & QR Code",
+    caption:
+      "Setelah status berubah menjadi Live, klik ikon Salin (Copy) atau ikon QR Code di kolom Website URL (pilandok-9yl142.my.canva.site/math-battl...) agar website dapat dibuka di desktop maupun smartphone.",
+    src: "/assets/canva/step-07-website-live-url-qrcode.png",
+  },
+];
+
 const PROJECT_OBJECTIVES = [
   "Mengenal pemanfaatan Canva AI dalam pembuatan game.",
   "Memahami konsep prompt-based creation.",
@@ -369,6 +428,77 @@ export function MathBattleShowcase({ onOpenImage }: MathBattleShowcaseProps) {
               </div>
             );
           })}
+        </div>
+
+        {/* Dokumentasi Screenshot Proses Pembuatan di Canva Code (7 Langkah) */}
+        <div className="pt-6 border-t border-slate-200/80 space-y-5">
+          <div className="rounded-2xl border border-indigo-200/80 bg-indigo-50/50 p-5 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span className="rounded-full bg-indigo-900 px-3 py-1 text-[11px] font-extrabold uppercase tracking-wider text-amber-300">
+                Teaching &amp; Learning Hub • Learning Resources
+              </span>
+              <span className="text-xs font-bold text-slate-600">
+                Tanggal Praktik: 25 November 2026
+              </span>
+            </div>
+            <h4 className="font-display text-lg sm:text-xl font-extrabold text-slate-900">
+              Membuat Website Game Edukasi Interaktif (Math Battle) dengan Canva Code
+            </h4>
+            <div className="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+              <span className="rounded-lg bg-white border border-slate-200 px-2.5 py-1">
+                <strong>Kategori:</strong> Web Development &amp; Artificial Intelligence (AI)
+              </span>
+              <span className="rounded-lg bg-white border border-slate-200 px-2.5 py-1">
+                <strong>Platform:</strong> Canva (Canva Code / Canva AI)
+              </span>
+              <span className="rounded-lg bg-white border border-slate-200 px-2.5 py-1">
+                <strong>Dokumentasi:</strong> Personal Digital Lab — Daffa Zidan Mahesta
+              </span>
+            </div>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Panduan ini mendokumentasikan proses pembuatan website game edukasi matematika
+              interaktif bernama <strong>Math Battle</strong> menggunakan fitur{" "}
+              <strong>Canva Code</strong> dan <strong>Canva AI</strong>. Cukup dengan menuliskan
+              perintah teks (<em>prompt</em>), Canva AI akan menyusun struktur website lengkap
+              beserta halaman utama (<em>Beranda</em>), panduan cara bermain, papan peringkat (
+              <em>Leaderboard</em>), dan fitur permainan interaktif yang siap dipublikasikan secara
+              online.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {CANVA_CREATION_SCREENSHOTS.map((shot) => (
+              <button
+                key={shot.step}
+                type="button"
+                onClick={() => onOpenImage?.(shot.src, `${shot.section} — ${shot.title}: ${shot.caption}`)}
+                className="group text-left flex flex-col justify-between overflow-hidden rounded-2xl border border-slate-200 bg-slate-50/70 hover:border-amber-400 hover:bg-white hover:shadow-md transition cursor-zoom-in"
+              >
+                <div>
+                  <div className="relative h-44 w-full overflow-hidden bg-slate-900/5 border-b border-slate-200/80">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={shot.src}
+                      alt={shot.title}
+                      className="h-full w-full object-cover object-top group-hover:scale-105 transition duration-300"
+                    />
+                    <span className="absolute top-2.5 left-2.5 rounded-lg bg-slate-900/85 px-2.5 py-1 text-[11px] font-extrabold text-amber-300 backdrop-blur-sm">
+                      Tahap {shot.step}
+                    </span>
+                  </div>
+                  <div className="p-4 space-y-1.5">
+                    <p className="text-[10px] font-extrabold uppercase tracking-wider text-indigo-700">
+                      {shot.section}
+                    </p>
+                    <h5 className="font-display text-sm font-bold text-slate-900 group-hover:text-indigo-700 transition">
+                      {shot.title}
+                    </h5>
+                    <p className="text-xs text-slate-600 leading-relaxed">{shot.caption}</p>
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
