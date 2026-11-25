@@ -30,11 +30,12 @@ import type {
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
 const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
-const CURRENT_SEED_REV = "2026-11-25-canva-code-math-battle-guide-v20";
+const CURRENT_SEED_REV = "2026-11-25-canva-code-math-battle-guide-v21";
 const REMOVED_SLUGS = new Set(["minecraft-education", "video-editing-capcut"]);
 const SYNCED_SLUGS = new Set([
   "lego-wedo-education",
   "tinkercad-3d-design",
+  "scratch-game-coding",
   "webar-augmented-reality",
   "robotic-tinybit",
   "iot-microbit",
@@ -128,7 +129,11 @@ export function PortfolioProvider({ children }: { children: React.ReactNode }) {
             SEED_DATA.modules.forEach((m) => modMap.set(m.slug, m));
             modulesSnap.forEach((d) => {
               const mod = d.data() as LearningModule;
-              if (!REMOVED_SLUGS.has(mod.slug) && modMap.has(mod.slug)) {
+              if (
+                !REMOVED_SLUGS.has(mod.slug) &&
+                !SYNCED_SLUGS.has(mod.slug) &&
+                modMap.has(mod.slug)
+              ) {
                 const seedOrder = modMap.get(mod.slug)!.order;
                 modMap.set(mod.slug, { ...mod, order: seedOrder });
               }
