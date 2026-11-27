@@ -7,11 +7,12 @@ import {
   ChevronDown,
   Menu,
   X,
-  Sparkles,
   FolderKanban,
   BookOpen,
   ShieldCheck,
   Home,
+  Cpu,
+  Mail,
 } from "lucide-react";
 import { usePortfolio } from "@/lib/store";
 import { ACCENT_STYLES, DAYS_META, STATUS_META } from "@/lib/theme";
@@ -38,77 +39,83 @@ export function Navbar() {
   const totalCount = data.modules.length;
 
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/85 backdrop-blur-md">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        {/* Brand */}
-        <Link href="/" className="flex items-center gap-2.5 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-900 via-blue-900 to-sky-700 text-white shadow-md shadow-slate-300 group-hover:scale-105 transition">
-            <Sparkles className="h-5 w-5 text-sky-300" />
-          </div>
-          <div>
-            <p className="font-display text-base font-bold leading-tight text-slate-900">
-              {data.profile.siteTitle}
-            </p>
-            <p className="text-[11px] font-medium text-slate-500">
-              {data.profile.name} • IDN SMSIT
-            </p>
+    <header className="sticky top-0 z-40 border-b border-[#3a241b] bg-[#1e110c]/95 text-white backdrop-blur-md">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+        {/* Brand Pill: [N] EXPLORE NEXORANESIA */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-2.5 rounded-full border border-[#4a2e22] bg-[#2a1811] pl-2 pr-4 py-1.5 shadow-sm hover:border-[#f26722] transition group"
+        >
+          <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#3a1f14] border border-[#f26722]/40 font-display text-xs font-black text-[#ff732e] group-hover:bg-[#f26722] group-hover:text-white transition">
+            N
+          </span>
+          <div className="flex flex-col">
+            <span className="font-display text-[11px] font-extrabold uppercase tracking-[0.14em] text-white leading-none">
+              EXPLORE NEXORANESIA
+            </span>
+            <span className="text-[9px] font-semibold tracking-wider text-orange-300/80 mt-0.5">
+              TIM IT PONDOK THOLABIE
+            </span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden xl:flex items-center gap-1">
+        {/* Desktop Nav — Uppercase with subtle vertical dividers like reference */}
+        <nav className="hidden xl:flex items-center text-[11px] font-extrabold uppercase tracking-[0.15em]">
           <Link
             href="/"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition ${
+            className={`px-3.5 py-2 transition ${
               pathname === "/"
-                ? "bg-slate-900 text-white"
-                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                ? "text-[#ff732e]"
+                : "text-stone-300 hover:text-white"
             }`}
           >
-            <Home className="h-3.5 w-3.5" />
-            Home
+            HOME
           </Link>
+
+          <span className="text-stone-700 select-none">|</span>
 
           <Link
             href="/#about"
-            className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
+            className="px-3.5 py-2 text-stone-300 hover:text-white transition"
           >
-            About Me
+            ABOUT
           </Link>
 
-          {/* Training Journey Mega Dropdown */}
+          <span className="text-stone-700 select-none">|</span>
+
+          {/* PROGRAMS Mega Dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setDropdownOpen((o) => !o)}
-              className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition cursor-pointer ${
+              className={`inline-flex items-center gap-1.5 px-3.5 py-2 uppercase tracking-[0.15em] transition cursor-pointer ${
                 pathname.startsWith("/materi")
-                  ? "bg-blue-50 text-blue-800"
-                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                  ? "text-[#ff732e]"
+                  : "text-stone-300 hover:text-white"
               }`}
             >
-              Training Journey ({completedCount}/{totalCount})
+              PROGRAMS ({completedCount}/{totalCount})
               <ChevronDown
-                className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180" : ""}`}
+                className={`h-3.5 w-3.5 transition-transform ${dropdownOpen ? "rotate-180 text-[#ff732e]" : ""}`}
               />
             </button>
 
             {dropdownOpen && (
-              <div className="absolute left-1/2 top-full mt-2 w-[780px] -translate-x-1/2 rounded-3xl border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-900/10">
-                <div className="mb-3 flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="absolute left-1/2 top-full mt-3 w-[800px] -translate-x-1/2 rounded-3xl border border-stone-200 bg-white p-5 text-slate-900 shadow-2xl shadow-black/30 normal-case tracking-normal">
+                <div className="mb-3 flex items-center justify-between border-b border-stone-100 pb-3">
                   <div>
                     <p className="font-display text-sm font-bold text-slate-900">
-                      Training Journey — Dokumentasi Pelatihan IDN SMSIT
+                      NEXORANESIA Programs &amp; Tech Modules — Tim IT Pondok Tholabie
                     </p>
                     <p className="text-xs text-slate-500">
-                      {totalCount} topik materi pelatihan beserta dokumentasi project, catatan belajar, dan panduan praktik
+                      {totalCount} program pengembangan teknologi, robotika, AI, 3D, dan pemrograman beserta karya &amp; modul
                     </p>
                   </div>
                   <Link
                     href="/#training-journey"
                     onClick={() => setDropdownOpen(false)}
-                    className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700 hover:bg-blue-100 transition"
+                    className="rounded-full bg-orange-50 border border-orange-200 px-3 py-1 text-xs font-bold text-[#e05819] hover:bg-orange-100 transition"
                   >
-                    Lihat Roadmap ({completedCount}/{totalCount} Selesai)
+                    Lihat Semua Program ({completedCount}/{totalCount} Aktif)
                   </Link>
                 </div>
 
@@ -170,55 +177,68 @@ export function Navbar() {
             )}
           </div>
 
+          <span className="text-stone-700 select-none">|</span>
+
+          <Link
+            href="/#activities"
+            className="px-3.5 py-2 text-stone-300 hover:text-white transition"
+          >
+            ACTIVITIES
+          </Link>
+
+          <span className="text-stone-700 select-none">|</span>
+
           <Link
             href="/portofolio"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition ${
+            className={`px-3.5 py-2 transition ${
               pathname === "/portofolio"
-                ? "bg-blue-50 text-blue-800"
-                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                ? "text-[#ff732e]"
+                : "text-stone-300 hover:text-white"
             }`}
           >
-            <FolderKanban className="h-3.5 w-3.5" />
-            My Projects
+            PROJECTS
           </Link>
+
+          <span className="text-stone-700 select-none">|</span>
 
           <Link
             href="/tutorial"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold transition ${
+            className={`px-3.5 py-2 transition ${
               pathname === "/tutorial"
-                ? "bg-blue-50 text-blue-800"
-                : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
+                ? "text-[#ff732e]"
+                : "text-stone-300 hover:text-white"
             }`}
           >
-            <BookOpen className="h-3.5 w-3.5" />
-            Teaching &amp; Learning Hub
+            ARTIKEL &amp; MODUL
           </Link>
 
+          <span className="text-stone-700 select-none">|</span>
+
           <Link
-            href="/#pondok-tholabie"
-            className="inline-flex items-center gap-1.5 rounded-xl px-3 py-2 text-xs font-bold text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition"
+            href="/#contact"
+            className="px-3.5 py-2 text-stone-300 hover:text-white transition"
           >
-            Pondok Tholabie
+            CONTACT
           </Link>
         </nav>
 
-        {/* Right CTA */}
+        {/* Right CTA: Admin */}
         <div className="hidden xl:flex items-center gap-2">
           <Link
             href="/admin"
-            className={`inline-flex items-center gap-1.5 rounded-xl px-3.5 py-2 text-xs font-bold transition shadow-sm ${
+            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-2 text-[11px] font-extrabold uppercase tracking-wider transition shadow-sm ${
               pathname === "/admin"
-                ? "bg-slate-900 text-white"
+                ? "bg-[#f26722] text-white"
                 : isAdmin
-                  ? "bg-blue-700 text-white hover:bg-blue-800"
-                  : "bg-slate-900 text-white hover:bg-slate-800"
+                  ? "bg-[#f26722] text-white hover:bg-[#e05819]"
+                  : "border border-[#4a2e22] bg-[#2a1811] text-stone-200 hover:border-[#f26722] hover:text-white"
             }`}
           >
-            <ShieldCheck className="h-4 w-4" />
-            {isAdmin ? "Dashboard Admin" : "Admin"}
+            <ShieldCheck className="h-3.5 w-3.5 text-[#ff732e]" />
+            {isAdmin ? "DASHBOARD TIM IT" : "ADMIN"}
             <span
               className={`ml-1 h-2 w-2 rounded-full ${
-                firebaseReady ? "bg-emerald-400" : "bg-sky-400"
+                firebaseReady ? "bg-emerald-400" : "bg-orange-400"
               }`}
               title={firebaseReady ? "Firebase Terhubung" : "Mode Lokal (Firebase Siap Dihubungkan)"}
             />
@@ -228,7 +248,7 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
-          className="inline-flex xl:hidden items-center justify-center rounded-xl border border-slate-200 p-2 text-slate-700 hover:bg-slate-100 cursor-pointer"
+          className="inline-flex xl:hidden items-center justify-center rounded-xl border border-[#4a2e22] bg-[#2a1811] p-2 text-stone-200 hover:border-[#f26722] cursor-pointer"
           aria-label="Buka menu"
         >
           {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -237,80 +257,81 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileOpen && (
-        <div className="xl:hidden border-t border-slate-200 bg-white px-4 py-4 max-h-[82vh] overflow-y-auto space-y-4">
+        <div className="xl:hidden border-t border-[#3a241b] bg-[#1e110c] px-4 py-4 max-h-[82vh] overflow-y-auto space-y-4">
           <div className="grid grid-cols-2 gap-2">
             <Link
               href="/"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-[#2a1811] border border-[#3a241b] px-3 py-2.5 text-xs font-bold text-stone-100"
             >
-              <Home className="h-4 w-4 text-blue-600" /> Home
+              <Home className="h-4 w-4 text-[#ff732e]" /> HOME
             </Link>
             <Link
               href="/#about"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-[#2a1811] border border-[#3a241b] px-3 py-2.5 text-xs font-bold text-stone-100"
             >
-              <Sparkles className="h-4 w-4 text-sky-600" /> About Me
+              <Cpu className="h-4 w-4 text-[#ff732e]" /> ABOUT
             </Link>
             <Link
               href="/#training-journey"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-[#2a1811] border border-[#3a241b] px-3 py-2.5 text-xs font-bold text-stone-100"
             >
-              <BookOpen className="h-4 w-4 text-emerald-600" /> Training Journey
+              <BookOpen className="h-4 w-4 text-emerald-400" /> PROGRAMS
             </Link>
             <Link
               href="/portofolio"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-[#2a1811] border border-[#3a241b] px-3 py-2.5 text-xs font-bold text-stone-100"
             >
-              <FolderKanban className="h-4 w-4 text-sky-600" /> My Projects
+              <FolderKanban className="h-4 w-4 text-sky-400" /> PROJECTS
             </Link>
             <Link
               href="/tutorial"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-[#2a1811] border border-[#3a241b] px-3 py-2.5 text-xs font-bold text-stone-100"
             >
-              <BookOpen className="h-4 w-4 text-violet-600" /> Teaching &amp; Learning Hub
+              <BookOpen className="h-4 w-4 text-amber-400" /> ARTIKEL &amp; MODUL
             </Link>
             <Link
-              href="/#pondok-tholabie"
+              href="/#contact"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center gap-2 rounded-xl bg-slate-50 px-3 py-2.5 text-xs font-bold text-slate-800"
+              className="flex items-center gap-2 rounded-xl bg-[#2a1811] border border-[#3a241b] px-3 py-2.5 text-xs font-bold text-stone-100"
             >
-              <Sparkles className="h-4 w-4 text-blue-700" /> Pondok Tholabie
+              <Mail className="h-4 w-4 text-[#ff732e]" /> CONTACT
             </Link>
           </div>
           <div>
             <Link
               href="/admin"
               onClick={() => setMobileOpen(false)}
-              className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-3 py-2.5 text-xs font-bold text-white"
+              className="flex items-center justify-center gap-2 rounded-xl bg-[#f26722] px-3 py-2.5 text-xs font-extrabold uppercase tracking-wider text-white"
             >
-              <ShieldCheck className="h-4 w-4 text-sky-400" /> Dashboard Admin
+              <ShieldCheck className="h-4 w-4" /> Dashboard Admin Tim IT
             </Link>
           </div>
 
-          <div className="space-y-3">
-            <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              {totalCount} Halaman Materi (Hari 1 – 4)
+          <div className="space-y-3 pt-2 border-t border-[#3a241b]">
+            <p className="text-xs font-bold uppercase tracking-wider text-stone-400">
+              {totalCount} Program &amp; Modul Teknologi
             </p>
             {DAYS_META.map((dayInfo) => {
-              const accent = ACCENT_STYLES[dayInfo.accentColor];
               const dayMods = data.modules.filter((m) => m.day === dayInfo.day);
               return (
                 <div key={dayInfo.day} className="space-y-1">
-                  <p className={`text-xs font-bold ${accent.text}`}>{dayInfo.label}</p>
+                  <p className="text-xs font-bold text-[#ff732e]">
+                    {dayInfo.label} — {dayInfo.themeTitle}
+                  </p>
                   {dayMods.map((mod) => (
                     <Link
                       key={mod.slug}
                       href={`/materi/${mod.slug}`}
                       onClick={() => setMobileOpen(false)}
-                      className="flex items-center justify-between rounded-xl border border-slate-100 bg-slate-50/70 px-3 py-2 text-xs font-semibold text-slate-800"
+                      className="flex items-center justify-between rounded-xl border border-[#3a241b] bg-[#2a1811]/80 px-3 py-2 text-xs font-semibold text-stone-200"
                     >
                       <span className="flex items-center gap-2">
-                        <ModuleIcon name={mod.iconName} className="h-3.5 w-3.5" />
+                        <ModuleIcon name={mod.iconName} className="h-3.5 w-3.5 text-[#ff732e]" />
                         {mod.title}
                       </span>
                       <span

@@ -48,17 +48,17 @@ export default function PortofolioPage() {
       <div className="rounded-3xl border border-slate-200 bg-white p-7 sm:p-9 shadow-sm">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100 px-3 py-1 text-xs font-bold text-blue-900">
-              <FolderKanban className="h-3.5 w-3.5" /> My Projects • Personal Digital Lab
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-[#d95311]">
+              <FolderKanban className="h-3.5 w-3.5" /> NEXORANESIA Projects • Tim IT Pondok Tholabie
             </span>
             <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">
-              My Projects &amp; Karya Praktik
+              Katalog Karya, Riset &amp; Prototipe Teknologi
             </h1>
             <p className="text-sm sm:text-base text-slate-600">
-              Kumpulan hasil karya dan project yang dikembangkan oleh{" "}
-              <strong>{data.profile.name}</strong> selama mengikuti pelatihan di{" "}
-              <strong>IDN SMSIT</strong> maupun eksplorasi teknologi — lengkap dengan dokumentasi
-              proses, file unduhan, dan preview 3D.
+              Kumpulan hasil karya, produk digital, dan prototipe teknologi yang dikembangkan di{" "}
+              <strong>NEXORANESIA — Tim IT Pondok Tholabie</strong> selama program pelatihan{" "}
+              <strong>IDN SMSIT</strong> maupun eksplorasi riset teknologi — lengkap dengan
+              dokumentasi proses, file unduhan, dan preview 3D.
             </p>
           </div>
 

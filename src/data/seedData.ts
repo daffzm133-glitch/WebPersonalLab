@@ -1,17 +1,17 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-25T19:15:00+07:00",
+  updatedAt: "2026-11-27T19:40:00+07:00",
   profile: {
-    name: "Daffa Zidan Mahesta",
-    displayName: "Daffa Zidan",
-    siteTitle: "Personal Digital Lab",
-    role: "IT Enthusiast & Digital Creator • Pondok Tholabie",
-    programName: "IDN SMSIT — Training Journey & Learning Documentation",
+    name: "Tim IT Pondok Tholabie",
+    displayName: "NEXORANESIA",
+    siteTitle: "NEXORANESIA",
+    role: "Pusat Pengembangan Teknologi, Robotika, AI & IT • Pondok Tholabie",
+    programName: "NEXORANESIA × Tim IT Pondok Tholabie — Tech & Robotics Development Hub",
     year: "2026",
-    bio: "Personal Digital Lab merupakan ruang dokumentasi perjalanan belajar, hasil pelatihan di IDN SMSIT, eksplorasi teknologi, serta kumpulan project dan karya digital yang saya kembangkan.",
+    bio: "NEXORANESIA merupakan brand dan pusat pengembangan di bidang teknologi, pemrograman, robotika, serta Artificial Intelligence (AI) yang dikelola oleh Tim IT Pondok Tholabie untuk membangun generasi inovator masa depan.",
     mission:
-      "Melalui website ini, saya ingin mendokumentasikan proses belajar, membagikan pengetahuan melalui perpustakaan materi terbuka, dan mengembangkan keterampilan teknologi agar dapat memberikan manfaat bagi lingkungan sekitar, khususnya Pondok Tholabie.",
+      "Membangun ekosistem pembelajaran, riset terapan, dokumentasi modul teknologi, dan pengembangan produk digital di lingkungan Pondok Tholabie melalui penguasaan Coding, Robotics, Artificial Intelligence (AI), 3D Engineering, dan Mobile Development.",
     avatar: "/assets/profile/daffa-portrait-hd.png",
     email: "daffzm133@gmail.com",
     github: "https://github.com/DaffaZidanKun",
