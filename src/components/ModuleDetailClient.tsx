@@ -28,6 +28,7 @@ import { ModuleIcon } from "@/components/ModuleIcon";
 import { StlViewer } from "@/components/StlViewer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { MathBattleShowcase } from "@/components/MathBattleShowcase";
+import { IotMicrobitLearningHub } from "@/components/IotMicrobitLearningHub";
 import { ScrollReveal } from "@/components/ScrollReveal";
 
 type TabKey = "projects" | "notes" | "tutorials";
@@ -217,6 +218,12 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
           <div className="space-y-8">
             {mod.slug === "design-canva" && (
               <MathBattleShowcase
+                onOpenImage={(src, caption) => setLightbox({ src, caption })}
+              />
+            )}
+            {(mod.slug === "iot-microbit" || mod.slug === "robotic-tinybit") && (
+              <IotMicrobitLearningHub
+                initialUnitId={mod.slug === "robotic-tinybit" ? "P03" : "P05"}
                 onOpenImage={(src, caption) => setLightbox({ src, caption })}
               />
             )}

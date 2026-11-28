@@ -1,7 +1,7 @@
 import type { PortfolioData } from "@/types/curriculum";
 
 export const SEED_DATA: PortfolioData = {
-  updatedAt: "2026-11-28T16:35:00+07:00",
+  updatedAt: "2026-11-28T18:00:00+07:00",
   profile: {
     name: "Daffa Zidan Mahesta",
     displayName: "Daffa Zidan",
@@ -1455,22 +1455,217 @@ Gambar 2D statis dari internet dapat diubah menjadi efek filter wajah interaktif
       order: 5,
       title: "Robotic Dengan Tinybit",
       shortTitle: "Robotic Tiny:bit",
-      category: "Robotika",
-      tagline: "Pemrograman mobil robot pintar Yahboom Tiny:bit dengan sensor ultrasonik & line follower",
+      category: "Smart Robotics",
+      tagline:
+        "Smart Robotics Yahboom Tiny:bit & BBC micro:bit V2: Line Following (P01), Ultrasonic Obstacle Avoidance (P02), dan Smartphone Bluetooth Control (P03)",
       summary:
-        "Mengenal robot beroda berbasis Micro:bit yaitu Tiny:bit. Akan mempelajari kontrol motor mobil robot, lampu RGB, buzzer musik, sensor garis (line tracking), serta sensor jarak ultrasonik untuk menghindari rintangan secara otomatis.",
+        "Bagian Smart Robotics dari paket pembelajaran 'From Smart Robotics to IoT' menggunakan robot beroda Yahboom Tiny:bit dan BBC micro:bit V2. Mencakup P01 Line Following Robot (sensor garis inframerah kiri/kanan), P02 Ultrasonic Obstacle Avoidance (navigasi penghindar rintangan dengan ambang jarak 15 cm dari salinan panduan 6.3), serta P03 Smartphone Controlled Robot (kendali arah, kecepatan, musik, dan lampu via Bluetooth menggunakan aplikasi Mbit).",
       learningGoals: [
-        "Mengenal struktur hardware Tiny:bit dan pemasangan board Micro:bit",
-        "Memprogram gerak maju, mundur, belok, dan kontrol lampu LED RGB via MakeCode",
-        "Membuat robot penghindar rintangan (obstacle avoidance) atau pengikut garis (line follower)",
+        "Memahami perbedaan robot otonom berbasis sensor (P01 & P02) dan robot kendali jarak dekat via Bluetooth smartphone (P03)",
+        "Menggunakan sensor garis inframerah dan blok Tiny-bitLib untuk koreksi gerak motor pada P01 Line Following Robot",
+        "Menerapkan pembacaan jarak ultrasonik dan logika percabangan ambang 15 cm pada P02 Ultrasonic Obstacle Avoidance",
+        "Menguji kendali robot Tiny:bit melalui koneksi Bluetooth dan aplikasi Mbit pada P03 Smartphone Controlled Robot",
       ],
-      status: "upcoming",
+      status: "completed",
       accentColor: "sky",
       iconName: "cpu",
-      tools: ["Robot Tiny:bit", "BBC Micro:bit", "Microsoft MakeCode"],
-      projects: [],
-      notes: [],
-      tutorials: [],
+      tools: [
+        "BBC micro:bit V2",
+        "Yahboom Tiny:bit Robot",
+        "Microsoft MakeCode",
+        "Extension Tiny-bitLib",
+        "Aplikasi Mbit (Bluetooth)",
+      ],
+      projects: [
+        {
+          id: "tinybit-p03-smartphone-control",
+          title: "P03 — Smartphone Controlled Robot (Yahboom Tiny:bit & Mbit)",
+          subtitle: "Smart Robotics • Status Praktik: Pergerakan terdokumentasi; tidak semua fitur teruji",
+          description:
+            "Aplikasi Mbit pada smartphone mengirim perintah melalui Bluetooth ke BBC micro:bit V2 pada robot Tiny:bit. Robot menerima data, menafsirkan perintah, dan menggerakkan motor (komunikasi lokal Bluetooth, bukan IoT internet). Pergerakan robot di lantai terdokumentasi melalui cuplikan video praktik (P03_VF_01 & P03_VF_02) beserta antarmuka kendali aplikasi Mbit (P03_SS_30).",
+          image: "/assets/iot-microbit/KIT_PH_31_Tinybit_Robot.png",
+          gallery: [
+            {
+              src: "/assets/iot-microbit/KIT_PH_31_Tinybit_Robot.png",
+              caption:
+                "KIT_PH_31 — Foto robot Tiny:bit dengan micro:bit terpasang (Foto asli; Konversi PNG; metadata dihapus).",
+            },
+            {
+              src: "/assets/iot-microbit/P03_DG_01_Bluetooth.png",
+              caption:
+                "P03_DG_01 — Smartphone control - Komunikasi lokal, bukan IoT berbasis internet. (Diagram baru; Ilustrasi konseptual, tidak berskala).",
+            },
+            {
+              src: "/assets/iot-microbit/P03_SS_29_Panduan_QR.png",
+              caption:
+                "P03_SS_29 — Panduan Yahboom untuk aplikasi dan transfer kode; QR ditutup karena tautan belum diuji ulang. (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P03_SS_30_Aplikasi_Mbit.png",
+              caption:
+                "P03_SS_30 — Antarmuka Mbit: kontrol arah, musik dan informasi sensor (Screenshot asli; Konversi PNG; metadata dihapus).",
+            },
+            {
+              src: "/assets/iot-microbit/P03_VF_01_Robot_Lantai_A.png",
+              caption:
+                "P03_VF_01 — Robot berada pada posisi awal yang terlihat (Frame video asli; Crop area lantai (privasi); timestamp target: 1.0 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P03_VF_02_Robot_Lantai_B.png",
+              caption:
+                "P03_VF_02 — Posisi robot berbeda pada cuplikan berikutnya (Frame video asli; Crop area lantai (privasi); timestamp target: 4.5 s).",
+            },
+          ],
+          tags: [
+            "P03",
+            "Tiny:bit",
+            "micro:bit V2",
+            "Bluetooth Control",
+            "Aplikasi Mbit",
+            "Smart Robotics",
+          ],
+          date: "22 November 2026",
+          featured: true,
+        },
+        {
+          id: "tinybit-p01-p02-autonomous-robotics",
+          title: "P01 Line Following & P02 Ultrasonic Obstacle Avoidance",
+          subtitle:
+            "Smart Robotics • Status Praktik: Berhasil menurut pengguna (P01 tanpa dokumentasi khusus; P02 parameter dari salinan panduan)",
+          description:
+            "Dua proyek robotika otonom menggunakan Yahboom Tiny:bit dan extension Tiny-bitLib di MakeCode: (1) P01 Line Following Robot yang memanfaatkan dua sensor inframerah untuk mendeteksi pantulan jalur hitam di permukaan terang dan mengoreksi arah motor; serta (2) P02 Ultrasonic Obstacle Avoidance yang membaca jarak objek di depan sensor ultrasonik dan memutar arah robot ketika jarak < 15 cm.",
+          image: "/assets/iot-microbit/P02_DG_01_Obstacle.png",
+          gallery: [
+            {
+              src: "/assets/iot-microbit/P01_DG_01_Tracking.png",
+              caption:
+                "P01_DG_01 — Line following - Logika umum; parameter asli Yahboom belum diperiksa lengkap. (Diagram baru; Ilustrasi konseptual, tidak berskala).",
+            },
+            {
+              src: "/assets/iot-microbit/P02_DG_01_Obstacle.png",
+              caption:
+                "P02_DG_01 — Obstacle avoidance - Logika umum navigasi dengan sensor ultrasonik. (Diagram baru; Ilustrasi konseptual, tidak berskala).",
+            },
+          ],
+          tags: [
+            "P01",
+            "P02",
+            "Line Following",
+            "Ultrasonic Sensor",
+            "Tiny-bitLib",
+            "Autonomous Robot",
+          ],
+          date: "22 November 2026",
+          featured: false,
+        },
+      ],
+      notes: [
+        {
+          id: "note-tinybit-smart-robotics-summary",
+          title: "Dokumentasi Smart Robotics (P01, P02 & P03) — Yahboom Tiny:bit & micro:bit V2",
+          category: "Smart Robotics • P01–P03",
+          summary:
+            "Ringkasan teknis, logika sensor garis (P01), parameter ultrasonik 15 cm (P02), kendali Bluetooth Mbit (P03), serta batas validasi bukti.",
+          content: `SMART ROBOTICS DENGAN YAHBOOM TINY:BIT & BBC MICRO:BIT V2 (P01–P03)
+
+1. P01 — LINE FOLLOWING ROBOT
+• Status Praktik: Berhasil menurut pengguna; tidak ada foto/video khusus hasil tracking. Rujukan [R4] dan salinan panduan [R6].
+• Prinsip Kerja: Sensor inframerah membedakan pantulan permukaan terang dan gelap. Dua sensor membaca posisi relatif jalur; program menyesuaikan motor.
+• Algoritma Konseptual (Bukan Salinan Kode Pelatihan):
+  on start: show icon Heart (sesuai hasil panduan)
+  forever:
+    baca sensor kiri dan kanan
+    jika posisi jalur sesuai pusat: maju
+    jika jalur menyimpang ke kiri: koreksi kiri
+    jika jalur menyimpang ke kanan: koreksi kanan
+    jika jalur hilang / keadaan ambigu: berhenti (usulan aman)
+• Mengapa Robot Bergerak Zig-Zag?
+  Dua sensor memberi informasi diskret, sehingga koreksi dapat melampaui pusat jalur dan berulang ke arah sebaliknya. Kecepatan, jarak sensor ke lantai, kontras dan radius tikungan memengaruhi kestabilan.
+
+2. P02 — ULTRASONIC OBSTACLE AVOIDANCE
+• Status Praktik: Berhasil menurut pengguna; parameter dari salinan panduan [R7]; tanpa dokumentasi praktik khusus. Rujukan [R5].
+• Prinsip Kerja: Sensor ultrasonik memanfaatkan pantulan suara (Jarak = kecepatan suara × waktu bolak-balik / 2).
+• Rekonstruksi Referensi Panduan 6.3 [R7]:
+  forever:
+    set distance = ultrasonic return distance (cm)
+    if distance < 15 then:
+        CarCtrlSpeed Back, speed 80
+        pause 200 ms
+        CarCtrlSpeed SpinRight, speed 100
+        pause 200 ms
+    else:
+        CarCtrlSpeed Run, speed 80
+  (Catatan: Nilai speed adalah satuan parameter library, bukan cm/detik.)
+
+3. P03 — SMARTPHONE CONTROLLED ROBOT
+• Status Praktik: Pergerakan terdokumentasi (P03_VF_01 & P03_VF_02); tidak semua fitur aplikasi teruji ulang.
+• Prinsip Kerja: Aplikasi Mbit mengirim perintah melalui Bluetooth ke micro:bit. Ini komunikasi lokal, bukan Blynk atau IoT internet.`,
+          tips: [
+            "Pada P01, jangan mengasumsikan nilai sensor 0/1 tanpa mencatat kondisi masing-masing sensor kiri/kanan pada lintasan hitam dan putih di MakeCode.",
+            "Pada P02, uji nilai 0, timeout, atau data tidak valid; pada versi pengembangan, hentikan motor ketika pembacaan tidak dapat dipercaya.",
+            "Pada P03, jika robot tidak muncul di aplikasi Mbit, cek izin Bluetooth/nearby devices, firmware HEX yang cocok, daya baterai, dan jarak.",
+          ],
+          updatedAt: "2026-11-28",
+        },
+      ],
+      tutorials: [
+        {
+          id: "tut-tinybit-p01-p02-p03",
+          title: "Tutorial Smart Robotics Tiny:bit: Line Following (P01), Ultrasonic (P02) & Bluetooth (P03)",
+          subtitle:
+            "Panduan langkah demi langkah dan kriteria pengujian untuk 3 proyek robotika Yahboom Tiny:bit",
+          difficulty: "Pemula",
+          duration: "45 menit",
+          tools: [
+            "micro:bit V2",
+            "Yahboom Tiny:bit & Baterai",
+            "MakeCode + Tiny-bitLib",
+            "Arena Garis & Rintangan",
+            "Smartphone + Aplikasi Mbit",
+          ],
+          goal: "Memahami dan menguji fungsi robot otonom pengikut garis (P01), penghindar rintangan ultrasonik (P02), serta robot kendali smartphone via Bluetooth (P03).",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "P01 — Menyiapkan Arena & Menguji Line Following Robot",
+              description:
+                "1. Siapkan arena: buat jalur hitam matte di atas permukaan terang di dalam ruangan.\n2. Buka contoh resmi Yahboom 6.7 Tracking, unduh Tracking.hex bila tersedia atau tambahkan Tiny-bitLib di MakeCode.\n3. Gunakan blok Line_Sensor, CarCtrlSpeed/CarCtrlSpeed2, Logic dan forever.\n4. Transfer HEX dan uji dengan kecepatan rendah; amati koreksi pada lintasan lurus, tikungan, dan saat jalur hilang.",
+              image: "/assets/iot-microbit/P01_DG_01_Tracking.png",
+              codeSnippet: `on start: show icon Heart (sesuai hasil panduan)
+forever:
+  baca sensor kiri dan kanan
+  jika posisi jalur sesuai pusat: maju
+  jika jalur menyimpang ke kiri: koreksi kiri
+  jika jalur menyimpang ke kanan: koreksi kanan
+  jika jalur hilang / keadaan ambigu: berhenti (usulan aman)`,
+            },
+            {
+              stepNumber: 2,
+              title: "P02 — Menyusun Blok & Menguji Ultrasonic Obstacle Avoidance",
+              description:
+                "1. Pasang micro:bit pada Tiny:bit, periksa baterai dan sensor ultrasonik depan.\n2. Buka Yahboom 6.3 dan unduh Ultrasonic-obstacle-avoidance.hex atau susun blok Tiny-bitLib.\n3. Baca jarak ke variabel distance dan bandingkan dengan ambang 15 cm sesuai salinan panduan 6.3.\n4. Mulai uji di lantai kosong, lalu letakkan rintangan datar dan catat jarak saat robot menghindar.",
+              image: "/assets/iot-microbit/P02_DG_01_Obstacle.png",
+              codeSnippet: `forever:
+  set distance = ultrasonic return distance (cm)
+  if distance < 15 then:
+      CarCtrlSpeed Back, speed 80
+      pause 200 ms
+      CarCtrlSpeed SpinRight, speed 100
+      pause 200 ms
+  else:
+      CarCtrlSpeed Run, speed 80`,
+            },
+            {
+              stepNumber: 3,
+              title: "P03 — Menghubungkan Aplikasi Mbit & Menguji Kendali Bluetooth",
+              description:
+                "1. Instal aplikasi Mbit dari tautan resmi Yahboom yang kompatibel.\n2. Transfer HEX Bluetooth resmi yang cocok dengan micro:bit dan Tiny:bit.\n3. Nyalakan robot, aktifkan Bluetooth smartphone, dan lakukan pairing melalui aplikasi Mbit.\n4. Uji gerakan maju/mundur, kiri/kanan, perubahan speed, tombol stop, serta perilaku saat putus koneksi.",
+              image: "/assets/iot-microbit/P03_SS_30_Aplikasi_Mbit.png",
+              tip: "Jangan menganggap koneksi berhasil hanya karena perangkat terdeteksi di Bluetooth; uji setiap tombol arah di lantai kosong yang aman.",
+            },
+          ],
+        },
+      ],
     },
     {
       slug: "iot-microbit",
@@ -1479,21 +1674,509 @@ Gambar 2D statis dari internet dapat diubah menjadi efek filter wajah interaktif
       title: "Internet Of Things Dengan Microbit",
       shortTitle: "IoT Micro:bit",
       category: "IoT & Hardware",
-      tagline: "Menghubungkan sensor & aktuator Micro:bit ke internet untuk monitoring & kontrol pintar",
+      tagline:
+        "From Smart Robotics to IoT (P00–P06): Physical Computing, Smart Lighting NeoPixel (P04), IoT Smart Switch Blynk (P05), dan Rancangan Monitoring Suhu (P06)",
       summary:
-        "Merancang prototipe Internet of Things (IoT) menggunakan board BBC Micro:bit dan modul ekspansi Wi-Fi. Mempelajari cara membaca data sensor (suhu, cahaya, kelembapan) lalu mengirimkannya ke dashboard cloud secara real-time.",
+        "Paket pembelajaran lengkap 'Internet of Things dengan micro:bit — From Smart Robotics to IoT (Learn • Explore • Create)'. Mencakup 4 materi fundamental & katalog perangkat (BBC micro:bit V2, HoLa:BIT, NeoPixel P15 24 LED, ESP8266 UART TX P16/RX P2 115200 baud, Blynk IoT) serta 7 unit proyek berurutan (P00 Interactive LED & Sound, P01 Line Following, P02 Ultrasonic Obstacle Avoidance, P03 Smartphone Control, P04 Smart LED Light Controller, P05 IoT Smart Switch with Blynk V1, dan P06 IoT Temperature Monitoring V2).",
       learningGoals: [
-        "Memahami arsitektur dasar IoT (Sensor → Mikrokontroler → Internet → Dashboard)",
-        "Membaca nilai sensor bawaan dan eksternal pada Micro:bit",
-        "Mengirim dan menampilkan data sensor ke platform IoT secara langsung",
+        "Menjelaskan perbedaan robot otonom, kendali Bluetooth, otomasi lokal dan sistem Internet of Things (IoT)",
+        "Membuat program blok MakeCode dengan input, proses dan keluaran yang jelas pada micro:bit V2, Tiny:bit, dan HoLa:BIT",
+        "Mengendalikan cincin 24 LED RGB NeoPixel (pin P15, format RGB/GRB) secara lokal (P00, P04) maupun jarak jauh",
+        "Menghubungkan micro:bit ke layanan Blynk Cloud melalui modul Wi-Fi ESP8266 (UART TX P16, RX P2, 115200 baud) pada Virtual Pin V1 (P05) dan V2 (P06)",
+        "Menguji sistem secara bertahap, mencatat hasil aktual vs target, serta melakukan diagnosis troubleshooting dengan aman",
       ],
-      status: "upcoming",
+      status: "completed",
       accentColor: "sky",
       iconName: "wifi",
-      tools: ["BBC Micro:bit", "Modul Wi-Fi IoT", "MakeCode", "Dashboard IoT"],
-      projects: [],
-      notes: [],
-      tutorials: [],
+      tools: [
+        "BBC micro:bit V2",
+        "HoLa:BIT Expansion Board",
+        "ESP8266 Wi-Fi (TX P16 / RX P2)",
+        "24 RGB NeoPixel Ring (P15)",
+        "Yahboom Tiny:bit & Aplikasi Mbit",
+        "Microsoft MakeCode",
+        "Blynk IoT (V1 & V2)",
+      ],
+      projects: [
+        {
+          id: "iot-p05-smart-switch-blynk",
+          title: "P05 — IoT Smart Switch with Blynk (ESP8266 & 24 NeoPixel)",
+          subtitle:
+            "Internet of Things • Status Praktik: ON/OFF berhasil menurut pengguna; tidak ada uji latensi/reliabilitas",
+          description:
+            "Proyek IoT Smart Switch yang memanfaatkan Virtual Pin V1 di Blynk Cloud untuk mengendalikan cincin 24 LED NeoPixel (pin P15) pada board HoLa:BIT dan BBC micro:bit V2 melalui modul Wi-Fi ESP8266 (UART TX P16, RX P2, 115200 baud). Pengguna mengonfirmasi kendali ON/OFF berhasil menyalakan dan mematikan LED ring dari dashboard Blynk. Ini adalah prototipe LED tegangan rendah untuk edukasi, bukan saklar listrik AC rumah.",
+          image: "/assets/iot-microbit/P05_PH_33_Hasil_LED.png",
+          gallery: [
+            {
+              src: "/assets/iot-microbit/P05_PH_33_Hasil_LED.png",
+              caption:
+                "P05_PH_33 — Foto LED ring menyala; respons saklar dikonfirmasi pengguna (Foto asli; Konversi PNG; metadata dihapus).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_DG_01_Smart_Switch.png",
+              caption:
+                "P05_DG_01 — IoT Smart Switch - Alur perintah Blynk ke LED ring. (Diagram baru; Ilustrasi konseptual, tidak berskala).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_21_New_Template.png",
+              caption:
+                "P05_SS_21 — Tombol New Template, anotasi asli (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_08_New_Datastream.png",
+              caption:
+                "P05_SS_08 — Dialog datastream baru (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_15_Datastream_Saklar.png",
+              caption:
+                "P05_SS_15 — Konfigurasi datastream saklar V1 (Integer 0/1) (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_09_Widget_Box.png",
+              caption:
+                "P05_SS_09 — Pemilihan widget Switch pada Web Dashboard Blynk (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_25_Save_Dashboard.png",
+              caption:
+                "P05_SS_25 — Tombol Save dashboard, anotasi asli (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_26_New_Device_Anotasi.png",
+              caption:
+                "P05_SS_26 — Tombol New Device, identitas disamarkan (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_28_Auth_Token_Lokasi.png",
+              caption:
+                "P05_SS_28 — Lokasi kolom Auth Token; nilai disamarkan (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_23_Extension_NeoPixel.png",
+              caption:
+                "P05_SS_23 — Pencarian extension NeoPixel di MakeCode (Screenshot asli; Konversi PNG; metadata dihapus).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_24_Extension_ESP8266.png",
+              caption:
+                "P05_SS_24 — Pencarian extension ESP8266 di MakeCode (Screenshot asli; Konversi PNG; metadata dihapus).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_17_Loop_Saklar.png",
+              caption:
+                "P05_SS_17 — Loop pembacaan Blynk dan kondisi LED; token ditutup (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_27_Read_Blynk.png",
+              caption:
+                "P05_SS_27 — Detail blok read Blynk; token disamarkan (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P05_SS_18_Dashboard_Device.png",
+              caption:
+                "P05_SS_18 — Dashboard device dengan switch aktif; bukan bukti koneksi sendiri (Screenshot asli; Mask permanen / crop).",
+            },
+          ],
+          tags: [
+            "P05",
+            "Blynk IoT",
+            "ESP8266 WiFi",
+            "Virtual Pin V1",
+            "HoLa:BIT",
+            "NeoPixel P15",
+          ],
+          date: "22 November 2026",
+          featured: true,
+        },
+        {
+          id: "iot-p00-p04-neopixel-led-controller",
+          title: "P00 Interactive LED & Sound + P04 Smart LED Light Controller",
+          subtitle:
+            "Latihan Dasar & Smart Lighting • Status Praktik: LED merah (P00) & pelangi (P04) terdokumentasi secara lokal",
+          description:
+            "Eksplorasi komputasi fisik dan otomasi pencahayaan lokal menggunakan BBC micro:bit V2, board HoLa:BIT, dan cincin 24 LED RGB NeoPixel pada pin P15: (1) P00 memprogram event tombol A dan B untuk menyalakan warna LED, ikon, dan nada (audio keluaran belum diverifikasi); serta (2) P04 memprogram animasi rotasi pelangi (showRainbow 1–360 dan rotate 1) di dalam buffer NeoPixel.",
+          image: "/assets/iot-microbit/P04_VF_03_LED_Rainbow.png",
+          gallery: [
+            {
+              src: "/assets/iot-microbit/KIT_PH_32_HolaBIT_Board.png",
+              caption:
+                "KIT_PH_32 — Foto close-up perangkat HoLa:BIT dan micro:bit; area layar dipotong. (Foto asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P00_SS_01_MakeCode_Home.png",
+              caption:
+                "P00_SS_01 — Halaman awal MakeCode (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P00_SS_02_New_Project.png",
+              caption:
+                "P00_SS_02 — Dialog membuat proyek di MakeCode (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P00_SS_03_Editor_Awal.png",
+              caption:
+                "P00_SS_03 — Editor blok dan simulator awal (Screenshot asli; Mask permanen / crop).",
+            },
+            {
+              src: "/assets/iot-microbit/P00_VF_04_Blok_Overview.png",
+              caption:
+                "P00_VF_04 — Editor dengan event tombol A dan B (Frame video asli; Mask area bawah layar; timestamp target: 22.0 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P00_VF_01_Blok_Tombol.png",
+              caption:
+                "P00_VF_01 — Blok event tombol dan output (Frame video asli; Mask area bawah layar; timestamp target: 1.0 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P00_VF_02_LED_Merah.png",
+              caption:
+                "P00_VF_02 — LED ring merah menyala; tangan peserta terlihat (Frame video asli; tanpa audio; timestamp target: 7.5 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P04_VF_01_Blok_Rainbow.png",
+              caption:
+                "P04_VF_01 — Blok animasi NeoPixel pada layar (Frame video asli; Mask area bawah layar; timestamp target: 1.0 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P04_VF_02_Simulator.png",
+              caption:
+                "P04_VF_02 — Simulator dan editor MakeCode (Frame video asli; Mask area bawah layar; timestamp target: 4.3 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P04_VF_03_LED_Rainbow.png",
+              caption:
+                "P04_VF_03 — LED ring menampilkan beberapa warna pelangi (Frame video asli; tanpa audio; timestamp target: 8.6 s).",
+            },
+            {
+              src: "/assets/iot-microbit/P04_DG_01_NeoPixel.png",
+              caption:
+                "P04_DG_01 — Animasi RGB NeoPixel - Rekonstruksi logika berdasarkan video praktik. (Diagram baru; Ilustrasi konseptual).",
+            },
+          ],
+          tags: [
+            "P00",
+            "P04",
+            "NeoPixel P15",
+            "HoLa:BIT",
+            "Smart Lighting",
+            "Physical Computing",
+          ],
+          date: "22–24 November 2026",
+          featured: true,
+        },
+        {
+          id: "iot-p06-temperature-monitoring-design",
+          title: "P06 — IoT Temperature Monitoring (Rancangan Perbaikan Sensor Internal V2)",
+          subtitle:
+            "Internet of Things • Status Praktik: Belum berhasil saat pelatihan; rancangan perbaikan belum dikompilasi atau diuji fisik",
+          description:
+            "Dokumentasi analisis dan rancangan perbaikan untuk proyek pemantauan suhu IoT ke Virtual Pin V2 di Blynk Cloud. Menggunakan sensor suhu internal prosesor BBC micro:bit V2 (input.temperature() dalam °C — tanpa sensor eksternal DHT11/DHT22, tanpa kelembapan, dan tanpa kipas/aktuator) yang dikirim melalui modul ESP8266 setiap 10 detik disertai indikator ikon Happy/Sad/No.",
+          image: "/assets/iot-microbit/P06_DG_01_Temperature.png",
+          gallery: [
+            {
+              src: "/assets/iot-microbit/P06_DG_01_Temperature.png",
+              caption:
+                "P06_DG_01 — IoT Temperature Monitoring - Rancangan perbaikan; belum diuji pada hardware. (Diagram baru; Ilustrasi konseptual, tidak berskala).",
+            },
+          ],
+          tags: [
+            "P06",
+            "Temperature Monitoring",
+            "Internal Sensor",
+            "Virtual Pin V2",
+            "Rancangan Perbaikan",
+          ],
+          date: "24 November 2026",
+          featured: false,
+        },
+      ],
+      notes: [
+        {
+          id: "note-iot-microbit-fundamental-katalog",
+          title: "Fundamental IoT, Katalog Perangkat (Tiny:bit & HoLa:BIT) & Konfigurasi Pin",
+          category: "Bagian I • Fundamental & Perangkat",
+          summary:
+            "Perbedaan sistem lokal vs IoT internet, spesifikasi BBC micro:bit V2, HoLa:BIT, NeoPixel P15, UART ESP8266 (TX P16/RX P2 115200), dan daftar software/extension.",
+          content: `FUNDAMENTAL KNOWLEDGE & KATALOG ALAT — INTERNET OF THINGS DENGAN MICRO:BIT
+("From Smart Robotics to IoT — Learn • Explore • Create")
+
+1. PERBEDAAN PERANGKAT LOKAL DAN SISTEM IOT
+• Physical computing (P00): Tombol → kode → LED/suara (Tanpa internet)
+• Robotika otonom (P01, P02): Sensor → logika → motor (Tanpa internet)
+• Bluetooth (P03): Smartphone → robot via aplikasi Mbit (Tanpa internet)
+• Otomasi lokal (P04): Animasi NeoPixel rainbow & rotate (Tanpa internet)
+• Remote control IoT (P05): Blynk Cloud (V1) → ESP8266 → micro:bit → LED NeoPixel (Menggunakan internet)
+• Monitoring IoT (P06): Sensor suhu internal micro:bit → ESP8266 → Blynk Cloud (V2) (Menggunakan internet)
+
+2. KONFIGURASI TEKNIS HOLA:BIT, NEOPIXEL & ESP8266
+• Pengendali utama: BBC micro:bit V2 (LED 5×5, tombol A/B, sensor suhu internal prosesor, Bluetooth, speaker).
+• Expansion board: HoLa:BIT / Sharing School (teridentifikasi secara visual; skema PCB resmi belum diperoleh).
+• NeoPixel Ring: Pin P15, 24 LED, format RGB (urutan kanal warna GRB).
+• Modul Wi-Fi ESP8266: Memerlukan firmware AT dan jaringan Wi-Fi 2,4 GHz (hindari captive portal).
+• Komunikasi UART micro:bit ↔ ESP8266: TX micro:bit P16 → RX ESP8266; TX ESP8266 → RX micro:bit P2; Baud rate 115200; GND bersama.
+• Sensor Suhu (P06): Internal prosesor micro:bit; TIDAK menggunakan DHT11/DHT22, kelembapan, atau kipas.
+
+3. SOFTWARE & EXTENSION MAKECODE
+• MakeCode Editor: https://makecode.microbit.org/
+• Tiny-bitLib: github.com/YahboomTechnology/Tiny-bitLib (motor, sensor tracking & jarak P01–P03)
+• NeoPixel: Paket resmi Microsoft di MakeCode (pxt-neopixel)
+• ESP8266 WiFi: Cytron Technologies pxt-esp8266 v2.0.1 (menggunakan HTTP port 80 pada versi yang diperiksa MKB [R13], bukan HTTPS)
+• Blynk IoT: Template, Device, Datastream (Virtual Pin V1 & V2), Switch, dan Gauge/Value Display.`,
+          tips: [
+            "Jangan pernah mempublikasikan Auth Token Blynk, SSID, password Wi-Fi asli, atau file HEX yang masih berisi kredensial ke repositori publik.",
+            "Virtual Pin V1 dan V2 adalah alamat saluran data logis di Blynk Cloud, bukan pin GPIO fisik pada board micro:bit.",
+            "Koneksi Wi-Fi yang berhasil saja belum membuktikan komunikasi API Blynk berhasil; selalu periksa status isBlynkUpdated().",
+          ],
+          updatedAt: "2026-11-28",
+        },
+        {
+          id: "note-iot-microbit-validasi-troubleshooting",
+          title: "Status Validasi P00–P06, Troubleshooting, Glosarium & Referensi R1–R15",
+          category: "Bagian II • Validasi, Troubleshooting & Referensi",
+          summary:
+            "Rekap status hasil praktik P00–P06 berdasarkan Master Knowledge Base v1.0, panduan diagnosis bertahap, glosarium 12 istilah inti, dan daftar referensi R1–R15.",
+          content: `STATUS HASIL PRAKTIK & BATAS BUKTI (MASTER KNOWLEDGE BASE v1.0)
+
+• P00 (Interactive LED & Sound): Observed — LED merah tampak; event A/B terlihat. Audio keluaran belum diperiksa.
+• P01 (Line Following Robot): User confirmed — Berhasil menurut pengguna; tidak ada foto/video proyek; blok asli belum lengkap.
+• P02 (Ultrasonic Obstacle Avoidance): User confirmed — Berhasil menurut pengguna; parameter (ambang 15 cm, speed 80/100, pause 200 ms) berasal dari salinan panduan 6.3 [R7].
+• P03 (Smartphone Controlled Robot): Observed — Robot berpindah posisi pada video (P03_VF_01 & P03_VF_02); tidak semua fitur aplikasi Mbit teruji.
+• P04 (Smart LED Light Controller): Observed — LED ring menyala warna-warni (P04_VF_03); otomasi lokal, tidak terlihat kontrol internet.
+• P05 (IoT Smart Switch with Blynk): User confirmed — ON/OFF Blynk berhasil menurut pengguna (P05_PH_33); belum ada pengukuran latensi/reliabilitas.
+• P06 (IoT Temperature Monitoring): Analysis / recommendation — Belum berhasil saat pelatihan; menggunakan sensor suhu internal micro:bit; rancangan perbaikan pada V2 belum dikompilasi atau diuji fisik.
+
+PRINSIP TROUBLESHOOTING & KEAMANAN
+1. Uji satu fungsi pada satu waktu (misal pada P05: uji LED lokal di P15 → uji init ESP8266 → uji koneksi Wi-Fi 2,4 GHz → uji datastream V1 → uji loop read Blynk).
+2. Pada P06, uji sensor suhu lokal terlebih dahulu (on button A → show number temperature °C), lalu uji pengiriman angka tetap "25" ke V2 sebelum mengirim nilai variabel suhu.
+3. Gunakan perangkat tegangan rendah sesuai manual; jangan pernah menghubungkan GPIO atau LED ke listrik AC rumah.
+
+REFERENSI TEKNIS (R1–R15)
+[R1] micro:bit features — https://microbit.org/get-started/features/
+[R2] MakeCode Temperature — https://makecode.microbit.org/reference/input/temperature
+[R3] MakeCode Editor — https://makecode.microbit.org/
+[R4] Yahboom 6.7 Tracking — https://www.yahboom.net/study/Tiny_bit/2690/
+[R5] Yahboom 6.3 Ultrasonic — https://www.yahboom.net/study/Tiny_bit/2686/
+[R6] Salinan panduan 6.7 Tracking — https://baranyilaszlozsolt.com/pciskola/tinybit/6.07.Tracking.pdf
+[R7] Salinan panduan 6.3 Ultrasonic — https://baranyilaszlozsolt.com/pciskola/tinybit/6.03.Ultrasonic.obstacle.avoidance.pdf
+[R8] Microsoft NeoPixel — https://makecode.microbit.org/pkg/microsoft/pxt-neopixel
+[R9] Blynk Device HTTPS API — https://docs.blynk.io/en/blynk.cloud/device-https-api
+[R10] Blynk Switch — https://docs.blynk.io/en/blynk.apps/widgets-controllers/switch
+[R11] Blynk Value Display — https://docs.blynk.io/en/blynk.apps/widgets-displays/value-display
+[R12] Cytron ESP8266 extension v2.0.1 — https://makecode.microbit.org/pkg/CytronTechnologies/pxt-esp8266
+[R13] Cytron pxt-esp8266 source code — https://github.com/CytronTechnologies/pxt-esp8266
+[R14] Yahboom Tiny-bitLib — https://github.com/YahboomTechnology/Tiny-bitLib
+[R15] Yahboom Tiny:bit course / app — https://www.yahboom.net/study/Tiny_bit`,
+          tips: [
+            "Jangan menyimpulkan proyek jaringan (P05/P06) berhasil hanya dari tampilan simulator MakeCode atau status ikon di layar.",
+            "Pada P06, panas dari prosesor dan board dapat memengaruhi pembacaan sensor suhu internal; hindari menutup sensor atau memegang chip selama pengamatan.",
+          ],
+          updatedAt: "2026-11-28",
+        },
+      ],
+      tutorials: [
+        {
+          id: "tut-iot-p00-p04-neopixel",
+          title: "Tutorial P00 & P04: Dasar MakeCode, Interactive LED & Smart LED Light Controller",
+          subtitle:
+            "Latihan dasar event tombol A/B (P00) dan animasi rotasi pelangi 24 NeoPixel pada pin P15 (P04)",
+          difficulty: "Pemula",
+          duration: "35 menit",
+          tools: [
+            "BBC micro:bit V2",
+            "HoLa:BIT Board",
+            "24 NeoPixel Ring (Pin P15)",
+            "Kabel USB Data",
+            "MakeCode + Extension NeoPixel",
+          ],
+          goal: "Peserta mampu membuat proyek di MakeCode, menambahkan extension NeoPixel pada pin P15 (24 LED, format RGB/GRB), memprogram event tombol A/B (P00), serta membuat animasi rotasi warna pelangi otomatis (P04).",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "P00 — Membuka MakeCode & Membuat Proyek Baru",
+              description:
+                "Buka makecode.microbit.org → klik New Project → beri nama proyek. Kenali bagian simulator, daftar kategori blok, dan area kerja (workspace).",
+              image: "/assets/iot-microbit/P00_SS_01_MakeCode_Home.png",
+            },
+            {
+              stepNumber: 2,
+              title: "P00 — Menyusun Blok Event Tombol A & B untuk NeoPixel",
+              description:
+                "Tambahkan extension NeoPixel. Pada blok on start, inisialisasi strip NeoPixel pada pin P15 dengan 24 LED (mode RGB), atur brightness 50, clear, dan show.\n\nTambahkan event on button A pressed untuk menampilkan warna merah + ikon Heart + nada pendek, serta on button B pressed untuk warna biru + ikon Happy.",
+              image: "/assets/iot-microbit/P00_VF_04_Blok_Overview.png",
+              codeSnippet: `on start: set strip = NeoPixel P15, 24 LEDs, RGB
+  set brightness 50; clear; show
+on button A pressed: show color red; show icon Heart
+  play tone (pilih nada pendek pada Music)
+on button B pressed: show color blue; show icon Happy
+  play tone (pilih nada berbeda)`,
+              tip: "Status praktik P00: LED merah menyala dan event A/B terdokumentasi pada video; audio keluaran belum diverifikasi.",
+            },
+            {
+              stepNumber: 3,
+              title: "P04 — Memprogram Animasi Pelangi & Rotasi Buffer NeoPixel",
+              description:
+                "Untuk proyek P04 (Smart LED Light Controller), buat strip NeoPixel pada DigitalPin.P15 dengan 24 LED mode RGB, tampilkan pola pelangi awal dengan showRainbow(1, 360), lalu di dalam forever jalankan rotate(1) diikuti show() agar warna bergeser mengelilingi cincin LED.",
+              image: "/assets/iot-microbit/P04_VF_03_LED_Rainbow.png",
+              codeSnippet: `let strip = neopixel.create(
+    DigitalPin.P15, 24, NeoPixelMode.RGB)
+strip.showRainbow(1, 360)
+basic.forever(function () {
+    strip.rotate(1)
+    strip.show()
+})`,
+              tip: "Status praktik P04: LED berwarna terdokumentasi pada video; ini adalah otomasi lokal, bukan IoT internet.",
+            },
+          ],
+        },
+        {
+          id: "tut-iot-p05-smart-switch-blynk",
+          title: "Tutorial P05: IoT Smart Switch with Blynk (ESP8266 & NeoPixel P15)",
+          subtitle:
+            "Panduan lengkap konfigurasi Template, Datastream V1, Widget Switch, Auth Token di Blynk Cloud, dan pemrograman ESP8266 di MakeCode",
+          difficulty: "Menengah",
+          duration: "50 menit",
+          tools: [
+            "BBC micro:bit V2 & HoLa:BIT",
+            "Modul Wi-Fi ESP8266 (TX P16, RX P2, 115200)",
+            "24 NeoPixel (Pin P15)",
+            "Wi-Fi 2,4 GHz",
+            "MakeCode (Extension NeoPixel & ESP8266 WiFi)",
+            "Akun Blynk IoT",
+          ],
+          goal: "Peserta mampu mengonfigurasi Virtual Pin V1 dan widget Switch di Blynk Cloud, menghubungkan micro:bit ke Wi-Fi melalui ESP8266, serta mengendalikan ON/OFF 24 LED NeoPixel dari jarak jauh.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Membuat Template & Datastream Virtual Pin V1 di Blynk",
+              description:
+                "1. Masuk ke Blynk.Console lalu klik New Template.\n2. Buka tab Datastreams → New Datastream → Virtual Pin.\n3. Isi Name/alias: saklar / Saklar, Virtual Pin: V1, Data Type: Integer, Min: 0, Max: 1, Default: 0, lalu simpan.",
+              image: "/assets/iot-microbit/P05_SS_15_Datastream_Saklar.png",
+            },
+            {
+              stepNumber: 2,
+              title: "Menambahkan Widget Switch, Membuat Device & Menyalin Auth Token",
+              description:
+                "1. Pada Web Dashboard tarik widget Switch ke kanvas, hubungkan ke datastream V1, lalu klik Save.\n2. Masuk ke menu Devices → New Device → From Template yang baru dibuat.\n3. Salin Auth Token device secara privat untuk dimasukkan ke program latihan lokal.",
+              image: "/assets/iot-microbit/P05_SS_09_Widget_Box.png",
+              tip: "Jangan pernah membagikan screenshot atau file HEX yang menampilkan Auth Token dan password Wi-Fi asli secara terbuka.",
+            },
+            {
+              stepNumber: 3,
+              title: "Menambahkan Extension NeoPixel & ESP8266 WiFi di MakeCode",
+              description:
+                "Di editor MakeCode, buka Extensions lalu cari dan tambahkan dua paket: (1) NeoPixel dan (2) ESP8266 WiFi (Cytron pxt-esp8266 v2.0.1).",
+              image: "/assets/iot-microbit/P05_SS_24_Extension_ESP8266.png",
+            },
+            {
+              stepNumber: 4,
+              title: "Menyusun Program Inisialisasi & Loop Pembacaan Blynk V1",
+              description:
+                "Susun blok inisialisasi NeoPixel (P15, 24 LED, RGB) dan ESP8266 (TX P16, RX P2, BaudRate 115200) beserta koneksi Wi-Fi. Di dalam forever, baca nilai V1 dari Blynk: jika bernilai 1 nyalakan NeoPixel warna putih, jika 0 matikan LED (clear & show).",
+              image: "/assets/iot-microbit/P05_SS_17_Loop_Saklar.png",
+              codeSnippet: `let strip = neopixel.create(DigitalPin.P15, 24, NeoPixelMode.RGB)
+strip.setBrightness(50)
+strip.clear()
+strip.show()
+let ssid = "NAMA_WIFI"
+let password = "PASSWORD_WIFI"
+let token = "DEVICE_AUTH_TOKEN"
+esp8266.init(SerialPin.P16, SerialPin.P2, BaudRate.BaudRate115200)
+basic.forever(function () {
+    let on = false
+    if (esp8266.isESP8266Initialized()) {
+        if (!esp8266.isWifiConnected()) {
+            esp8266.connectWiFi(ssid, password)
+        }
+        if (esp8266.isWifiConnected()) {
+            let value = esp8266.readBlynk(token, "V1")
+            if (esp8266.isBlynkUpdated()) {
+                on = (value == "1")
+            }
+        }
+    }
+    if (on) { strip.showColor(neopixel.colors(NeoPixelColors.White)) }
+    else { strip.clear(); strip.show() }
+    basic.pause(3000)
+})`,
+            },
+            {
+              stepNumber: 5,
+              title: "Menguji Respons Saklar ON/OFF pada Perangkat Fisik",
+              description:
+                "Lakukan pengujian bertahap: pastikan LED lokal berfungsi, init ESP8266 berhasil, Wi-Fi 2,4 GHz tersambung, lalu ubah posisi Switch V1 di dashboard Blynk (OFF → ON → OFF) dan amati nyala cincin LED NeoPixel.",
+              image: "/assets/iot-microbit/P05_PH_33_Hasil_LED.png",
+              tip: "Status praktik P05: ON/OFF berhasil menurut konfirmasi pengguna; belum ada pengujian latensi atau reliabilitas jangka panjang.",
+            },
+          ],
+        },
+        {
+          id: "tut-iot-p06-temperature-monitoring",
+          title: "Tutorial P06: IoT Temperature Monitoring (Rancangan Perbaikan Sensor Internal V2)",
+          subtitle:
+            "Panduan rancangan perbaikan pengiriman data suhu internal micro:bit ke Virtual Pin V2 Blynk Cloud",
+          difficulty: "Menengah",
+          duration: "45 menit",
+          tools: [
+            "BBC micro:bit V2 (Sensor Suhu Internal)",
+            "HoLa:BIT & ESP8266 Wi-Fi",
+            "Wi-Fi 2,4 GHz",
+            "MakeCode + Extension ESP8266 WiFi",
+            "Blynk IoT (Virtual Pin V2, Gauge / Value Display)",
+          ],
+          goal: "Memahami rancangan perbaikan proyek monitoring suhu IoT menggunakan sensor suhu internal micro:bit (tanpa DHT22) dan metode pengujian bertahap ke Virtual Pin V2 Blynk.",
+          steps: [
+            {
+              stepNumber: 1,
+              title: "Menguji Sensor Suhu Internal secara Lokal",
+              description:
+                "Sebelum menggunakan jaringan Wi-Fi, buat program uji lokal sederhana: on button A pressed → show number (temperature °C). Transfer ke micro:bit dan tekan tombol A untuk memastikan pembacaan suhu chip tampil normal.",
+              image: "/assets/iot-microbit/P06_DG_01_Temperature.png",
+              tip: "Status praktik P06: Belum berhasil saat pelatihan. Tutorial ini adalah rancangan perbaikan yang belum dikompilasi atau diuji pada hardware fisik.",
+            },
+            {
+              stepNumber: 2,
+              title: "Mengonfigurasi Datastream V2 & Widget Gauge di Blynk",
+              description:
+                "Tambahkan datastream Virtual Pin V2 (Name: Temperature / Suhu, Data type: Integer, Min: 0, Max: 60, Default: 0, Unit: °C). Pasang widget Gauge atau Value Display di dashboard Blynk dan hubungkan ke V2.\n\nLakukan tes API terlebih dahulu dengan mengirim angka tetap \"25\" menggunakan blok write Blynk sebelum mengirim nilai sensor.",
+            },
+            {
+              stepNumber: 3,
+              title: "Menyusun Blok / Kode Referensi Pengiriman Suhu ke V2",
+              description:
+                "Susun blok inisialisasi ESP8266 (TX P16, RX P2, 115200) dan koneksi Wi-Fi. Di dalam forever, simpan pembacaan input.temperature() ke variabel suhu, kirim ke V2 menggunakan writeBlynk, tampilkan ikon Happy jika isBlynkUpdated() berhasil (atau Sad/No jika gagal), dan beri jeda 10.000 ms (10 detik).",
+              codeSnippet: `let suhu = 0
+let token = "DEVICE_AUTH_TOKEN"
+let ssid = "NAMA_WIFI"
+let password = "PASSWORD_WIFI"
+esp8266.init(SerialPin.P16, SerialPin.P2, BaudRate.BaudRate115200)
+if (esp8266.isESP8266Initialized()) {
+    esp8266.connectWiFi(ssid, password)
+} else {
+    basic.showIcon(IconNames.No)
+}
+basic.forever(function () {
+    suhu = input.temperature()
+    if (esp8266.isESP8266Initialized()) {
+        if (!esp8266.isWifiConnected()) {
+            esp8266.connectWiFi(ssid, password)
+        }
+        if (esp8266.isWifiConnected()) {
+            esp8266.writeBlynk(token, "V2", "" + suhu)
+            if (esp8266.isBlynkUpdated()) {
+                basic.showIcon(IconNames.Happy)
+            } else {
+                basic.showIcon(IconNames.Sad)
+            }
+        } else { basic.showIcon(IconNames.No) }
+    } else { basic.showIcon(IconNames.No) }
+    basic.pause(10000)
+})`,
+              tip: "Jangan menyatakan P06 berhasil sebelum seluruh 5 tahap pada lembar pengujian ulang (sensor lokal, init+Wi-Fi, V2 angka 25, V2 suhu aktual, perubahan suhu & update) diuji dan lulus pada perangkat fisik.",
+            },
+          ],
+        },
+      ],
     },
 
     // ==================== HARI KE-3 ====================
