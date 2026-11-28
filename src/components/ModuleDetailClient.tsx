@@ -28,6 +28,7 @@ import { ModuleIcon } from "@/components/ModuleIcon";
 import { StlViewer } from "@/components/StlViewer";
 import { ImageLightbox } from "@/components/ImageLightbox";
 import { MathBattleShowcase } from "@/components/MathBattleShowcase";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 type TabKey = "projects" | "notes" | "tutorials";
 
@@ -152,7 +153,7 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
 
       {/* ==================== 3 INTERACTIVE TABS ==================== */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="-mt-6 mb-8 flex flex-wrap gap-2 rounded-2xl border border-slate-200 bg-white p-2 shadow-lg shadow-slate-900/5">
+        <div className="-mt-6 mb-8 flex flex-wrap gap-2 rounded-2xl border border-white/90 bg-white/75 p-2 shadow-xl shadow-slate-900/5 backdrop-blur-xl">
           <button
             onClick={() => setActiveTab("projects")}
             className={`flex-1 min-w-[160px] inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold transition cursor-pointer ${
@@ -227,9 +228,9 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
               />
             ) : (
               mod.projects.map((proj) => (
+                <ScrollReveal key={proj.id} direction="up">
                 <article
-                  key={proj.id}
-                  className="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm"
+                  className="glass-panel overflow-hidden rounded-3xl"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-12">
                     {/* Left Image */}
@@ -400,6 +401,7 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                     </div>
                   )}
                 </article>
+                </ScrollReveal>
               ))
             )}
           </div>
@@ -416,9 +418,9 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
               />
             ) : (
               mod.notes.map((note) => (
+                <ScrollReveal key={note.id} direction="up">
                 <article
-                  key={note.id}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-6"
+                  className="glass-panel rounded-3xl p-6 sm:p-8 space-y-6"
                 >
                   <div className="flex flex-wrap items-start justify-between gap-3 border-b border-slate-100 pb-4">
                     <div>
@@ -488,6 +490,7 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                     </div>
                   )}
                 </article>
+                </ScrollReveal>
               ))
             )}
           </div>
@@ -504,9 +507,9 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
               />
             ) : (
               mod.tutorials.map((tut) => (
+                <ScrollReveal key={tut.id} direction="up">
                 <article
-                  key={tut.id}
-                  className="rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-6"
+                  className="glass-panel rounded-3xl p-6 sm:p-8 space-y-6"
                 >
                   {/* Tutorial Header */}
                   <div className="border-b border-slate-100 pb-5 space-y-3">
@@ -623,6 +626,7 @@ export function ModuleDetailClient({ slug }: { slug: string }) {
                     </div>
                   )}
                 </article>
+                </ScrollReveal>
               ))
             )}
           </div>

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { usePortfolio } from "@/lib/store";
 import { ACCENT_STYLES } from "@/lib/theme";
+import { ScrollReveal } from "@/components/ScrollReveal";
 
 export default function TutorialNotesPage() {
   const { data } = usePortfolio();
@@ -72,117 +73,122 @@ export default function TutorialNotesPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 space-y-8">
       {/* Header & Search */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-7 sm:p-9 shadow-sm space-y-5">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div className="space-y-2 max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-orange-100 px-3 py-1 text-xs font-bold text-[#d95311]">
-              <BookOpen className="h-3.5 w-3.5" /> NEXORANESIA Academy • Tim IT Pondok Tholabie
-            </span>
-            <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">
-              Pusat Artikel, Modul &amp; Panduan Teknologi
-            </h1>
-            <p className="text-sm sm:text-base text-slate-600">
-              Perpustakaan materi pembelajaran dan pengembangan teknologi terbuka yang dikelola oleh{" "}
-              <strong>NEXORANESIA — Tim IT Pondok Tholabie</strong> — berisi modul pembelajaran,
-              tutorial praktik langkah demi langkah, panduan pembuatan project, dokumentasi hasil
-              praktik, dan referensi belajar teknologi.
-            </p>
+      <ScrollReveal direction="up">
+        <div className="glass-panel rounded-3xl p-7 sm:p-9 space-y-5">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div className="space-y-2 max-w-2xl">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-blue-100/90 border border-blue-200/80 px-3 py-1 text-xs font-bold text-blue-900">
+                <BookOpen className="h-3.5 w-3.5" /> Teaching &amp; Learning Hub • Learning Resources
+              </span>
+              <h1 className="font-display text-3xl sm:text-4xl font-extrabold text-slate-900">
+                Teaching &amp; Learning Hub
+              </h1>
+              <p className="text-sm sm:text-base text-slate-600">
+                Perpustakaan materi pembelajaran digital terbuka di{" "}
+                <strong>Personal Digital Lab</strong> — berisi materi pembelajaran, tutorial praktik,
+                panduan pembuatan project, dokumentasi hasil praktik, dan referensi belajar teknologi
+                yang dapat dibaca siapa saja.
+              </p>
+            </div>
+
+            <div className="relative w-full md:w-96">
+              <Search className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
+              <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Cari tutorial, catatan, shortcut..."
+                className="w-full rounded-2xl border border-white/90 bg-white/80 py-3 pl-10 pr-4 text-sm text-slate-900 shadow-sm backdrop-blur-md focus:border-blue-500 focus:bg-white focus:outline-none"
+              />
+            </div>
           </div>
 
-          <div className="relative w-full md:w-96">
-            <Search className="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400" />
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Cari tutorial, catatan, shortcut..."
-              className="w-full rounded-2xl border border-slate-200 bg-slate-50 py-3 pl-10 pr-4 text-sm text-slate-900 focus:border-violet-500 focus:bg-white focus:outline-none"
-            />
+          <div className="flex flex-wrap gap-2 border-t border-slate-200/60 pt-5">
+            <button
+              onClick={() => setTab("all")}
+              className={`rounded-full px-4 py-1.5 text-xs font-bold transition cursor-pointer ${
+                tab === "all"
+                  ? "bg-slate-900 text-white shadow-sm"
+                  : "glass-pill text-slate-600 hover:bg-white"
+              }`}
+            >
+              Semua ({filteredTutorials.length + filteredNotes.length})
+            </button>
+            <button
+              onClick={() => setTab("tutorials")}
+              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold transition cursor-pointer ${
+                tab === "tutorials"
+                  ? "bg-emerald-600 text-white shadow-sm"
+                  : "glass-pill text-slate-600 hover:bg-white"
+              }`}
+            >
+              <GraduationCap className="h-3.5 w-3.5" /> Tutorial Siap Ajar ({filteredTutorials.length})
+            </button>
+            <button
+              onClick={() => setTab("notes")}
+              className={`inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold transition cursor-pointer ${
+                tab === "notes"
+                  ? "bg-amber-500 text-white shadow-sm"
+                  : "glass-pill text-slate-600 hover:bg-white"
+              }`}
+            >
+              <StickyNote className="h-3.5 w-3.5" /> Catatan &amp; Shortcut ({filteredNotes.length})
+            </button>
           </div>
         </div>
-
-        <div className="flex flex-wrap gap-2 border-t border-slate-100 pt-5">
-          <button
-            onClick={() => setTab("all")}
-            className={`rounded-full px-4 py-1.5 text-xs font-bold transition cursor-pointer ${
-              tab === "all"
-                ? "bg-slate-900 text-white"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            Semua ({filteredTutorials.length + filteredNotes.length})
-          </button>
-          <button
-            onClick={() => setTab("tutorials")}
-            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold transition cursor-pointer ${
-              tab === "tutorials"
-                ? "bg-emerald-600 text-white"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            <GraduationCap className="h-3.5 w-3.5" /> Tutorial Siap Ajar ({filteredTutorials.length})
-          </button>
-          <button
-            onClick={() => setTab("notes")}
-            className={`inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold transition cursor-pointer ${
-              tab === "notes"
-                ? "bg-amber-500 text-white"
-                : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-            }`}
-          >
-            <StickyNote className="h-3.5 w-3.5" /> Catatan & Shortcut ({filteredNotes.length})
-          </button>
-        </div>
-      </div>
+      </ScrollReveal>
 
       {/* Tutorials Section */}
       {(tab === "all" || tab === "tutorials") && (
         <section className="space-y-4">
-          <h2 className="font-display text-2xl font-extrabold text-slate-900 flex items-center gap-2">
-            <GraduationCap className="h-6 w-6 text-emerald-600" />
-            Tutorial Step-by-Step ({filteredTutorials.length})
-          </h2>
+          <ScrollReveal direction="up">
+            <h2 className="font-display text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+              <GraduationCap className="h-6 w-6 text-emerald-600" />
+              Tutorial Step-by-Step ({filteredTutorials.length})
+            </h2>
+          </ScrollReveal>
 
           {filteredTutorials.length === 0 ? (
-            <p className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
+            <p className="glass-panel rounded-2xl p-6 text-sm text-slate-500">
               Tidak ada tutorial yang cocok dengan pencarian.
             </p>
           ) : (
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-              {filteredTutorials.map((tut) => {
+              {filteredTutorials.map((tut, idx) => {
                 const accent = ACCENT_STYLES[tut.module.accentColor];
                 return (
-                  <Link
-                    key={tut.id}
-                    href={`/materi/${tut.module.slug}`}
-                    className="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:border-emerald-400 hover:shadow-lg transition"
-                  >
-                    <div className="space-y-3">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${accent.badgeSolid}`}>
-                          Hari {tut.module.day} • {tut.module.shortTitle}
-                        </span>
-                        <span className="rounded-full bg-slate-100 px-2.5 py-0.5 text-[11px] font-bold text-slate-700">
-                          {tut.difficulty}
-                        </span>
-                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500">
-                          <Clock className="h-3.5 w-3.5" /> {tut.duration}
-                        </span>
+                  <ScrollReveal key={tut.id} direction="up" delay={(idx % 2) * 100}>
+                    <Link
+                      href={`/materi/${tut.module.slug}`}
+                      className="glass-card group flex h-full flex-col justify-between rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${accent.badgeSolid}`}>
+                            Hari {tut.module.day} • {tut.module.shortTitle}
+                          </span>
+                          <span className="rounded-full bg-white/85 border border-slate-200/70 px-2.5 py-0.5 text-[11px] font-bold text-slate-700">
+                            {tut.difficulty}
+                          </span>
+                          <span className="inline-flex items-center gap-1 text-xs font-semibold text-slate-500">
+                            <Clock className="h-3.5 w-3.5" /> {tut.duration}
+                          </span>
+                        </div>
+
+                        <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-blue-700 transition">
+                          {tut.title}
+                        </h3>
+                        <p className="text-sm text-slate-600 leading-relaxed">{tut.goal}</p>
                       </div>
 
-                      <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-emerald-700 transition">
-                        {tut.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">{tut.goal}</p>
-                    </div>
-
-                    <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-bold">
-                      <span className="text-slate-500">{tut.steps.length} Langkah Praktik</span>
-                      <span className="inline-flex items-center gap-1 text-emerald-700">
-                        Baca Tutorial Lengkap <ArrowRight className="h-3.5 w-3.5" />
-                      </span>
-                    </div>
-                  </Link>
+                      <div className="mt-5 flex items-center justify-between border-t border-slate-200/60 pt-4 text-xs font-bold">
+                        <span className="text-slate-500">{tut.steps.length} Langkah Praktik</span>
+                        <span className="inline-flex items-center gap-1 text-blue-700">
+                          Baca Tutorial Lengkap <ArrowRight className="h-3.5 w-3.5" />
+                        </span>
+                      </div>
+                    </Link>
+                  </ScrollReveal>
                 );
               })}
             </div>
@@ -193,62 +199,65 @@ export default function TutorialNotesPage() {
       {/* Notes Section */}
       {(tab === "all" || tab === "notes") && (
         <section className="space-y-4">
-          <h2 className="font-display text-2xl font-extrabold text-slate-900 flex items-center gap-2">
-            <StickyNote className="h-6 w-6 text-amber-500" />
-            Catatan & Cheat Sheet ({filteredNotes.length})
-          </h2>
+          <ScrollReveal direction="up">
+            <h2 className="font-display text-2xl font-extrabold text-slate-900 flex items-center gap-2">
+              <StickyNote className="h-6 w-6 text-amber-500" />
+              Catatan &amp; Cheat Sheet ({filteredNotes.length})
+            </h2>
+          </ScrollReveal>
 
           {filteredNotes.length === 0 ? (
-            <p className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-500">
+            <p className="glass-panel rounded-2xl p-6 text-sm text-slate-500">
               Tidak ada catatan yang cocok dengan pencarian.
             </p>
           ) : (
             <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-              {filteredNotes.map((note) => {
+              {filteredNotes.map((note, idx) => {
                 const accent = ACCENT_STYLES[note.module.accentColor];
                 return (
-                  <Link
-                    key={note.id}
-                    href={`/materi/${note.module.slug}`}
-                    className="group flex flex-col justify-between rounded-3xl border border-slate-200 bg-white p-6 shadow-sm hover:border-amber-400 hover:shadow-lg transition"
-                  >
-                    <div className="space-y-3">
-                      <div className="flex flex-wrap items-center gap-2">
-                        <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${accent.badgeSolid}`}>
-                          Hari {note.module.day} • {note.module.shortTitle}
-                        </span>
-                        <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[11px] font-bold text-amber-800">
-                          {note.category}
-                        </span>
+                  <ScrollReveal key={note.id} direction="up" delay={(idx % 2) * 100}>
+                    <Link
+                      href={`/materi/${note.module.slug}`}
+                      className="glass-card group flex h-full flex-col justify-between rounded-3xl p-6 transition-all duration-300 hover:-translate-y-1"
+                    >
+                      <div className="space-y-3">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className={`rounded-full px-2.5 py-0.5 text-[11px] font-bold ${accent.badgeSolid}`}>
+                            Hari {note.module.day} • {note.module.shortTitle}
+                          </span>
+                          <span className="rounded-full bg-amber-100/90 px-2.5 py-0.5 text-[11px] font-bold text-amber-800">
+                            {note.category}
+                          </span>
+                        </div>
+
+                        <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-blue-700 transition">
+                          {note.title}
+                        </h3>
+                        <p className="text-sm text-slate-600 leading-relaxed">{note.summary}</p>
+
+                        {note.shortcuts && note.shortcuts.length > 0 && (
+                          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                            <Keyboard className="h-3.5 w-3.5 text-slate-400" />
+                            {note.shortcuts.map((sc, i) => (
+                              <kbd
+                                key={i}
+                                className="rounded-lg border border-slate-200 bg-white/80 px-2 py-0.5 font-mono text-[11px] font-bold text-slate-700"
+                              >
+                                {sc.keys}
+                              </kbd>
+                            ))}
+                          </div>
+                        )}
                       </div>
 
-                      <h3 className="font-display text-xl font-bold text-slate-900 group-hover:text-amber-700 transition">
-                        {note.title}
-                      </h3>
-                      <p className="text-sm text-slate-600 leading-relaxed">{note.summary}</p>
-
-                      {note.shortcuts && note.shortcuts.length > 0 && (
-                        <div className="flex flex-wrap items-center gap-1.5 pt-1">
-                          <Keyboard className="h-3.5 w-3.5 text-slate-400" />
-                          {note.shortcuts.map((sc, i) => (
-                            <kbd
-                              key={i}
-                              className="rounded-lg border border-slate-200 bg-slate-50 px-2 py-0.5 font-mono text-[11px] font-bold text-slate-700"
-                            >
-                              {sc.keys}
-                            </kbd>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-4 text-xs font-bold">
-                      <span className="text-slate-400">Update: {note.updatedAt}</span>
-                      <span className="inline-flex items-center gap-1 text-amber-700">
-                        Buka Catatan <ArrowRight className="h-3.5 w-3.5" />
-                      </span>
-                    </div>
-                  </Link>
+                      <div className="mt-5 flex items-center justify-between border-t border-slate-200/60 pt-4 text-xs font-bold">
+                        <span className="text-slate-400">Update: {note.updatedAt}</span>
+                        <span className="inline-flex items-center gap-1 text-blue-700">
+                          Buka Catatan <ArrowRight className="h-3.5 w-3.5" />
+                        </span>
+                      </div>
+                    </Link>
+                  </ScrollReveal>
                 );
               })}
             </div>

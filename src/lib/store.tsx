@@ -30,7 +30,7 @@ import type {
 
 const LOCAL_STORAGE_KEY = "daffa_steam_lab_v1";
 const SEED_REV_KEY = "daffa_steam_lab_seed_rev";
-const CURRENT_SEED_REV = "2026-11-27-nexoranesia-pondok-tholabie-v22";
+const CURRENT_SEED_REV = "2026-11-28-portfolio-glass-scroll-v23";
 const REMOVED_SLUGS = new Set(["minecraft-education", "video-editing-capcut"]);
 const SYNCED_SLUGS = new Set([
   "lego-wedo-education",

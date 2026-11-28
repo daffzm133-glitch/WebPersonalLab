@@ -21,10 +21,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title:
-    "NEXORANESIA — Tim IT & Pusat Pengembangan Teknologi Pondok Tholabie | Indonesia's Next Era of Innovation",
+  title: "Personal Digital Lab — Daffa Zidan Mahesta | Learning Technology, Creating Possibilities",
   description:
-    "NEXORANESIA adalah pusat pengembangan teknologi, robotika, coding, Artificial Intelligence (AI), dan inovasi digital yang dikelola oleh Tim IT Pondok Tholabie. Dokumentasi program pelatihan, riset karya, dan pusat pembelajaran teknologi terbuka.",
+    "Personal Portfolio & Learning Documentation milik Daffa Zidan Mahesta (IT Enthusiast & Digital Creator dari Pondok Tholabie). Dokumentasi perjalanan pelatihan IDN SMSIT, My Projects, Learning Resources, dan Teaching & Learning Hub.",
 };
 
 export default function RootLayout({
@@ -37,7 +36,7 @@ export default function RootLayout({
       lang="id"
       className={`${jakarta.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#faf8f5] text-slate-900">
+      <body className="min-h-full flex flex-col bg-[#f4f7fb] text-slate-900">
         <PortfolioProvider>
           <Navbar />
           <main className="flex-1">{children}</main>
